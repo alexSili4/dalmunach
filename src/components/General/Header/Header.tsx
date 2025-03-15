@@ -5,7 +5,7 @@ import Dalmunach from '@/icons/header/dalmunach.svg?react';
 import Scyfion from '@/icons/header/scyfion.svg?react';
 import DinkSetter from '@/icons/header/dink-setter.svg?react';
 import { ClassNames } from '@/constants';
-import HeaderSocialLinks from '@GeneralComponents/HeaderSocialLinks';
+import SocialLinksList from '@GeneralComponents/SocialLinksList';
 
 const Header: FC = () => {
   return (
@@ -20,7 +20,7 @@ const Header: FC = () => {
               </LogoWrap>
               <Dalmunach className={ClassNames.dalmunachIcon} />
             </Icons>
-            <HeaderSocialLinks />
+            <SocialLinksList />
           </Container>
         </Nav>
       </GeneralContainer>

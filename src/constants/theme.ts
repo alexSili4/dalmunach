@@ -3,6 +3,10 @@ declare module '@emotion/react' {
 }
 
 interface ITheme {
+  fontFamily: {
+    sofiaSans: string;
+    playfairDisplay: string;
+  };
   padding: {
     container: number;
   };
@@ -22,7 +26,7 @@ interface ITheme {
 
 const theme: ITheme = {
   // colors: {  },
-  // fontFamily: {  },
+  fontFamily: { sofiaSans: 'Sofia Sans', playfairDisplay: 'Playfair Display' },
   // fontWeight: {  },
   // fontSize: {  },
   // borderRadius: {  },

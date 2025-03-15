@@ -1,10 +1,26 @@
 import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
+import { theme } from '@/constants';
+import { playfairDisplayBold, sofiaSansRegular } from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
     styles={css`
+      @font-face {
+        font-family: ${theme.fontFamily.sofiaSans};
+        src: local(${theme.fontFamily.sofiaSans}),
+          url(${sofiaSansRegular}) format('truetype');
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.playfairDisplay};
+        src: local(${theme.fontFamily.playfairDisplay}),
+          url(${playfairDisplayBold}) format('truetype');
+        font-weight: 400;
+      }
+
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
           'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',

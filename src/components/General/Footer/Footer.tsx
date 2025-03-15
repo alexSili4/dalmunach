@@ -6,10 +6,19 @@ import {
   Warning,
   Icons,
   IconsWrap,
+  OtherIcons,
+  LogoImg,
+  DrinkSetterImg,
+  ScyfionImg,
+  DalmunachImg,
 } from './Footer.styled';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import FooterLinks from '@GeneralComponents/FooterLinks';
-import SocialLinks from '@GeneralComponents/SocialLinks';
+import SocialLinksList from '@GeneralComponents/SocialLinksList';
+import logo from '@/images/footer/logo.png';
+import dalmunach from '@/images/footer/dalmunach.png';
+import drinkSetter from '@/images/footer/drink-setter.png';
+import scyfion from '@/images/footer/scyfion.png';
 
 const Footer: FC = () => {
   return (
@@ -19,12 +28,15 @@ const Footer: FC = () => {
           <Content>
             <IconsWrap>
               <Icons>
-                {/* DS */}
-                {/* SCY */}
+                <LogoImg src={logo} alt='Лого лікеро-горілчаних заводів' />
+                <OtherIcons>
+                  <DrinkSetterImg src={drinkSetter} alt='Лого Drink Setter' />
+                  <ScyfionImg src={scyfion} alt='Лого Scyfion' />
+                </OtherIcons>
               </Icons>
-              {/* Dal */}
+              <DalmunachImg src={dalmunach} alt='Лого Dalmunach' />
             </IconsWrap>
-            <SocialLinks isFooter />
+            <SocialLinksList isFooter />
           </Content>
           <FooterLinks />
         </Container>
