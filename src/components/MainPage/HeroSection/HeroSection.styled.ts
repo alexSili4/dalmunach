@@ -39,6 +39,8 @@ export const Container = styled.div`
 `;
 
 export const TextWrap = styled.div`
+  position: relative;
+  z-index: ${({ theme }) => theme.zIndex.heroTitle};
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)}px;

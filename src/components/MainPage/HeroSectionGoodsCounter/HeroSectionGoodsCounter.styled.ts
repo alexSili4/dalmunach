@@ -7,7 +7,9 @@ import {
 import progressBgMob from '@/images/hero/progress-bg-mob.jpg';
 import progressBgTablet from '@/images/hero/progress-bg-tablet.png';
 
-export const Container = styled.div`
+export const Container = styled.div``;
+
+export const Content = styled.div`
   padding-left: ${({ theme }) => theme.spacing(5)}px;
 `;
 

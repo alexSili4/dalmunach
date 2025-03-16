@@ -12,6 +12,7 @@ import {
   TotalQuantityText,
   TotalQuantityTitle,
   TotalQuantityWrap,
+  Content,
 } from './HeroSectionGoodsCounter.styled';
 import Bottle from '@/icons/hero/bottle.svg?react';
 import { ClassNames } from '@/constants';
@@ -36,28 +37,30 @@ const HeroSectionGoodsCounter: FC = () => {
 
   return (
     <Container>
-      <BottleWrap>
-        <ProgressWrap>
-          <Progress className={ClassNames.progress} />
-          <Background progress={progress}></Background>
-          <ReservedQuantityWrap progress={progress}>
-            <ReservedQuantityMarker />
-            <ReservedQuantityText>
-              <ReservedQuantity>{current}</ReservedQuantity>
-              <ReservedQuantityTitle>Зарезервовано</ReservedQuantityTitle>
-            </ReservedQuantityText>
-          </ReservedQuantityWrap>
-          <TotalQuantityWrap>
-            <TotalQuantityMarker />
-            <TotalQuantityText>
-              <TotalQuantityTitle>всього пляшок</TotalQuantityTitle>
-              <TotalQuantity>{total}</TotalQuantity>
-            </TotalQuantityText>
-          </TotalQuantityWrap>
-        </ProgressWrap>
-        <ProgressStroke className={ClassNames.progressStroke} />
-        <Bottle className={ClassNames.bottle} />
-      </BottleWrap>
+      <Content>
+        <BottleWrap>
+          <ProgressWrap>
+            <Progress className={ClassNames.progress} />
+            <Background progress={progress}></Background>
+            <ReservedQuantityWrap progress={progress}>
+              <ReservedQuantityMarker />
+              <ReservedQuantityText>
+                <ReservedQuantity>{current}</ReservedQuantity>
+                <ReservedQuantityTitle>Зарезервовано</ReservedQuantityTitle>
+              </ReservedQuantityText>
+            </ReservedQuantityWrap>
+            <TotalQuantityWrap>
+              <TotalQuantityMarker />
+              <TotalQuantityText>
+                <TotalQuantityTitle>всього пляшок</TotalQuantityTitle>
+                <TotalQuantity>{total}</TotalQuantity>
+              </TotalQuantityText>
+            </TotalQuantityWrap>
+          </ProgressWrap>
+          <ProgressStroke className={ClassNames.progressStroke} />
+          <Bottle className={ClassNames.bottle} />
+        </BottleWrap>
+      </Content>
     </Container>
   );
 };
