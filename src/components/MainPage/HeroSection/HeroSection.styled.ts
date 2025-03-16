@@ -4,6 +4,7 @@ import sectionBgTablet from '@/images/hero/section-bg-tablet.jpg';
 import sectionBgDesk from '@/images/hero/section-bg-desk.jpg';
 
 export const Section = styled.section`
+  position: relative;
   padding-top: ${({ theme }) => theme.spacing(52)}px;
   padding-bottom: ${({ theme }) => theme.spacing(12)}px;
   background-image: url(${sectionBgMob});
