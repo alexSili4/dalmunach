@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import frame from '@/images/preview/frame.png';
 import sectionBgMob from '@/images/preview/section-bg-mob.jpg';
 import sectionBgTablet from '@/images/preview/section-bg-tablet.jpg';
 import sectionBgDesk from '@/images/preview/section-bg-desk.jpg';
@@ -26,23 +25,43 @@ export const Section = styled.section`
 `;
 
 export const VideoWrap = styled.div`
-  height: 356px;
+  position: relative;
+  display: flex;
+  height: 667px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(${frame});
-  background-position: 0 0;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  padding-top: ${({ theme }) => theme.spacing(26)}px;
+  padding-left: ${({ theme }) => theme.spacing(10)}px;
+  padding-right: ${({ theme }) => theme.spacing(9)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(24)}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 461px;
     height: 864px;
+    /* padding: ${({ theme: { spacing } }) =>
+      `${spacing(34)}px ${spacing(14)}px ${spacing(16)}px ${spacing(29)}px`}; */
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 614px;
     height: 1151px;
+    /* padding: ${({ theme: { spacing } }) =>
+      `${spacing(46)}px ${spacing(19)}px ${spacing(39)}px ${spacing(21)}px`}; */
   }
+`;
+
+export const VideoBg = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+`;
+
+export const Video = styled.video`
+  width: 100%;
+  height: 100%;
 `;
 
 export const DeliciousImg = styled.img`
