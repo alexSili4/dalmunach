@@ -15,10 +15,10 @@ const Header: FC = () => {
           <Container>
             <Icons>
               <LogoWrap>
-                <DinkSetter className={ClassNames.dinkSetterIcon} />
-                <Scyfion className={ClassNames.scyfionIcon} />
+                <DinkSetter className={ClassNames.dinkSetterHeaderIcon} />
+                <Scyfion className={ClassNames.scyfionHeaderIcon} />
               </LogoWrap>
-              <Dalmunach className={ClassNames.dalmunachIcon} />
+              <Dalmunach className={ClassNames.dalmunachHeaderIcon} />
             </Icons>
             <SocialLinksList />
           </Container>

@@ -7,10 +7,31 @@ import {
 import progressBgMob from '@/images/hero/progress-bg-mob.jpg';
 import progressBgTablet from '@/images/hero/progress-bg-tablet.png';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(16)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    gap: ${({ theme }) => theme.spacing(2)}px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(3)}px;
+  }
+`;
 
 export const Content = styled.div`
   padding-left: ${({ theme }) => theme.spacing(5)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    padding-left: ${({ theme }) => theme.spacing(9)}px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding-left: ${({ theme }) => theme.spacing(11)}px;
+  }
 `;
 
 export const BottleWrap = styled.div`
@@ -43,7 +64,7 @@ export const ProgressWrap = styled.div`
   & > .${ClassNames.progress} {
     width: 80px;
     max-width: 80px;
-    height: 107px;
+    height: 109px;
   }
 `;
 
@@ -146,5 +167,62 @@ export const TotalQuantityTitle = styled.p`
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
+  text-transform: uppercase;
+`;
+
+export const SaleClosedWrap = styled.div`
+  position: absolute;
+  z-index: ${({ theme }) => theme.zIndex.counter};
+  top: 35px;
+  left: -46px;
+  border: 4px solid #222222;
+  border-radius: 8px;
+  padding: ${({ theme: { spacing } }) => `${spacing(4)}px ${spacing(5)}px`};
+  transform: rotate(10.83deg);
+`;
+
+export const SaleClosedTitle = styled.div`
+  color: #222222;
+  font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 0.65;
+  text-transform: uppercase;
+  white-space: nowrap;
+`;
+
+export const ReservedLink = styled.a`
+  flex-shrink: 0;
+  display: flex;
+  padding: ${({ theme }) => theme.spacing()}px;
+  border: 1px solid #222222;
+  border-radius: 100px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 222px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 296px;
+  }
+`;
+
+export const ReservedLinkTitleWrap = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid #222222;
+  border-radius: inherit;
+  padding: ${({ theme }) => theme.spacing(6)}px;
+`;
+
+export const ReservedLinkTitle = styled.span`
+  color: #222222;
+  font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 10%;
   text-transform: uppercase;
 `;

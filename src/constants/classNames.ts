@@ -1,7 +1,7 @@
 const enum ClassNames {
-  dinkSetterIcon = 'dink-setter-icon',
-  scyfionIcon = 'scyfion-icon',
-  dalmunachIcon = 'dalmunach-icon',
+  dinkSetterHeaderIcon = 'dink-setter-header-icon',
+  scyfionHeaderIcon = 'scyfion-header-icon',
+  dalmunachHeaderIcon = 'dalmunach-header-icon',
   bottle = 'bottle',
   progress = 'progress',
   progressStroke = 'progress-stroke',

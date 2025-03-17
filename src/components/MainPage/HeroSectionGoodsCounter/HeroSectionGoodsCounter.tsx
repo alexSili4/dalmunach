@@ -13,6 +13,11 @@ import {
   TotalQuantityTitle,
   TotalQuantityWrap,
   Content,
+  SaleClosedWrap,
+  SaleClosedTitle,
+  ReservedLink,
+  ReservedLinkTitle,
+  ReservedLinkTitleWrap,
 } from './HeroSectionGoodsCounter.styled';
 import Bottle from '@/icons/hero/bottle.svg?react';
 import { ClassNames } from '@/constants';
@@ -21,6 +26,7 @@ import ProgressStroke from '@/icons/hero/progress-stroke.svg?react';
 import ReservedQuantityMarker from '@/icons/hero/reserved-quantity-marker.svg?react';
 import TotalQuantityMarker from '@/icons/hero/total-quantity-marker.svg?react';
 import { getCounterProgress } from '@/utils';
+import SectionsIds from '@/constants/sectionsIds';
 
 const HeroSectionGoodsCounter: FC = () => {
   // TODO fix
@@ -34,6 +40,8 @@ const HeroSectionGoodsCounter: FC = () => {
   ] = useState<number>(342);
 
   const progress = getCounterProgress({ current, total });
+  const isSaleClosed = progress >= 100;
+  const reservedLink = `#${SectionsIds.preOrder}`;
 
   return (
     <Container>
@@ -56,11 +64,21 @@ const HeroSectionGoodsCounter: FC = () => {
                 <TotalQuantity>{total}</TotalQuantity>
               </TotalQuantityText>
             </TotalQuantityWrap>
+            {isSaleClosed && (
+              <SaleClosedWrap>
+                <SaleClosedTitle>продаж завершено</SaleClosedTitle>
+              </SaleClosedWrap>
+            )}
           </ProgressWrap>
           <ProgressStroke className={ClassNames.progressStroke} />
           <Bottle className={ClassNames.bottle} />
         </BottleWrap>
       </Content>
+      <ReservedLink href={reservedLink}>
+        <ReservedLinkTitleWrap>
+          <ReservedLinkTitle>ПЕРЕДЗАМОВИТИ</ReservedLinkTitle>
+        </ReservedLinkTitleWrap>
+      </ReservedLink>
     </Container>
   );
 };

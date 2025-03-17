@@ -111,3 +111,64 @@ export const Ellipse = styled.div`
     width: 777;
   }
 `;
+
+export const GirlImg = styled.img`
+  position: absolute;
+  left: calc(50% + 227px);
+  top: 487px;
+  width: 544px;
+  height: 726px;
+  transform: rotate(-10.21deg);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: 650px;
+    left: calc(50% + 302px);
+    width: 725px;
+    height: 967px;
+    transform: rotate(-10.06deg);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    display: none;
+  }
+`;
+
+export const BirdImgWrap = styled.div`
+  position: absolute;
+  top: 817px;
+  right: calc(50% + 275px);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: 1089px;
+    right: calc(50% + 367px);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    display: none;
+  }
+`;
+
+export const BirdImgBg = styled.img`
+  width: 286px;
+  height: 285px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 381px;
+    height: 380px;
+  }
+`;
+
+export const BirdImg = styled.img`
+  position: absolute;
+  top: 66px;
+  left: 23px;
+  width: 210px;
+  height: 151px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: 88px;
+    left: 31px;
+    width: 280px;
+    height: 200px;
+  }
+`;

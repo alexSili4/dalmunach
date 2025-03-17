@@ -11,6 +11,13 @@ export const StyledHeader = styled.header`
   padding-bottom: ${({ theme }) => theme.spacing(6)}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    padding-top: ${({ theme }) => theme.spacing(10)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(10)}px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding-top: ${({ theme }) => theme.spacing(20)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(20)}px;
   }
 `;
 
@@ -39,7 +46,7 @@ export const Icons = styled.div`
     gap: ${({ theme }) => theme.spacing(59)}px;
   }
 
-  & > svg.${ClassNames.dalmunachIcon} {
+  & > svg.${ClassNames.dalmunachHeaderIcon} {
     width: 100%;
   }
 `;
