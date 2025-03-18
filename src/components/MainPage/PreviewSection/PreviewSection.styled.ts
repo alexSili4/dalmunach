@@ -26,6 +26,7 @@ export const Section = styled.section`
 
 export const VideoWrap = styled.div`
   position: relative;
+  z-index: ${({ theme }) => theme.zIndex.preview};
   display: flex;
   height: 667px;
   margin-left: auto;
@@ -38,15 +39,19 @@ export const VideoWrap = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 461px;
     height: 864px;
-    /* padding: ${({ theme: { spacing } }) =>
-      `${spacing(34)}px ${spacing(14)}px ${spacing(16)}px ${spacing(29)}px`}; */
+    padding-top: ${({ theme }) => theme.spacing(34)}px;
+    padding-left: ${({ theme }) => theme.spacing(15)}px;
+    padding-right: ${({ theme }) => theme.spacing(14)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(29)}px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 614px;
     height: 1151px;
-    /* padding: ${({ theme: { spacing } }) =>
-      `${spacing(46)}px ${spacing(19)}px ${spacing(39)}px ${spacing(21)}px`}; */
+    padding-top: ${({ theme }) => theme.spacing(48)}px;
+    padding-left: ${({ theme }) => theme.spacing(22)}px;
+    padding-right: ${({ theme }) => theme.spacing(20)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(43)}px;
   }
 `;
 

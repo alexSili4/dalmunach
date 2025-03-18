@@ -76,9 +76,8 @@ export const Background = styled.div<IStyledBackgroundProps>`
   height: 100%;
   transform: translateY(-${({ progress }) => progress}%);
   background-image: url(${progressBgMob});
-  background-size: 100% 100%;
+  background-size: contain;
   background-position: 0 0;
-  background-repeat: no-repeat;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     background-image: url(${progressBgTablet});

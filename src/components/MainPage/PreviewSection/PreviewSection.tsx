@@ -21,7 +21,7 @@ const PreviewSection: FC = () => {
       <GeneralContainer>
         <VideoWrap>
           <Video src={preview} controls preload='auto'></Video>
-          {/* <VideoBg src={frame} alt='Фон' /> */}
+          <VideoBg src={frame} alt='Фон' />
         </VideoWrap>
       </GeneralContainer>
       <DeliciousImg src={delicious} alt='Декоративне зображення' />
