@@ -25,7 +25,6 @@ interface ITheme {
     counter: number;
     heroTitle: number;
     bottle: number;
-    preview: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => number;
@@ -55,7 +54,6 @@ const theme: ITheme = {
     counter: 10,
     heroTitle: 10,
     bottle: 100,
-    preview: 1000,
   },
   // shadows: {  },
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',

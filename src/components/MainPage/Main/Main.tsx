@@ -5,6 +5,7 @@ import HistorySection from '@MainPageComponents/HistorySection';
 import PreviewSection from '@MainPageComponents/PreviewSection';
 import ShowBottleSection from '@MainPageComponents/ShowBottleSection';
 import { BottleWrap, Container, Bottle } from './Main.styled';
+import SymbolsSection from '@MainPageComponents/SymbolsSection';
 
 const Main: FC = () => {
   return (
@@ -17,6 +18,7 @@ const Main: FC = () => {
       <HistorySection />
       <PreviewSection />
       <ShowBottleSection />
+      <SymbolsSection />
     </Container>
   );
 };

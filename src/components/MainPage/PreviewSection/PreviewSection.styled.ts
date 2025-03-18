@@ -26,7 +26,7 @@ export const Section = styled.section`
 
 export const VideoWrap = styled.div`
   position: relative;
-  z-index: ${({ theme }) => theme.zIndex.preview};
+  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
   display: flex;
   height: 667px;
   margin-left: auto;
