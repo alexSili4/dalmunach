@@ -11,6 +11,7 @@ import footerBgDesk from '@/images/footer/footer-bg-desk.jpg';
 
 export const StyledFooter = styled.footer`
   position: relative;
+  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
   padding-top: ${({ theme }) => theme.spacing(10)}px;
   padding-bottom: ${({ theme }) => theme.spacing(44)}px;
   background-image: url(${footerBgMob});
