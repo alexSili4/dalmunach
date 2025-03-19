@@ -7,6 +7,7 @@ import ShowBottleSection from '@MainPageComponents/ShowBottleSection';
 import { BottleWrap, Container, Bottle } from './Main.styled';
 import SymbolsSection from '@MainPageComponents/SymbolsSection';
 import DistillerySection from '@MainPageComponents/DistillerySection';
+import ReservedSection from '@MainPageComponents/ReservedSection';
 
 const Main: FC = () => {
   return (
@@ -21,6 +22,7 @@ const Main: FC = () => {
       <ShowBottleSection />
       <SymbolsSection />
       <DistillerySection />
+      <ReservedSection />
     </Container>
   );
 };

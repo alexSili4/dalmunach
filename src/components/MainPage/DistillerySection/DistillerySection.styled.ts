@@ -12,6 +12,7 @@ export const Section = styled.section`
   background-position: 0 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(60)}px;
@@ -118,5 +119,57 @@ export const YeyImg = styled.img`
     right: 241px;
     width: 556px;
     height: 210px;
+  }
+`;
+
+export const SectionBgWrap = styled.div`
+  position: absolute;
+  bottom: 91px;
+  left: 50%;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  min-width: 618px;
+  transform: translateX(-50%);
+`;
+
+export const SectionBgMob = styled.img`
+  width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    display: none;
+  }
+`;
+
+export const SectionBgTablet = styled.img`
+  width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    display: none;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: none;
+  }
+`;
+
+export const SectionBgDesk = styled.img`
+  width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: none;
+  }
+`;
+
+export const BarrelLidImg = styled.img`
+  position: absolute;
+  right: 18.5%;
+  bottom: 53.2%;
+  width: 8.65%;
+  aspect-ratio: 1 / 1;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    right: 3.3%;
+    bottom: 46%;
   }
 `;

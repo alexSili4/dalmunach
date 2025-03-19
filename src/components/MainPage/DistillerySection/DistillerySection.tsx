@@ -7,13 +7,28 @@ import {
   Title,
   BottleImg,
   YeyImg,
+  SectionBgWrap,
+  SectionBgMob,
+  SectionBgTablet,
+  SectionBgDesk,
+  BarrelLidImg,
 } from './DistillerySection.styled';
 import bottle from '@/images/distillery/bottle.png';
 import yey from '@/images/distillery/yey.png';
+import otherSectionBgMob from '@/images/distillery/other-section-bg-mob.png';
+import otherSectionBgTablet from '@/images/distillery/other-section-bg-tablet.png';
+import otherSectionBgDesk from '@/images/distillery/other-section-bg-desk.png';
+import barrelLid from '@/images/distillery/barrel-lid.png';
 
 const DistillerySection: FC = () => {
   return (
     <Section>
+      <SectionBgWrap>
+        <SectionBgMob src={otherSectionBgMob} alt='Фон' />
+        <SectionBgTablet src={otherSectionBgTablet} alt='Фон' />
+        <SectionBgDesk src={otherSectionBgDesk} alt='Фон' />
+        <BarrelLidImg src={barrelLid} alt='Кришка бочки' />
+      </SectionBgWrap>
       <BottleImg src={bottle} alt='Пляшка' />
       <YeyImg src={yey} alt='Око' />
       <GeneralContainer>
