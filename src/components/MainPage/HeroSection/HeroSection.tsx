@@ -13,9 +13,9 @@ import {
   BirdImg,
 } from './HeroSection.styled';
 import HeroSectionGoodsCounter from '@MainPageComponents/HeroSectionGoodsCounter';
-import girl from '@/images/hero/girl.png';
-import birdBg from '@/images/hero/bird-bg.png';
-import bird from '@/images/hero/bird.png';
+import girl from '@/images/main/hero/girl.png';
+import birdBg from '@/images/main/hero/bird-bg.png';
+import bird from '@/images/main/hero/bird.png';
 
 const HeroSection: FC = () => {
   return (

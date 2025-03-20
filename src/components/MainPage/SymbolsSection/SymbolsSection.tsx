@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import HiddenSectionTitle from '@/components/General/HiddenSectionTitle';
-import booklet from '@/images/symbols/booklet.png';
-import pluses from '@/images/symbols/pluses.png';
-import diagrams from '@/images/symbols/diagrams.png';
+import booklet from '@/images/main/symbols/booklet.png';
+import pluses from '@/images/main/symbols/pluses.png';
+import diagrams from '@/images/main/symbols/diagrams.png';
 import {
   Section,
   BookletImg,

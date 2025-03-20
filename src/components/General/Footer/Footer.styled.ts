@@ -11,7 +11,6 @@ import footerBgDesk from '@/images/footer/footer-bg-desk.jpg';
 
 export const StyledFooter = styled.footer`
   position: relative;
-  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
   padding-top: ${({ theme }) => theme.spacing(10)}px;
   padding-bottom: ${({ theme }) => theme.spacing(44)}px;
   background-image: url(${footerBgMob});
@@ -25,7 +24,7 @@ export const StyledFooter = styled.footer`
     background-image: url(${footerBgTablet});
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     padding-top: ${({ theme }) => theme.spacing(20)}px;
     padding-bottom: ${({ theme }) => theme.spacing(96)}px;
     background-image: url(${footerBgDesk});

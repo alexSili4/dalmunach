@@ -4,9 +4,10 @@ import sectionBgTablet from '@/images/reserved/section-bg-tablet.jpg';
 import sectionBgMob from '@/images/reserved/section-bg-mob.jpg';
 
 export const Section = styled.section`
+  position: relative;
   padding-top: ${({ theme }) => theme.spacing(55)}px;
   background-image: url(${sectionBgMob});
-  background-position: 0 0;
+  background-position: bottom 0 left 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 

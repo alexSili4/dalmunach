@@ -1,10 +1,10 @@
 import { IGetCounterProgressProps } from '@/types/funcs.types';
 
 const getCounterProgress = ({
-  current,
-  total,
+  ordersCount,
+  maxBottles,
 }: IGetCounterProgressProps): number => {
-  const progress = (current / total) * 100;
+  const progress = (ordersCount / maxBottles) * 100;
 
   return progress;
 };

@@ -13,12 +13,12 @@ import {
   SectionBgDesk,
   BarrelLidImg,
 } from './DistillerySection.styled';
-import bottle from '@/images/distillery/bottle.png';
-import yey from '@/images/distillery/yey.png';
-import otherSectionBgMob from '@/images/distillery/other-section-bg-mob.png';
-import otherSectionBgTablet from '@/images/distillery/other-section-bg-tablet.png';
-import otherSectionBgDesk from '@/images/distillery/other-section-bg-desk.png';
-import barrelLid from '@/images/distillery/barrel-lid.png';
+import bottle from '@/images/main/distillery/bottle.png';
+import yey from '@/images/main/distillery/yey.png';
+import otherSectionBgMob from '@/images/main/distillery/other-section-bg-mob.png';
+import otherSectionBgTablet from '@/images/main/distillery/other-section-bg-tablet.png';
+import otherSectionBgDesk from '@/images/main/distillery/other-section-bg-desk.png';
+import barrelLid from '@/images/main/distillery/barrel-lid.png';
 
 const DistillerySection: FC = () => {
   return (

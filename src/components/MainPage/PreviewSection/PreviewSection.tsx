@@ -8,11 +8,11 @@ import {
   Video,
   VideoBg,
 } from './PreviewSection.styled';
-import delicious from '@/images/preview/delicious.png';
-import howGood from '@/images/preview/how-good.png';
+import delicious from '@/images/main/preview/delicious.png';
+import howGood from '@/images/main/preview/how-good.png';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import preview from '@/video/preview.mp4';
-import frame from '@/images/preview/frame.png';
+import frame from '@/images/main/preview/frame.png';
 
 const PreviewSection: FC = () => {
   return (

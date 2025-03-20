@@ -4,10 +4,16 @@ import AboutSection from '@MainPageComponents/AboutSection';
 import HistorySection from '@MainPageComponents/HistorySection';
 import PreviewSection from '@MainPageComponents/PreviewSection';
 import ShowBottleSection from '@MainPageComponents/ShowBottleSection';
-import { BottleWrap, Container, Bottle } from './Main.styled';
+import {
+  BottleWrap,
+  Container,
+  Bottle,
+  OtherSectionsWrap,
+} from './Main.styled';
 import SymbolsSection from '@MainPageComponents/SymbolsSection';
 import DistillerySection from '@MainPageComponents/DistillerySection';
 import ReservedSection from '@MainPageComponents/ReservedSection';
+import Footer from '@GeneralComponents/Footer';
 
 const Main: FC = () => {
   return (
@@ -20,9 +26,12 @@ const Main: FC = () => {
       <HistorySection />
       <PreviewSection />
       <ShowBottleSection />
-      <SymbolsSection />
-      <DistillerySection />
-      <ReservedSection />
+      <OtherSectionsWrap>
+        <SymbolsSection />
+        <DistillerySection />
+        <ReservedSection />
+        <Footer />
+      </OtherSectionsWrap>
     </Container>
   );
 };

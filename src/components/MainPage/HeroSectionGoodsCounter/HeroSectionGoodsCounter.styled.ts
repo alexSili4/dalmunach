@@ -5,7 +5,7 @@ import {
   IStyledReservedQuantityWrapProps,
 } from './HeroSectionGoodsCounter.types';
 import progressBgMob from '@/images/hero/progress-bg-mob.jpg';
-import progressBgTablet from '@/images/hero/progress-bg-tablet.png';
+import progressBgTablet from '@/images/main/hero/progress-bg-tablet.png';
 
 export const Container = styled.div`
   flex-shrink: 0;
@@ -14,11 +14,11 @@ export const Container = styled.div`
   gap: ${({ theme }) => theme.spacing(16)}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: ${({ theme }) => theme.spacing(2)}px;
+    gap: ${({ theme }) => theme.spacing(7)}px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    gap: ${({ theme }) => theme.spacing(3)}px;
+    gap: ${({ theme }) => theme.spacing(9)}px;
   }
 `;
 

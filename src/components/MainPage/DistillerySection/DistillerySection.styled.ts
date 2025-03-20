@@ -5,7 +5,6 @@ import sectionBgDesk from '@/images/distillery/section-bg-desk.jpg';
 
 export const Section = styled.section`
   position: relative;
-  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
   padding-top: ${({ theme }) => theme.spacing(22)}px;
   padding-bottom: ${({ theme }) => theme.spacing(120)}px;
   background-image: url(${sectionBgMob});

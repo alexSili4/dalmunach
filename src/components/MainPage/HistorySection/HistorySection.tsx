@@ -9,9 +9,9 @@ import {
   ManImg,
   TriangleImg,
 } from './HistorySection.styled';
-import pluses from '@/images/history/pluses.png';
-import man from '@/images/history/man.png';
-import triangle from '@/images/history/triangle.png';
+import pluses from '@/images/main/history/pluses.png';
+import man from '@/images/main/history/man.png';
+import triangle from '@/images/main/history/triangle.png';
 
 const HistorySection: FC = () => {
   return (

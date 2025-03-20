@@ -10,3 +10,8 @@ export interface IReservedFormData {
   phone: string;
   email: string;
 }
+
+export interface IReservedInfo {
+  max_bottles: number;
+  orders_count: number;
+}

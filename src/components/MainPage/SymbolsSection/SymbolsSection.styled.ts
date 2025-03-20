@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/symbols/section-bg-mob.jpg';
-import sectionBgTablet from '@/images/symbols/section-bg-tablet.png';
-import sectionBgDesk from '@/images/symbols/section-bg-desk.png';
+import sectionBgMob from '@/images/main/symbols/section-bg-mob.jpg';
+import sectionBgTablet from '@/images/main/symbols/section-bg-tablet.png';
+import sectionBgDesk from '@/images/main/symbols/section-bg-desk.png';
 
 export const Section = styled.section`
   position: relative;
-  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
   padding-top: ${({ theme }) => theme.spacing(23)}px;
   padding-bottom: ${({ theme }) => theme.spacing(183)}px;
   background-image: url(${sectionBgMob});

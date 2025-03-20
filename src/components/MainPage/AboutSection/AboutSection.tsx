@@ -1,9 +1,9 @@
 import HiddenSectionTitle from '@GeneralComponents/HiddenSectionTitle';
 import { FC } from 'react';
-import logo from '@/images/about/logo.png';
-import dalmunach from '@/images/about/dalmunach.png';
-import drinkSetter from '@/images/about/drink-setter.png';
-import scyfion from '@/images/about/scyfion.png';
+import logo from '@/images/main/about/logo.png';
+import dalmunach from '@/images/main/about/dalmunach.png';
+import drinkSetter from '@/images/main/about/drink-setter.png';
+import scyfion from '@/images/main/about/scyfion.png';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import {
   Container,

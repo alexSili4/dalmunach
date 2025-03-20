@@ -1,14 +1,29 @@
-import { ErrorMessages, IReservedFormData } from '@/types/reserved.types';
+import {
+  ErrorMessages,
+  IReservedFormData,
+  IReservedInfo,
+} from '@/types/reserved.types';
 import HttpService from './http.service';
-import { AxiosResponse } from 'axios';
 
 class AppService extends HttpService {
   constructor() {
     super();
   }
+
+  async getReservedInfo(): Promise<IReservedInfo> {
+    const response = await this.get<IReservedInfo>(
+      {
+        url: 'settings/all',
+      },
+      false
+    );
+
+    return response.data;
+  }
+
   async reserved(
     data: IReservedFormData
-  ): Promise<AxiosResponse<ErrorMessages | IReservedFormData, any>> {
+  ): Promise<ErrorMessages | IReservedFormData> {
     const response = await this.post<
       ErrorMessages | IReservedFormData,
       IReservedFormData
@@ -20,7 +35,7 @@ class AppService extends HttpService {
       false
     );
 
-    return response;
+    return response.data;
   }
 }
 

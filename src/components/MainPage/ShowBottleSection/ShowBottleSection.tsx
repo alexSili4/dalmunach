@@ -13,13 +13,13 @@ import {
   EllipseRight,
   Container,
 } from './ShowBottleSection.styled';
-import deregent from '@/images/showBottle/deregent.png';
-import hand from '@/images/showBottle/hand.png';
-import peopleDesk from '@/images/showBottle/people-desk.png';
-import peopleMob from '@/images/showBottle/people-mob.png';
-import ray from '@/images/showBottle/ray.png';
-import sculpture from '@/images/showBottle/sculpture.png';
-import stand from '@/images/showBottle/stand.png';
+import deregent from '@/images/main/showBottle/deregent.png';
+import hand from '@/images/main/showBottle/hand.png';
+import peopleDesk from '@/images/main/showBottle/people-desk.png';
+import peopleMob from '@/images/main/showBottle/people-mob.png';
+import ray from '@/images/main/showBottle/ray.png';
+import sculpture from '@/images/main/showBottle/sculpture.png';
+import stand from '@/images/main/showBottle/stand.png';
 
 const ShowBottleSection: FC = () => {
   const [top, setTop] = useState<number>(0);

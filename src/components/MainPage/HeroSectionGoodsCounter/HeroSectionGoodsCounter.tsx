@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import {
   Container,
   Background,
@@ -26,20 +26,15 @@ import ProgressStroke from '@/icons/hero/progress-stroke.svg?react';
 import ReservedQuantityMarker from '@/icons/hero/reserved-quantity-marker.svg?react';
 import TotalQuantityMarker from '@/icons/hero/total-quantity-marker.svg?react';
 import { getCounterProgress } from '@/utils';
-import SectionsIds from '@/constants/sectionsIds';
+import { SectionsIds } from '@/constants';
+import { useAppStore } from '@/store/store';
+import { selectMaxBottles, selectOrdersCount } from '@/store/app/selectors';
 
 const HeroSectionGoodsCounter: FC = () => {
-  // TODO fix
-  const [
-    total,
-    // setTotal
-  ] = useState<number>(342);
-  const [
-    current,
-    // setCurrent
-  ] = useState<number>(342);
+  const ordersCount = useAppStore(selectOrdersCount);
+  const maxBottles = useAppStore(selectMaxBottles);
 
-  const progress = getCounterProgress({ current, total });
+  const progress = getCounterProgress({ ordersCount, maxBottles });
   const isSaleClosed = progress >= 100;
   const reservedLink = `#${SectionsIds.preOrder}`;
 
@@ -53,7 +48,7 @@ const HeroSectionGoodsCounter: FC = () => {
             <ReservedQuantityWrap progress={progress}>
               <ReservedQuantityMarker />
               <ReservedQuantityText>
-                <ReservedQuantity>{current}</ReservedQuantity>
+                <ReservedQuantity>{ordersCount}</ReservedQuantity>
                 <ReservedQuantityTitle>Зарезервовано</ReservedQuantityTitle>
               </ReservedQuantityText>
             </ReservedQuantityWrap>
@@ -61,7 +56,7 @@ const HeroSectionGoodsCounter: FC = () => {
               <TotalQuantityMarker />
               <TotalQuantityText>
                 <TotalQuantityTitle>всього пляшок</TotalQuantityTitle>
-                <TotalQuantity>{total}</TotalQuantity>
+                <TotalQuantity>{maxBottles}</TotalQuantity>
               </TotalQuantityText>
             </TotalQuantityWrap>
             {isSaleClosed && (
