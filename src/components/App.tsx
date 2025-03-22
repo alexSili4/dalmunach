@@ -4,10 +4,9 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '@/store/store';
 import { selectGetReservedInfo } from '@/store/app/selectors';
 import { AnimatePresence } from 'framer-motion';
-
-const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
-const MainPage = lazy(() => import('@/pages/MainPage'));
-const WarningPage = lazy(() => import('@/pages/WarningPage'));
+import WarningPage from '@/pages/WarningPage';
+import NotFoundPage from '@/pages/NotFoundPage';
+import MainPage from '@/pages/MainPage';
 
 const App: FC = () => {
   const location = useLocation();
@@ -39,9 +38,6 @@ const App: FC = () => {
   return (
     <AnimatePresence mode='wait'>
       <Routes location={location} key={location.pathname}>
-        {isLegalDrinkingAgeUser && (
-          <Route path={PagePaths.root} element={<MainPage />} />
-        )}
         <Route
           path={PagePaths.warning}
           element={
@@ -50,6 +46,9 @@ const App: FC = () => {
             />
           }
         />
+        {isLegalDrinkingAgeUser && (
+          <Route path={PagePaths.root} element={<MainPage />} />
+        )}
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </AnimatePresence>
