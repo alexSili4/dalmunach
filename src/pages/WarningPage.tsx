@@ -1,14 +1,17 @@
-import { IWarningPageOutletContext } from '@/types/types';
 import { FC } from 'react';
-import { useOutletContext } from 'react-router-dom';
 import Warning from '@WarningPageComponents/Warning';
+import AnimatedPage from '@GeneralComponents/AnimatedPage';
+import { SetBooleanFunc } from '@/types/funcs.types';
 
-const WarningPage: FC = () => {
-  const { updateIsLegalDrinkingAgeUser }: IWarningPageOutletContext =
-    useOutletContext();
+export interface IProps {
+  updateIsLegalDrinkingAgeUser: SetBooleanFunc;
+}
 
+const WarningPage: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
   return (
-    <Warning updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser} />
+    <AnimatedPage>
+      <Warning updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser} />
+    </AnimatedPage>
   );
 };
 

@@ -1,16 +1,20 @@
-import { FC, lazy, useEffect } from 'react';
+import { FC, lazy, useEffect, useState } from 'react';
 import { PagePaths } from '@/constants';
-import { Route, Routes } from 'react-router-dom';
-import SharedLayout from '@GeneralComponents/SharedLayout';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '@/store/store';
 import { selectGetReservedInfo } from '@/store/app/selectors';
+import { AnimatePresence } from 'framer-motion';
 
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const MainPage = lazy(() => import('@/pages/MainPage'));
 const WarningPage = lazy(() => import('@/pages/WarningPage'));
 
 const App: FC = () => {
+  const location = useLocation();
   const getReservedInfo = useAppStore(selectGetReservedInfo);
+  const [isLegalDrinkingAgeUser, setIsLegalDrinkingAgeUser] =
+    useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getCurrentReservedInfo = async () => {
@@ -20,15 +24,35 @@ const App: FC = () => {
     getCurrentReservedInfo();
   }, [getReservedInfo]);
 
+  const updateIsLegalDrinkingAgeUser = (data: boolean) => {
+    setIsLegalDrinkingAgeUser(data);
+  };
+
+  useEffect(() => {
+    if (!isLegalDrinkingAgeUser) {
+      navigate(PagePaths.warning);
+    } else {
+      navigate(PagePaths.root);
+    }
+  }, [isLegalDrinkingAgeUser, navigate]);
+
   return (
-    <Routes>
-      <Route path={PagePaths.root} element={<SharedLayout />}>
-        <Route index element={<MainPage />} />
-        <Route path={PagePaths.root} element={<MainPage />} />
-        <Route path={PagePaths.warning} element={<WarningPage />} />
+    <AnimatePresence mode='wait'>
+      <Routes location={location} key={location.pathname}>
+        {isLegalDrinkingAgeUser && (
+          <Route path={PagePaths.root} element={<MainPage />} />
+        )}
+        <Route
+          path={PagePaths.warning}
+          element={
+            <WarningPage
+              updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
+            />
+          }
+        />
         <Route path='*' element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </AnimatePresence>
   );
 };
 
