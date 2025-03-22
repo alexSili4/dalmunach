@@ -1,4 +1,4 @@
-import { FC, lazy, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { PagePaths } from '@/constants';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '@/store/store';
