@@ -22,10 +22,10 @@ import {
   BirdDeskImg,
   BirdMobImg,
 } from './AboutSection.styled';
-import birdMob from '@/images/about/bird-mob.png';
-import birdDesk from '@/images/about/bird-desk.png';
-import birdBgMob from '@/images/about/bird-bg-mob.png';
-import birdBgDesk from '@/images/about/bird-bg-desk.png';
+import birdMob from '@/images/main/about/bird-mob.png';
+import birdDesk from '@/images/main/about/bird-desk.png';
+import birdBgMob from '@/images/main/about/bird-bg-mob.png';
+import birdBgDesk from '@/images/main/about/bird-bg-desk.png';
 
 const AboutSection: FC = () => {
   return (

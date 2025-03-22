@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/hero/section-bg-mob.jpg';
-import sectionBgTablet from '@/images/hero/section-bg-tablet.jpg';
-import sectionBgDesk from '@/images/hero/section-bg-desk.jpg';
+import sectionBgMob from '@/images/main/hero/section-bg-mob.jpg';
+import sectionBgTablet from '@/images/main/hero/section-bg-tablet.jpg';
+import sectionBgDesk from '@/images/main/hero/section-bg-desk.jpg';
 
 export const Section = styled.section`
   position: relative;
@@ -27,6 +27,7 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(8)}px;

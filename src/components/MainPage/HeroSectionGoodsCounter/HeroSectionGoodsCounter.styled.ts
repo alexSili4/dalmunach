@@ -4,7 +4,7 @@ import {
   IStyledBackgroundProps,
   IStyledReservedQuantityWrapProps,
 } from './HeroSectionGoodsCounter.types';
-import progressBgMob from '@/images/hero/progress-bg-mob.jpg';
+import progressBgMob from '@/images/main/hero/progress-bg-mob.jpg';
 import progressBgTablet from '@/images/main/hero/progress-bg-tablet.png';
 
 export const Container = styled.div`
@@ -194,8 +194,14 @@ export const ReservedLink = styled.a`
   flex-shrink: 0;
   display: flex;
   padding: ${({ theme }) => theme.spacing()}px;
-  border: 1px solid #222222;
+  border: 1px solid;
+  border-color: #222222;
   border-radius: 100px;
+  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    border-color: ${({ theme }) => theme.colors.white};
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 222px;
@@ -211,9 +217,18 @@ export const ReservedLinkTitleWrap = styled.span`
   align-items: center;
   justify-content: center;
   width: 100%;
-  border: 1px solid #222222;
-  border-radius: inherit;
+  border: 1px solid;
+  border-color: #222222;
+  border-radius: 100px;
+  background-color: transparent;
   padding: ${({ theme }) => theme.spacing(6)}px;
+  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc},
+    background-color ${({ theme }) => theme.transitionDurationAndFunc};
+
+  a:is(:hover, :focus) > & {
+    border-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 export const ReservedLinkTitle = styled.span`

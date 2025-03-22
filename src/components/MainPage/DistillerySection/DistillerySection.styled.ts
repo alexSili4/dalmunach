@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/distillery/section-bg-mob.jpg';
-import sectionBgTablet from '@/images/distillery/section-bg-tablet.jpg';
-import sectionBgDesk from '@/images/distillery/section-bg-desk.jpg';
+import sectionBgMob from '@/images/main/distillery/section-bg-mob.jpg';
+import sectionBgTablet from '@/images/main/distillery/section-bg-tablet.jpg';
+import sectionBgDesk from '@/images/main/distillery/section-bg-desk.jpg';
 
 export const Section = styled.section`
   position: relative;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import sectionBgDesk from '@/images/showBottle/section-bg-desk.jpg';
-import sectionBgMob from '@/images/showBottle/section-bg-mob.jpg';
-import sectionBgTablet from '@/images/showBottle/section-bg-tablet.jpg';
+import sectionBgDesk from '@/images/main/showBottle/section-bg-desk.jpg';
+import sectionBgMob from '@/images/main/showBottle/section-bg-mob.jpg';
+import sectionBgTablet from '@/images/main/showBottle/section-bg-tablet.jpg';
 import { IStyledContainerProps } from './ShowBottleSection.types';
 
 export const Section = styled.section`

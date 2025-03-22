@@ -5,6 +5,7 @@ declare module '@emotion/react' {
 interface ITheme {
   colors: {
     black: string;
+    white: string;
   };
   fontFamily: {
     sofiaSans: string;
@@ -34,7 +35,7 @@ interface ITheme {
 }
 
 const theme: ITheme = {
-  colors: { black: '#000000' },
+  colors: { black: '#000000', white: '#ffffff' },
   fontFamily: { sofiaSans: 'Sofia Sans', playfairDisplay: 'Playfair Display' },
   // fontWeight: {  },
   // fontSize: {  },

@@ -94,16 +94,30 @@ export const InputsWrap = styled.div`
 export const Button = styled.button`
   display: flex;
   padding: ${({ theme }) => theme.spacing()}px;
-  border: 1px solid #222222;
+  border: 1px solid;
+  border-color: #222222;
   border-radius: 100px;
   background-color: transparent;
+  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    border-color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 export const BtnTitleWrap = styled.span`
   width: 100%;
-  border: inherit;
-  border-radius: inherit;
+  border: 1px solid;
+  border-color: #222222;
+  border-radius: 100px;
   padding: ${({ theme }) => theme.spacing(6)}px;
+  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc},
+    background-color ${({ theme }) => theme.transitionDurationAndFunc};
+
+  button:is(:hover, :focus) > & {
+    border-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.white};
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: ${({ theme }) => theme.spacing(5)}px;
