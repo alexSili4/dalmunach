@@ -21,6 +21,10 @@ const GlobalStyles: FC = () => (
         font-weight: 400;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         background-color: #e5d7b8;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
