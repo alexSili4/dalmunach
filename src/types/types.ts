@@ -1,5 +1,6 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, RefObject } from 'react';
 import { SetBooleanFunc } from './funcs.types';
+import { MotionValue } from 'framer-motion';
 
 // events
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
@@ -21,3 +22,7 @@ export interface IWarningPageOutletContext {
 }
 
 export interface IOutletContext extends IWarningPageOutletContext {}
+
+export type MotionValueNumber = MotionValue<number>;
+
+export type RefDivObject = RefObject<HTMLDivElement>;

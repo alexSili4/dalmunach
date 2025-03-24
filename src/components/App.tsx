@@ -28,9 +28,8 @@ const App: FC = () => {
 
   return (
     <AnimatePresence mode='wait'>
-      {/* <Routes location={location} key={location.pathname}> */}
       {isLegalDrinkingAgeUser ? (
-        <Routes>
+        <Routes key='router'>
           <Route path={PagePaths.root} element={<SharedLayout />}>
             <Route index element={<MainPage />} />
             <Route path={PagePaths.root} element={<MainPage />} />
@@ -40,6 +39,7 @@ const App: FC = () => {
       ) : (
         <WarningPage
           updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
+          key='Warning'
         />
       )}
     </AnimatePresence>

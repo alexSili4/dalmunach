@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
+      '@AnimatedComponents': '/src/components/Animated',
       '@GeneralComponents': '/src/components/General',
       '@MainPageComponents': '/src/components/MainPage',
       '@WarningPageComponents': '/src/components/WarningPage',

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 export const StyledHeader = styled.header`
   position: absolute;
-  z-index: ${({ theme }) => theme.zIndex.header};
+  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
   top: 0;
   left: 0;
   width: 100%;

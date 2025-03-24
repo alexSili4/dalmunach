@@ -55,27 +55,6 @@ export const DeregentImg = styled.img`
   }
 `;
 
-export const HandImg = styled.img`
-  position: absolute;
-  top: 647px;
-  left: 50%;
-  max-width: 2000px;
-  height: 209px;
-  transform: translateX(-158px);
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 46px;
-    height: 289px;
-    transform: translateX(-225px);
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 61px;
-    height: 385px;
-    transform: translateX(-299px);
-  }
-`;
-
 export const PeopleMobImg = styled.img`
   position: absolute;
   top: 396px;
@@ -148,29 +127,6 @@ export const SculptureImg = styled.img`
     left: -110px;
     width: 769px;
     height: 699px;
-  }
-`;
-
-export const StandImg = styled.img`
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 431px;
-  height: 242px;
-  transform: translateX(calc(-50% + 16px));
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    bottom: 42px;
-    width: 646px;
-    height: 363px;
-    transform: translateX(calc(-50% + 10px));
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    bottom: 56px;
-    width: 861px;
-    height: 484px;
-    transform: translateX(calc(-50% + 13px));
   }
 `;
 

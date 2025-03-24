@@ -4,6 +4,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@GeneralComponents/*": ["./src/components/General/*"],
+      "@AnimatedComponents/*": ["./src/components/Animated/*"],
       "@WarningPageComponents/*": ["./src/components/WarningPage/*"],
       "@MainPageComponents/*": ["./src/components/MainPage/*"]
     },

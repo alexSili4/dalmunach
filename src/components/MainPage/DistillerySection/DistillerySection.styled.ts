@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import sectionBgMob from '@/images/main/distillery/section-bg-mob.jpg';
 import sectionBgTablet from '@/images/main/distillery/section-bg-tablet.jpg';
 import sectionBgDesk from '@/images/main/distillery/section-bg-desk.jpg';
+import { animations } from '@/constants';
 
 export const Section = styled.section`
   position: relative;
@@ -166,6 +167,7 @@ export const BarrelLidImg = styled.img`
   bottom: 53.2%;
   width: 8.65%;
   aspect-ratio: 1 / 1;
+  animation: ${animations.barrelLidRotate} 12s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     right: 3.3%;

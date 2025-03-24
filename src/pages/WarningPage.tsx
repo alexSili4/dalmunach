@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Warning from '@WarningPageComponents/Warning';
-import AnimatedPage from '@GeneralComponents/AnimatedPage';
+import AnimatedPage from '@AnimatedComponents/AnimatedPage';
 import { SetBooleanFunc } from '@/types/funcs.types';
 
 export interface IProps {

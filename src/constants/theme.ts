@@ -25,7 +25,6 @@ interface ITheme {
     desktop: number;
   };
   zIndex: {
-    header: number;
     counter: number;
     heroTitle: number;
     bottle: number;
@@ -54,7 +53,6 @@ const theme: ITheme = {
     container: 16,
   },
   zIndex: {
-    header: 10,
     counter: 10,
     heroTitle: 10,
     bottle: 100,
