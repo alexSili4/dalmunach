@@ -13,6 +13,8 @@ import { useInView, useScroll, useTransform } from 'framer-motion';
 import DecorativeBottle from '@MainPageComponents/DecorativeBottle';
 
 const Main: FC = () => {
+  const symbolsSectionRef = useRef<HTMLDivElement>(null);
+  const symbolsSectionInView = useInView(symbolsSectionRef);
   const showBottleSectionRef = useRef<HTMLDivElement>(null);
   const showBottleSectionInView = useInView(showBottleSectionRef);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,6 +31,7 @@ const Main: FC = () => {
   return (
     <Container ref={containerRef}>
       <DecorativeBottle
+        symbolsSectionInView={symbolsSectionInView}
         bottleScale={bottleScale}
         showBottleSectionInView={showBottleSectionInView}
       />
@@ -38,7 +41,7 @@ const Main: FC = () => {
       <PreviewSection />
       <ShowBottleSection sectionRef={showBottleSectionRef} />
       <OtherSectionsWrap>
-        <SymbolsSection />
+        <SymbolsSection sectionRef={symbolsSectionRef} />
         <DistillerySection />
         <ReservedSection />
         <Footer />

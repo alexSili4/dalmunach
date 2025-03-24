@@ -4,10 +4,12 @@ import { Container } from './AnimatedPage.styled';
 import { Variants } from 'framer-motion';
 
 const AnimatedPage: FC<IProps> = ({ children }) => {
+  const transition = { duration: 0.8 };
+
   const pageVariants: Variants = {
-    initial: { opacity: 0, x: '-80%', transition: { duration: 0.8 } },
-    animate: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-    exit: { opacity: 0, x: '80%', transition: { duration: 0.8 } },
+    initial: { opacity: 0, x: '-80%', transition },
+    animate: { opacity: 1, x: 0, transition },
+    exit: { opacity: 0, x: '80%', transition },
   };
 
   return (

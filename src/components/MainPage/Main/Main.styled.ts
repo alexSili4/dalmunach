@@ -5,9 +5,11 @@ export const Container = styled.div`
 `;
 
 export const OtherSectionsWrap = styled.div`
+  position: relative;
+  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     position: absolute;
-    z-index: ${({ theme }) => theme.zIndex.bottle + 1};
     top: 100%;
     left: 0;
     width: 100%;

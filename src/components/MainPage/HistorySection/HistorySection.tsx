@@ -12,6 +12,7 @@ import {
 import pluses from '@/images/main/history/pluses.png';
 import man from '@/images/main/history/man.png';
 import triangle from '@/images/main/history/triangle.png';
+import AnimatedHistorySectionBottle from '@AnimatedComponents/AnimatedHistorySectionBottle';
 
 const HistorySection: FC = () => {
   return (
@@ -43,6 +44,7 @@ const HistorySection: FC = () => {
       <PlusesImg src={pluses} alt='Декоративне зображення' />
       <TriangleImg src={triangle} alt='Трикутник' />
       <ManImg src={man} alt='Робітник' />
+      <AnimatedHistorySectionBottle />
     </Section>
   );
 };

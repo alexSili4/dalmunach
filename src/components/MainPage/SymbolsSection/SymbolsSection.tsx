@@ -13,10 +13,11 @@ import {
   Text,
   Title,
 } from './SymbolsSection.styled';
+import { IProps } from './SymbolsSection.types';
 
-const SymbolsSection: FC = () => {
+const SymbolsSection: FC<IProps> = ({ sectionRef }) => {
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <HiddenSectionTitle title='Про сенси символів' />
       <GeneralContainer>
         <Container>
