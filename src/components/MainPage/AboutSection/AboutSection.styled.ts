@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import sectionBgMob from '@/images/main/about/section-bg-mob.jpg';
 import sectionBgTablet from '@/images/main/about/section-bg-tablet.jpg';
 import sectionBgDesk from '@/images/main/about/section-bg-desk.jpg';
+import { animations } from '@/constants';
 
 export const Section = styled.section`
   position: relative;
@@ -136,6 +137,7 @@ export const BirdWrap = styled.div`
   position: absolute;
   top: 84px;
   left: calc(50% - 107px);
+  animation: ${animations.montyPython} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: -38px;

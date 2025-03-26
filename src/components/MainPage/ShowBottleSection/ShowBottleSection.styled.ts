@@ -3,6 +3,7 @@ import sectionBgDesk from '@/images/main/showBottle/section-bg-desk.jpg';
 import sectionBgMob from '@/images/main/showBottle/section-bg-mob.jpg';
 import sectionBgTablet from '@/images/main/showBottle/section-bg-tablet.jpg';
 import { IStyledContainerProps } from './ShowBottleSection.types';
+import { animations } from '@/constants';
 
 export const Section = styled.section`
   position: relative;
@@ -38,6 +39,10 @@ export const DeregentImg = styled.img`
   width: 387px;
   height: 330px;
   transform: translateX(calc(-50% - 30px));
+  offset-path: path(
+    'M 100 200 C 300 0, 500 0, 700 200 C 500 400, 300 400, 100 200 Z'
+  );
+  animation: ${animations.infinityPath} 4s ease-in-out infinite alternate;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 422px;
@@ -61,6 +66,7 @@ export const PeopleMobImg = styled.img`
   right: 16px;
   width: 172px;
   height: 200px;
+  animation: ${animations.montyPython} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
@@ -73,6 +79,7 @@ export const PeopleDeskImg = styled.img`
   left: 119px;
   width: 387px;
   height: 450px;
+  animation: ${animations.montyPython} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 677px;
@@ -114,6 +121,7 @@ export const SculptureImg = styled.img`
   left: -35px;
   width: 240px;
   height: 232px;
+  animation: ${animations.montyPython} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 170px;

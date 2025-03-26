@@ -2,16 +2,17 @@ import styled from '@emotion/styled';
 import sectionBgMob from '@/images/main/hero/section-bg-mob.jpg';
 import sectionBgTablet from '@/images/main/hero/section-bg-tablet.jpg';
 import sectionBgDesk from '@/images/main/hero/section-bg-desk.jpg';
+import { animations } from '@/constants';
 
 export const Section = styled.section`
   position: relative;
+  z-index: 10;
   padding-top: ${({ theme }) => theme.spacing(52)}px;
   padding-bottom: ${({ theme }) => theme.spacing(12)}px;
   background-image: url(${sectionBgMob});
   background-position: 0 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     background-image: url(${sectionBgTablet});
@@ -23,6 +24,10 @@ export const Section = styled.section`
     background-image: url(${sectionBgDesk});
     padding-top: ${({ theme }) => theme.spacing(72)}px;
     padding-bottom: ${({ theme }) => theme.spacing(195)}px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    overflow: hidden;
   }
 `;
 
@@ -120,6 +125,7 @@ export const GirlImg = styled.img`
   width: 544px;
   height: 726px;
   transform: rotate(-10.21deg);
+  animation: ${animations.montyPython} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 650px;
@@ -138,6 +144,7 @@ export const BirdImgWrap = styled.div`
   position: absolute;
   top: 817px;
   right: calc(50% + 275px);
+  animation: ${animations.montyPython} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 1089px;

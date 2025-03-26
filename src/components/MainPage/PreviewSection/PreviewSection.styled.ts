@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import sectionBgMob from '@/images/main/preview/section-bg-mob.jpg';
 import sectionBgTablet from '@/images/main/preview/section-bg-tablet.jpg';
 import sectionBgDesk from '@/images/main/preview/section-bg-desk.jpg';
+import { animations } from '@/constants';
 
 export const Section = styled.section`
   position: relative;
@@ -75,6 +76,7 @@ export const DeliciousImg = styled.img`
   left: 0;
   width: 176px;
   height: 327px;
+  animation: ${animations.montyPython} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 422px;
@@ -97,6 +99,7 @@ export const HowGoodImg = styled.img`
   right: 2px;
   width: 191px;
   height: 345px;
+  animation: ${animations.montyPython} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 469px;
