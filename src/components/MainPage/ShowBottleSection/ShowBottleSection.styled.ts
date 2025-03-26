@@ -38,18 +38,14 @@ export const DeregentImg = styled.img`
   left: 50%;
   width: 387px;
   height: 330px;
-  transform: translateX(calc(-50% - 30px));
-  offset-path: path(
-    'M 100 200 C 300 0, 500 0, 700 200 C 500 400, 300 400, 100 200 Z'
-  );
-  animation: ${animations.infinityPath} 4s ease-in-out infinite alternate;
+  /* transform: translateX(calc(-50% - 30px)); */
+  animation: ${animations.deregent} 12s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 422px;
     left: calc(50% + 123px);
     width: 571px;
     height: 488px;
-    transform: none;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
