@@ -15,10 +15,10 @@ import {
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import FooterLinks from '@GeneralComponents/FooterLinks';
 import SocialLinksList from '@GeneralComponents/SocialLinksList';
-import logo from '@/images/footer/logo.png';
-import dalmunach from '@/images/footer/dalmunach.png';
-import drinkSetter from '@/images/footer/drink-setter.png';
-import scyfion from '@/images/footer/scyfion.png';
+import logo from '@/images/footer/logo-min.png';
+import dalmunach from '@/images/footer/dalmunach-min.png';
+import drinkSetter from '@/images/footer/drink-setter-min.png';
+import scyfion from '@/images/footer/scyfion-min.png';
 
 const Footer: FC = () => {
   return (

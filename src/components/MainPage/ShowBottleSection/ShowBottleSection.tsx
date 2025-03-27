@@ -11,11 +11,11 @@ import {
   EllipseRight,
   Container,
 } from './ShowBottleSection.styled';
-import deregent from '@/images/main/showBottle/deregent.png';
-import peopleDesk from '@/images/main/showBottle/people-desk.png';
-import peopleMob from '@/images/main/showBottle/people-mob.png';
-import ray from '@/images/main/showBottle/ray.png';
-import sculpture from '@/images/main/showBottle/sculpture.png';
+import deregent from '@/images/main/showBottle/deregent-min.png';
+import peopleDesk from '@/images/main/showBottle/people-desk-min.png';
+import peopleMob from '@/images/main/showBottle/people-mob-min.png';
+import ray from '@/images/main/showBottle/ray-min.png';
+import sculpture from '@/images/main/showBottle/sculpture-min.png';
 import { IProps } from './ShowBottleSection.types';
 
 const ShowBottleSection: FC<IProps> = ({ sectionRef }) => {
@@ -40,11 +40,11 @@ const ShowBottleSection: FC<IProps> = ({ sectionRef }) => {
     <Section ref={sectionRef}>
       <HiddenSectionTitle title='Демонстрація пляшки' />
       <Container ref={containerRef} top={top}>
-        <DeregentImg src={deregent} alt='Дережер' />
         <RayImg src={ray} alt='Промінь' />
+        <EllipseRight></EllipseRight>
+        <DeregentImg src={deregent} alt='Дережер' />
         <EllipseLeft></EllipseLeft>
         <SculptureImg src={sculpture} alt='Скульптура' />
-        <EllipseRight></EllipseRight>
         <PeopleMobImg src={peopleMob} alt='Люди' />
         <PeopleDeskImg src={peopleDesk} alt='Люди' />
       </Container>

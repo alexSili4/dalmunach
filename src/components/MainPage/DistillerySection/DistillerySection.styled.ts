@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/main/distillery/section-bg-mob.jpg';
-import sectionBgTablet from '@/images/main/distillery/section-bg-tablet.jpg';
-import sectionBgDesk from '@/images/main/distillery/section-bg-desk.jpg';
+import sectionBgMob from '@/images/main/distillery/section-bg-mob-min.jpg';
+import sectionBgTablet from '@/images/main/distillery/section-bg-tablet-min.jpg';
+import sectionBgDesk from '@/images/main/distillery/section-bg-desk-min.jpg';
 import { animations } from '@/constants';
 
 export const Section = styled.section`
@@ -105,6 +105,8 @@ export const YeyImg = styled.img`
   right: 14px;
   width: 302px;
   height: 114px;
+  transform-origin: right center;
+  animation: ${animations.scanner} 6s infinite alternate;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 398px;
@@ -112,6 +114,7 @@ export const YeyImg = styled.img`
     width: 417px;
     height: 158px;
     transform: rotate(15deg);
+    animation: ${animations.scannerDesk} 6s infinite alternate;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

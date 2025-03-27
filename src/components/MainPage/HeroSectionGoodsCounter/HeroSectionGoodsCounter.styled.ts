@@ -4,8 +4,8 @@ import {
   IStyledBackgroundProps,
   IStyledReservedQuantityWrapProps,
 } from './HeroSectionGoodsCounter.types';
-import progressBgMob from '@/images/main/hero/progress-bg-mob.jpg';
-import progressBgTablet from '@/images/main/hero/progress-bg-tablet.png';
+import progressBgMob from '@/images/main/hero/progress-bg-mob-min.jpg';
+import progressBgTablet from '@/images/main/hero/progress-bg-tablet-min.png';
 
 export const Container = styled.div`
   flex-shrink: 0;

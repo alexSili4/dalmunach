@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Container, StyledHeader, LogoWrap, Nav, Icons } from './Header.styled';
+import { Container, StyledHeader, LogoWrap, Nav,  } from './Header.styled';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import Dalmunach from '@/icons/header/dalmunach.svg?react';
 import Scyfion from '@/icons/header/scyfion.svg?react';
@@ -13,13 +13,11 @@ const Header: FC = () => {
       <GeneralContainer>
         <Nav>
           <Container>
-            <Icons>
               <LogoWrap>
                 <DinkSetter className={ClassNames.dinkSetterHeaderIcon} />
                 <Scyfion className={ClassNames.scyfionHeaderIcon} />
               </LogoWrap>
-              <Dalmunach className={ClassNames.dalmunachHeaderIcon} />
-            </Icons>
+            <Dalmunach className={ClassNames.dalmunachHeaderIcon} />
             <SocialLinksList />
           </Container>
         </Nav>

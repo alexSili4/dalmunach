@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/warning/hero/section-bg-mob.jpg';
-import sectionBgDesk from '@/images/warning/hero/section-bg-desk.jpg';
+import sectionBgMob from '@/images/warning/hero/section-bg-mob-min.jpg';
+import sectionBgDesk from '@/images/warning/hero/section-bg-desk-min.jpg';
 
 export const Section = styled.section`
   background-image: url(${sectionBgMob});

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import formBg from '@/images/main/reserved/form-bg.png';
+import formBg from '@/images/main/reserved/form-bg-min.png';
 
 export const Container = styled.div`
   display: flex;

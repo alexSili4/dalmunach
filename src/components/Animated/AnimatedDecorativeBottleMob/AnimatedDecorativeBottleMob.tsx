@@ -1,8 +1,8 @@
 import { AnimatePresence, Variants } from 'framer-motion';
 import { FC } from 'react';
-import bottle from '@/images/main/bottle/bottle.png';
-import hand from '@/images/main/bottle/hand.png';
-import stand from '@/images/main/bottle/stand.png';
+import bottle from '@/images/main/bottle/bottle-min.png';
+import hand from '@/images/main/bottle/hand-min.png';
+import stand from '@/images/main/bottle/stand-min.png';
 import {
   Bottle,
   BottleWrap,

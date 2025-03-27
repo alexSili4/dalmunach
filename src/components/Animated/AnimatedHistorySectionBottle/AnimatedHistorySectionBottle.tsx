@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import bottle from '@/images/main/bottle/bottle.png';
+import bottle from '@/images/main/bottle/bottle-min.png';
 import { Bottle } from './AnimatedHistorySectionBottle.styled';
 
 const AnimatedHistorySectionBottle: FC = () => {

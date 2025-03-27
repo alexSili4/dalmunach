@@ -29,25 +29,19 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-`;
-
-export const Icons = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(6)}px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    flex-direction: row;
-    align-items: center;
-    gap: ${({ theme }) => theme.spacing(44)}px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    gap: ${({ theme }) => theme.spacing(59)}px;
-  }
 
   & > svg.${ClassNames.dalmunachHeaderIcon} {
     width: 100%;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      width: 300px;
+      height: 34px;
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+      width: 400px;
+      height: 46px;
+    }
   }
 `;
 
@@ -61,5 +55,29 @@ export const LogoWrap = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(8)}px;
+  }
+
+  & > svg.${ClassNames.dinkSetterHeaderIcon} {
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      width: 94px;
+      height: 30px;
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+      width: 124px;
+      height: 39px;
+    }
+  }
+
+  & > svg.${ClassNames.scyfionHeaderIcon} {
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      width: 94px;
+      height: 24px;
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+      width: 125px;
+      height: 32px;
+    }
   }
 `;

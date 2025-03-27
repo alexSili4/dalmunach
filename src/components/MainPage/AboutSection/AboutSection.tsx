@@ -1,9 +1,9 @@
 import HiddenSectionTitle from '@GeneralComponents/HiddenSectionTitle';
 import { FC } from 'react';
-import logo from '@/images/main/about/logo.png';
-import dalmunach from '@/images/main/about/dalmunach.png';
-import drinkSetter from '@/images/main/about/drink-setter.png';
-import scyfion from '@/images/main/about/scyfion.png';
+import logo from '@/images/main/about/logo-min.png';
+import dalmunach from '@/images/main/about/dalmunach-min.png';
+import drinkSetter from '@/images/main/about/drink-setter-min.png';
+import scyfion from '@/images/main/about/scyfion-min.png';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import {
   Container,
@@ -15,21 +15,22 @@ import {
   LogoImg,
   LogoWrap,
   ScyfionImg,
-  Text,
   BirdWrap,
   BirdBgDeskImg,
   BirdBgMobImg,
   BirdDeskImg,
   BirdMobImg,
 } from './AboutSection.styled';
-import birdMob from '@/images/main/about/bird-mob.png';
-import birdDesk from '@/images/main/about/bird-desk.png';
-import birdBgMob from '@/images/main/about/bird-bg-mob.png';
-import birdBgDesk from '@/images/main/about/bird-bg-desk.png';
+import birdMob from '@/images/main/about/bird-mob-min.png';
+import birdDesk from '@/images/main/about/bird-desk-min.png';
+import birdBgMob from '@/images/main/about/bird-bg-mob-min.png';
+import birdBgDesk from '@/images/main/about/bird-bg-desk-min.png';
+import AnimatedAboutSectionText from '@AnimatedComponents/AnimatedAboutSectionText';
+import { IProps } from './AboutSection.types';
 
-const AboutSection: FC = () => {
+const AboutSection: FC<IProps> = ({ inView, sectionRef }) => {
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <HiddenSectionTitle title='Про винокурні Шотландії' />
       <GeneralContainer>
         <Container>
@@ -43,12 +44,10 @@ const AboutSection: FC = () => {
             </LogoWrap>
             <DalmunachImg src={dalmunach} alt='Лого Dalmunach' />
           </Content>
-          <Text>
-            Від почину віку спливло вже чверть століття. За цей час у Шотландії
-            розпочали роботу понад 30 нових солодових винокурень. Чимала частина
-            з них вже може похвалитися власними віскі з витримкою, яка досягає
-            двозначних чисел у роках.
-          </Text>
+          <AnimatedAboutSectionText
+            text='Від почину віку спливло вже чверть століття. За цей час у Шотландії розпочали роботу понад 30 нових солодових винокурень. Чимала частина з них вже може похвалитися власними віскі з витримкою, яка досягає двозначних чисел у роках.'
+            inView={inView}
+          />
         </Container>
       </GeneralContainer>
       <BirdWrap>

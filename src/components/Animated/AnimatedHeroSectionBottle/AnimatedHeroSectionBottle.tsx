@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import bottle from '@/images/main/bottle/bottle.png';
+import bottle from '@/images/main/bottle/bottle-min.png';
 import { Bottle } from './AnimatedHeroSectionBottle.styled';
 import { IProps } from './AnimatedHeroSectionBottle.types';
 import { AnimatePresence, Variants } from 'framer-motion';

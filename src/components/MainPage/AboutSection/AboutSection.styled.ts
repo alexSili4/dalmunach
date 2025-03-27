@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/main/about/section-bg-mob.jpg';
-import sectionBgTablet from '@/images/main/about/section-bg-tablet.jpg';
-import sectionBgDesk from '@/images/main/about/section-bg-desk.jpg';
+import sectionBgMob from '@/images/main/about/section-bg-mob-min.jpg';
+import sectionBgTablet from '@/images/main/about/section-bg-tablet-min.jpg';
+import sectionBgDesk from '@/images/main/about/section-bg-desk-min.jpg';
 import { animations } from '@/constants';
 
 export const Section = styled.section`
@@ -117,27 +117,11 @@ export const DalmunachImg = styled.img`
   }
 `;
 
-export const Text = styled.p`
-  color: #222222;
-  font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 15px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    font-size: 20px;
-  }
-`;
-
 export const BirdWrap = styled.div`
   position: absolute;
   top: 84px;
   left: calc(50% - 107px);
-  animation: ${animations.montyPython} 6s steps(1) infinite;
+  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: -38px;

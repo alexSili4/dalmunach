@@ -21,10 +21,10 @@ import {
 } from './HeroSection.styled';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent } from '@/types/types';
-import logo from '@/images/warning/hero/logo.png';
-import dalmunach from '@/images/warning/hero/dalmunach.png';
-import drinkSetter from '@/images/warning/hero/drink-setter.png';
-import scyfion from '@/images/warning/hero/scyfion.png';
+import logo from '@/images/warning/hero/logo-min.png';
+import dalmunach from '@/images/warning/hero/dalmunach-min.png';
+import drinkSetter from '@/images/warning/hero/drink-setter-min.png';
+import scyfion from '@/images/warning/hero/scyfion-min.png';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 
 const HeroSection: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {

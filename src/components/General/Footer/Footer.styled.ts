@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
-import warningBgMob from '@/images/footer/warning-bg-mob.png';
-import warningBgTablet from '@/images/footer/warning-bg-tablet.png';
-import warningBgDesk from '@/images/footer/warning-bg-desk.png';
-import warningTextMob from '@/images/footer/warning-text-mob.png';
-import warningTextTablet from '@/images/footer/warning-text-tablet.png';
-import warningTextDesk from '@/images/footer/warning-text-desk.png';
-import footerBgMob from '@/images/footer/footer-bg-mob.jpg';
-import footerBgTablet from '@/images/footer/footer-bg-tablet.jpg';
-import footerBgDesk from '@/images/footer/footer-bg-desk.jpg';
+import warningBgMob from '@/images/footer/warning-bg-mob-min.png';
+import warningBgTablet from '@/images/footer/warning-bg-tablet-min.png';
+import warningBgDesk from '@/images/footer/warning-bg-desk-min.png';
+import warningTextMob from '@/images/footer/warning-text-mob-min.png';
+import warningTextTablet from '@/images/footer/warning-text-tablet-min.png';
+import warningTextDesk from '@/images/footer/warning-text-desk-min.png';
+import footerBgMob from '@/images/footer/footer-bg-mob-min.jpg';
+import footerBgTablet from '@/images/footer/footer-bg-tablet-min.jpg';
+import footerBgDesk from '@/images/footer/footer-bg-desk-min.jpg';
 
 export const StyledFooter = styled.footer`
   position: relative;

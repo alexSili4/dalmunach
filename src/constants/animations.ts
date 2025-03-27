@@ -602,7 +602,7 @@ const barrelLidRotate = keyframes`
   }
 `;
 
-export const montyPython = keyframes`
+const montyPython = keyframes`
    0%   { transform: rotate(0deg); }
   5%   { transform: rotate(5deg); }
   10%  { transform: rotate(-7deg); }
@@ -626,10 +626,61 @@ export const montyPython = keyframes`
   100% { transform: rotate(0deg); }
 `;
 
+const montyPythonLite = keyframes`
+0%   { transform: rotate(0deg); }
+5%   { transform: rotate(4deg); }
+10%  { transform: rotate(-6deg); }
+15%  { transform: rotate(9deg); }
+20%  { transform: rotate(-8deg); }
+25%  { transform: rotate(5deg); }
+30%  { transform: rotate(-3deg); }
+35%  { transform: rotate(7deg); }
+40%  { transform: rotate(-5deg); }
+45%  { transform: rotate(4deg); }
+50%  { transform: rotate(-2deg); }
+55%  { transform: rotate(1deg); }
+60%  { transform: rotate(-4deg); }
+65%  { transform: rotate(3deg); }
+70%  { transform: rotate(-6deg); }
+75%  { transform: rotate(2deg); }
+80%  { transform: rotate(-3deg); }
+85%  { transform: rotate(5deg); }
+90%  { transform: rotate(-4deg); }
+95%  { transform: rotate(2deg); }
+100% { transform: rotate(0deg); }
+`;
+
+const scanner = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+`;
+
+const scannerDesk = keyframes`
+  0% {
+    transform: rotate(15deg);
+  }
+  50%{
+    transform: rotate(7.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+`;
+
 const animations = {
   barrelLidRotate,
   montyPython,
+  montyPythonLite,
   deregent,
+  scanner,
+  scannerDesk,
 };
 
 export default animations;

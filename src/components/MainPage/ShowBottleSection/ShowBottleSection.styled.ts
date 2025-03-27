@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import sectionBgDesk from '@/images/main/showBottle/section-bg-desk.jpg';
-import sectionBgMob from '@/images/main/showBottle/section-bg-mob.jpg';
-import sectionBgTablet from '@/images/main/showBottle/section-bg-tablet.jpg';
+import sectionBgDesk from '@/images/main/showBottle/section-bg-desk-min.jpg';
+import sectionBgMob from '@/images/main/showBottle/section-bg-mob-min.jpg';
+import sectionBgTablet from '@/images/main/showBottle/section-bg-tablet-min.jpg';
 import { IStyledContainerProps } from './ShowBottleSection.types';
 import { animations } from '@/constants';
 
@@ -35,10 +35,9 @@ export const Container = styled.div<IStyledContainerProps>`
 export const DeregentImg = styled.img`
   position: absolute;
   top: 63px;
-  left: 50%;
+  left: calc(50% - 223px);
   width: 387px;
   height: 330px;
-  /* transform: translateX(calc(-50% - 30px)); */
   animation: ${animations.deregent} 12s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {

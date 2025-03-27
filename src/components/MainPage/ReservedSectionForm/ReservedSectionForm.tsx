@@ -18,7 +18,7 @@ import {
   BtnTitleWrap,
 } from './ReservedSectionForm.styled';
 import Input from '@MainPageComponents/Input';
-import postCard from '@/images/main/reserved/post-card.png';
+import postCard from '@/images/main/reserved/post-card-min.png';
 import { useAppStore } from '@/store/store';
 import { selectGetReservedInfo } from '@/store/app/selectors';
 

@@ -66,4 +66,9 @@ export const Link = styled.a<IStyledLinkProps>`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: ${({ isFooter }) => (isFooter ? 80 : 40)}px;
   }
+
+  & > svg {
+    width: 100%;
+    height: 100%;
+  }
 `;

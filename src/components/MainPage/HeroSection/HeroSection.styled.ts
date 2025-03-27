@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/main/hero/section-bg-mob.jpg';
-import sectionBgTablet from '@/images/main/hero/section-bg-tablet.jpg';
-import sectionBgDesk from '@/images/main/hero/section-bg-desk.jpg';
+import sectionBgMob from '@/images/main/hero/section-bg-mob-min.jpg';
+import sectionBgTablet from '@/images/main/hero/section-bg-tablet-min.jpg';
+import sectionBgDesk from '@/images/main/hero/section-bg-desk-min.jpg';
 import { animations } from '@/constants';
 
 export const Section = styled.section`
@@ -57,26 +57,6 @@ export const TextWrap = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(6)}px;
-  }
-`;
-
-export const Title = styled.h1`
-  width: 205px;
-  color: #222222;
-  font-family: ${({ theme }) => theme.fontFamily.playfairDisplay};
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 0.8;
-  text-transform: uppercase;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    width: 486px;
-    font-size: 114px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 647px;
-    font-size: 152px;
   }
 `;
 
@@ -144,7 +124,7 @@ export const BirdImgWrap = styled.div`
   position: absolute;
   top: 817px;
   right: calc(50% + 275px);
-  animation: ${animations.montyPython} 6s steps(1) infinite;
+  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 1089px;
