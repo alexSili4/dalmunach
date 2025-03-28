@@ -6,7 +6,7 @@ import {
   Text,
   Title,
   BottleImg,
-  YeyImg,
+  YeyPicture,
   SectionBgWrap,
   SectionBgMob,
   SectionBgTablet,
@@ -14,13 +14,17 @@ import {
   BarrelLidImg,
 } from './DistillerySection.styled';
 import bottle from '@/images/main/distillery/bottle-min.png';
-import yey from '@/images/main/distillery/yey-min.png';
+import yeyMob from '@/images/main/distillery/yey-mob-min.png';
+import yeyDesk from '@/images/main/distillery/yey-desk-min.png';
 import otherSectionBgMob from '@/images/main/distillery/other-section-bg-mob-min.png';
 import otherSectionBgTablet from '@/images/main/distillery/other-section-bg-tablet-min.png';
 import otherSectionBgDesk from '@/images/main/distillery/other-section-bg-desk-min.png';
 import barrelLid from '@/images/main/distillery/barrel-lid-min.png';
+import { theme } from '@/constants';
 
 const DistillerySection: FC = () => {
+  const yeyPictureMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
+
   return (
     <Section>
       <SectionBgWrap>
@@ -30,7 +34,10 @@ const DistillerySection: FC = () => {
         <BarrelLidImg src={barrelLid} alt='Кришка бочки' />
       </SectionBgWrap>
       <BottleImg src={bottle} alt='Пляшка' />
-      <YeyImg src={yey} alt='Око' />
+      <YeyPicture>
+        <source srcSet={yeyDesk} media={yeyPictureMedia} />
+        <img src={yeyMob} alt='Око' />
+      </YeyPicture>
       <GeneralContainer>
         <Container>
           <Title>

@@ -19,7 +19,7 @@ export const Container = styled.div<IStyledContainerProps>`
   background-position: 0 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow-x: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 1200px;

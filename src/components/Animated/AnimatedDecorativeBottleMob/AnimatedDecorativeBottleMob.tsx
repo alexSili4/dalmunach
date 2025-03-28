@@ -1,4 +1,4 @@
-import { AnimatePresence, Variants } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
 import bottle from '@/images/main/bottle/bottle-min.png';
 import hand from '@/images/main/bottle/hand-min.png';
@@ -14,26 +14,6 @@ import {
 import { IProps } from './AnimatedDecorativeBottleMob.types';
 
 const AnimatedDecorativeBottleMob: FC<IProps> = ({ inView }) => {
-  const transition = { duration: 1.2 };
-
-  const handVariants: Variants = {
-    initial: { opacity: 0, x: '80%' },
-    animate: { opacity: 1, x: 0, transition },
-    exit: { opacity: 0, x: '-80%', transition },
-  };
-
-  const standVariants: Variants = {
-    initial: { opacity: 0, x: '-80%' },
-    animate: { opacity: 1, x: 0, transition },
-    exit: { opacity: 0, x: '80%', transition },
-  };
-
-  const bottleVariants: Variants = {
-    initial: { opacity: 0, x: '-80%' },
-    animate: { opacity: 1, x: 0, transition },
-    exit: { opacity: 0, x: '-80%', transition },
-  };
-
   return (
     <Container>
       <StickyBottleWrap>
@@ -43,30 +23,33 @@ const AnimatedDecorativeBottleMob: FC<IProps> = ({ inView }) => {
               <StandImg
                 src={stand}
                 alt='Стенд'
-                variants={standVariants}
-                initial='initial'
-                exit='exit'
                 key='stand-mob'
+                initial={{ opacity: 0, x: '-80%' }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: '80%' }}
+                transition={{ duration: 1.2 }}
               />
             )}
             {inView && (
               <Bottle
                 src={bottle}
                 alt='Пляшка'
-                variants={bottleVariants}
-                initial='initial'
-                exit='exit'
                 key='bottle-mob'
+                initial={{ opacity: 0, x: '-80%' }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: '-80%' }}
+                transition={{ duration: 1.2, delay: 1.2 }}
               />
             )}
             {inView && (
               <HandImg
                 src={hand}
                 alt='Рука'
-                variants={handVariants}
-                initial='initial'
-                exit='exit'
                 key='hand-mob'
+                initial={{ opacity: 0, x: '80%' }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: '-80%' }}
+                transition={{ duration: 1.2 }}
               />
             )}
           </AnimatePresence>

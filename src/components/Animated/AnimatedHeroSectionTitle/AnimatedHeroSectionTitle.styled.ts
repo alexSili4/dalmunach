@@ -9,7 +9,7 @@ export const Title = styled(motion.h1)`
   font-family: ${({ theme }) => theme.fontFamily.playfairDisplay};
   font-size: 48px;
   font-weight: 700;
-  line-height: 0.8;
+  line-height: 0.84;
   text-transform: uppercase;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {

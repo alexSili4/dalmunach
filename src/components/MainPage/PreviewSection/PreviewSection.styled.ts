@@ -11,6 +11,7 @@ export const Section = styled.section`
   background-position: 0 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(56)}px;
@@ -25,58 +26,13 @@ export const Section = styled.section`
   }
 `;
 
-export const VideoWrap = styled.div`
-  position: relative;
-  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
-  display: flex;
-  height: 667px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: ${({ theme }) => theme.spacing(26)}px;
-  padding-left: ${({ theme }) => theme.spacing(10)}px;
-  padding-right: ${({ theme }) => theme.spacing(9)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(24)}px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    width: 461px;
-    height: 864px;
-    padding-top: ${({ theme }) => theme.spacing(34)}px;
-    padding-left: ${({ theme }) => theme.spacing(15)}px;
-    padding-right: ${({ theme }) => theme.spacing(14)}px;
-    padding-bottom: ${({ theme }) => theme.spacing(29)}px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 614px;
-    height: 1151px;
-    padding-top: ${({ theme }) => theme.spacing(48)}px;
-    padding-left: ${({ theme }) => theme.spacing(22)}px;
-    padding-right: ${({ theme }) => theme.spacing(20)}px;
-    padding-bottom: ${({ theme }) => theme.spacing(43)}px;
-  }
-`;
-
-export const VideoBg = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-`;
-
-export const Video = styled.video`
-  width: 100%;
-  height: 100%;
-`;
-
 export const DeliciousImg = styled.img`
   position: absolute;
   top: 123px;
   left: 0;
   width: 176px;
   height: 327px;
-  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
+  animation: ${animations.montyPythonLiteReverse} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 422px;

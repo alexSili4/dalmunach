@@ -28,6 +28,7 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({ scale, inView }) => {
             <StandImg
               src={stand}
               alt='Стенд'
+              key='stand-tablet'
               initial={{ opacity: 0, x: '-80%' }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '80%' }}
@@ -39,6 +40,7 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({ scale, inView }) => {
             <HandImg
               src={hand}
               alt='Рука'
+              key='hand-tablet'
               initial={{ opacity: 0, x: '80%' }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '-80%' }}

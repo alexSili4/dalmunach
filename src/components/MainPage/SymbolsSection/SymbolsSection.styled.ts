@@ -76,25 +76,6 @@ export const Text = styled.p`
   }
 `;
 
-export const DiagramsImg = styled.img`
-  position: absolute;
-  top: 707px;
-  right: 12px;
-  width: 440px;
-  height: 509px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 943px;
-    left: 16px;
-    width: 586px;
-    height: 678px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    display: none;
-  }
-`;
-
 export const PlusesImg = styled.img`
   position: absolute;
   top: 156px;
@@ -112,31 +93,5 @@ export const PlusesImg = styled.img`
     top: 387px;
     width: 276px;
     height: 1100px;
-  }
-`;
-
-export const BookletImg = styled.img`
-  position: absolute;
-  top: 385px;
-  left: 50%;
-  width: 428px;
-  max-width: 428px;
-  height: 617px;
-  transform: translateX(-50%);
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 280px;
-    left: 118px;
-    width: 571px;
-    max-width: 100%;
-    height: 824px;
-    transform: none;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 373px;
-    left: 157px;
-    width: 762px;
-    height: 1099px;
   }
 `;

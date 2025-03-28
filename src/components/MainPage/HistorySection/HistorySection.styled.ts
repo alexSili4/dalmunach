@@ -94,28 +94,6 @@ export const PlusesImg = styled.img`
   }
 `;
 
-export const ManImg = styled.img`
-  position: absolute;
-  top: 787px;
-  left: calc(50% - 32px);
-  width: 156px;
-  height: 600px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 569px;
-    left: calc(50% + 192px);
-    width: 193px;
-    height: 743px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 759px;
-    left: calc(50% + 256px);
-    width: 257px;
-    height: 991px;
-  }
-`;
-
 export const TriangleImg = styled.img`
   position: absolute;
   top: 912px;

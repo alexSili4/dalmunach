@@ -99,7 +99,7 @@ export const BottleImg = styled.img`
   }
 `;
 
-export const YeyImg = styled.img`
+export const YeyPicture = styled.picture`
   position: absolute;
   top: 192px;
   right: 14px;
@@ -109,19 +109,17 @@ export const YeyImg = styled.img`
   animation: ${animations.scanner} 6s infinite alternate;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 398px;
-    right: 181px;
-    width: 417px;
-    height: 158px;
-    transform: rotate(15deg);
-    animation: ${animations.scannerDesk} 6s infinite alternate;
+    top: 347px;
+    right: 167px;
+    width: 444px;
+    height: 261px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 531px;
-    right: 241px;
-    width: 556px;
-    height: 210px;
+    top: 462px;
+    right: 223px;
+    width: 592px;
+    height: 347px;
   }
 `;
 

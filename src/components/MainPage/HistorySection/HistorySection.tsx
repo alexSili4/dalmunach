@@ -6,17 +6,17 @@ import {
   Text,
   Title,
   PlusesImg,
-  ManImg,
   TriangleImg,
 } from './HistorySection.styled';
 import pluses from '@/images/main/history/pluses-min.png';
-import man from '@/images/main/history/man-min.png';
 import triangle from '@/images/main/history/triangle-min.png';
 import AnimatedHistorySectionBottle from '@AnimatedComponents/AnimatedHistorySectionBottle';
+import AnimatedHistorySectionImages from '@AnimatedComponents/AnimatedHistorySectionImages';
+import { IProps } from './HistorySection.types';
 
-const HistorySection: FC = () => {
+const HistorySection: FC<IProps> = ({ inView, sectionRef }) => {
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <GeneralContainer>
         <Container>
           <Title>Історія та творці віскі Dalmunach</Title>
@@ -43,7 +43,7 @@ const HistorySection: FC = () => {
       </GeneralContainer>
       <PlusesImg src={pluses} alt='Декоративне зображення' />
       <TriangleImg src={triangle} alt='Трикутник' />
-      <ManImg src={man} alt='Робітник' />
+      <AnimatedHistorySectionImages inView={inView} />
       <AnimatedHistorySectionBottle />
     </Section>
   );
