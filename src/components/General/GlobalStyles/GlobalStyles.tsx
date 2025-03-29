@@ -26,7 +26,7 @@ const GlobalStyles: FC = () => (
       }
 
       body {
-        background-color: #e5d7b8;
+        background-color: ${theme.colors.body};
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
           'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
           'Helvetica Neue', sans-serif;

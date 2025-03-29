@@ -124,7 +124,6 @@ export const BirdImgWrap = styled.div`
   position: absolute;
   top: 817px;
   right: calc(50% + 275px);
-  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 1089px;
@@ -152,6 +151,7 @@ export const BirdImg = styled.img`
   left: 23px;
   width: 210px;
   height: 151px;
+  animation: ${animations.montyPythonLiteReverse} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 88px;

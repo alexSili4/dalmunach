@@ -121,7 +121,6 @@ export const BirdWrap = styled.div`
   position: absolute;
   top: 84px;
   left: calc(50% - 107px);
-  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: -38px;
@@ -163,6 +162,7 @@ export const BirdMobImg = styled.img`
   left: 18px;
   width: 158px;
   height: 113px;
+  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
@@ -175,6 +175,7 @@ export const BirdDeskImg = styled.img`
   left: 135px;
   width: 290px;
   height: 239px;
+  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 117px;

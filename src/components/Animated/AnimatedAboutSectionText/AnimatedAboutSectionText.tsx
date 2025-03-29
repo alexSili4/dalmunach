@@ -13,7 +13,7 @@ const AnimatedAboutSectionText: FC<IProps> = ({ text, inView }) => {
     ease: [0.25, 0.1, 0.25, 1],
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: {
       transition: {

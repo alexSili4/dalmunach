@@ -1,14 +1,21 @@
 import { FC } from 'react';
 import Warning from '@WarningPageComponents/Warning';
-import { SetBooleanFunc } from '@/types/funcs.types';
+import { Func, SetBooleanFunc } from '@/types/funcs.types';
 
 export interface IProps {
   updateIsLegalDrinkingAgeUser: SetBooleanFunc;
+  onSectionLoaded: Func;
 }
 
-const WarningPage: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
+const WarningPage: FC<IProps> = ({
+  updateIsLegalDrinkingAgeUser,
+  onSectionLoaded,
+}) => {
   return (
-      <Warning updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser} />
+    <Warning
+      updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
+      onSectionLoaded={onSectionLoaded}
+    />
   );
 };
 

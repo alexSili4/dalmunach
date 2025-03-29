@@ -8,3 +8,5 @@ export interface IGetCounterProgressProps {
 export type SetStringOrNullFunc = (data: StringOrNull) => void;
 
 export type SetBooleanFunc = (data: boolean) => void;
+
+export type Func = () => void;

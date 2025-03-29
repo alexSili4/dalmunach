@@ -6,6 +6,7 @@ interface ITheme {
   colors: {
     black: string;
     white: string;
+    body: string;
   };
   fontFamily: {
     sofiaSans: string;
@@ -34,7 +35,7 @@ interface ITheme {
 }
 
 const theme: ITheme = {
-  colors: { black: '#000000', white: '#ffffff' },
+  colors: { black: '#000000', white: '#ffffff', body: '#e5d7b8' },
   fontFamily: { sofiaSans: 'Sofia Sans', playfairDisplay: 'Playfair Display' },
   // fontWeight: {  },
   // fontSize: {  },

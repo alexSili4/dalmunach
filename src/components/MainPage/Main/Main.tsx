@@ -17,10 +17,6 @@ const Main: FC = () => {
   const aboutSectionInView = useInView(aboutSectionRef, {
     margin: '-300px 0px -300px 0px',
   });
-  const historySectionRef = useRef<HTMLDivElement>(null);
-  const historySectionInView = useInView(historySectionRef, {
-    margin: '-300px 0px -100% 0px',
-  });
   const symbolsSectionRef = useRef<HTMLDivElement>(null);
   const symbolsSectionInView = useInView(symbolsSectionRef, {
     margin: '-300px 0px -300px 0px',
@@ -47,10 +43,7 @@ const Main: FC = () => {
       />
       <HeroSection />
       <AboutSection sectionRef={aboutSectionRef} inView={aboutSectionInView} />
-      <HistorySection
-        sectionRef={historySectionRef}
-        inView={historySectionInView}
-      />
+      <HistorySection />
       <PreviewSection />
       <ShowBottleSection sectionRef={showBottleSectionRef} />
       <OtherSectionsWrap>

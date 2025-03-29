@@ -19,7 +19,7 @@ export const Container = styled.div<IStyledContainerProps>`
   background-position: 0 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  overflow-x: hidden;
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 1200px;
@@ -38,13 +38,14 @@ export const DeregentImg = styled.img`
   left: calc(50% - 223px);
   width: 387px;
   height: 330px;
-  animation: ${animations.deregent} 12s linear infinite;
+  animation: ${animations.deregentMob} 12s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 422px;
     left: calc(50% + 123px);
     width: 571px;
     height: 488px;
+    animation: ${animations.deregent} 12s linear infinite;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

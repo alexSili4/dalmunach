@@ -18,9 +18,10 @@ export const ManImgWrap = styled(motion.div)`
   }
 `;
 
-export const ManImg = styled.img`
+export const ManImg = styled(motion.img)`
   width: 156px;
   height: 600px;
+  transform-origin: bottom right;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 193px;
