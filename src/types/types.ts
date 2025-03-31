@@ -6,6 +6,8 @@ import { MotionValue } from 'framer-motion';
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
 // other
+export type Strings = Array<string>;
+
 export type NumberOrNull = number | null;
 
 export type StringOrNull = string | null;

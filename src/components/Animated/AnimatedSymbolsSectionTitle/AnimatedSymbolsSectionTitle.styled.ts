@@ -3,17 +3,7 @@ import { motion } from 'framer-motion';
 
 export const Container = styled(motion.div)``;
 
-export const Title = styled(motion.h1)`
-  width: 205px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    width: 486px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 647px;
-  }
-`;
+export const Title = styled(motion.h2)``;
 
 export const Word = styled.span`
   display: inline-block;
@@ -26,16 +16,16 @@ export const Symbol = styled(motion.span)`
   display: inline-block;
   color: #222222;
   font-family: ${({ theme }) => theme.fontFamily.playfairDisplay};
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
-  line-height: 0.84;
+  line-height: 1;
   text-transform: uppercase;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 114px;
+    font-size: 45px;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    font-size: 152px;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    font-size: 60px;
   }
 `;

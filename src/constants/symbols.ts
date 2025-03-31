@@ -1,6 +1,6 @@
 const enum Symbols {
-  newLine = '<br/>',
-  space = ' '
+  break = '<br/>',
+  space = ' ',
 }
 
 export default Symbols;

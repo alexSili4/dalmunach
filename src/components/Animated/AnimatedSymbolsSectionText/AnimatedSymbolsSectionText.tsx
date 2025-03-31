@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { IProps } from './AnimatedAboutSectionText.types';
-import { Text, Word, WordContainer } from './AnimatedAboutSectionText.styled';
+import { IProps } from './AnimatedSymbolsSectionText.types';
+import { Text, Word, WordContainer } from './AnimatedSymbolsSectionText.styled';
 import { getTextWord } from '@/utils';
 import { useAnimatedSectionText } from '@/hooks';
 
-const AnimatedAboutSectionText: FC<IProps> = ({ text, inView }) => {
+const AnimatedSymbolsSectionText: FC<IProps> = ({ text, inView }) => {
   const { containerVariants, elementVariants, animate, words } =
     useAnimatedSectionText({
       text,
@@ -26,4 +26,4 @@ const AnimatedAboutSectionText: FC<IProps> = ({ text, inView }) => {
   );
 };
 
-export default AnimatedAboutSectionText;
+export default AnimatedSymbolsSectionText;

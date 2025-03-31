@@ -42,7 +42,7 @@ const ReseRvedSectionForm: FC<IProps> = ({ updateError }) => {
       if (error instanceof AxiosError && error.status === 422) {
         const errorMessage = error.response?.data
           .map(({ message }: IErrorMessage) => message)
-          .join(Symbols.newLine);
+          .join(Symbols.break);
 
         updateError(errorMessage);
       }
@@ -55,7 +55,8 @@ const ReseRvedSectionForm: FC<IProps> = ({ updateError }) => {
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <Container>
         <TitleWrap>
-          <Title>Надішліть свої контактні дані для передзамовлення</Title>
+          <AnimatedReseRvedSectionFormTitle />
+          {/* <Title>Надішліть свої контактні дані для передзамовлення</Title> */}
           <PostCardImg src={postCard} alt='Фон' />
         </TitleWrap>
         <Content>

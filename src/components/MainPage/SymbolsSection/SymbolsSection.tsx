@@ -2,15 +2,11 @@ import { FC } from 'react';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import HiddenSectionTitle from '@/components/General/HiddenSectionTitle';
 import pluses from '@/images/main/symbols/pluses-min.png';
-import {
-  Section,
-  Container,
-  PlusesImg,
-  Text,
-  Title,
-} from './SymbolsSection.styled';
+import { Section, Container, PlusesImg } from './SymbolsSection.styled';
 import { IProps } from './SymbolsSection.types';
 import AnimatedSymbolsSectionImages from '@AnimatedComponents/AnimatedSymbolsSectionImages';
+import AnimatedSymbolsSectionTitle from '@AnimatedComponents/AnimatedSymbolsSectionTitle';
+import AnimatedSymbolsSectionText from '@AnimatedComponents/AnimatedSymbolsSectionText';
 
 const SymbolsSection: FC<IProps> = ({ sectionRef, inView }) => {
   return (
@@ -18,11 +14,14 @@ const SymbolsSection: FC<IProps> = ({ sectionRef, inView }) => {
       <HiddenSectionTitle title='Про сенси символів' />
       <GeneralContainer>
         <Container>
-          <Title>Бажаєш розгадати сенси символів?</Title>
-          <Text>
-            До кожної пляшки надається буклет з якого ви можете дізнатись сенси
-            знаків.
-          </Text>
+          <AnimatedSymbolsSectionTitle
+            text='Бажаєш розгадати сенси символів?'
+            inView={inView}
+          />
+          <AnimatedSymbolsSectionText
+            text='До кожної пляшки надається буклет з якого ви можете дізнатись сенси знаків.'
+            inView={inView}
+          />
         </Container>
       </GeneralContainer>
       <PlusesImg src={pluses} alt='Декоративні символи' />

@@ -40,39 +40,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.h2`
-  color: #222222;
-  font-family: ${({ theme }) => theme.fontFamily.playfairDisplay};
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1;
-  text-transform: uppercase;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 45px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    font-size: 60px;
-  }
-`;
-
-export const Text = styled.p`
-  color: #222222;
-  font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 15px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    font-size: 20px;
-  }
-`;
-
 export const PlusesImg = styled.img`
   position: absolute;
   top: 787px;

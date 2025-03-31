@@ -1,15 +1,15 @@
 import { FC } from 'react';
-import { IProps } from './AnimatedHeroSectionTitle.types';
+import { IProps } from './AnimatedSymbolsSectionTitle.types';
 import {
   Title,
   Symbol,
   SymbolContainer,
   Word,
-} from './AnimatedHeroSectionTitle.styled';
+} from './AnimatedSymbolsSectionTitle.styled';
 import { getTitleSymbols } from '@/utils';
 import { useAnimatedSectionTitle } from '@/hooks';
 
-const AnimatedHeroSectionTitle: FC<IProps> = ({ text, inView }) => {
+const AnimatedSymbolsSectionTitle: FC<IProps> = ({ text, inView }) => {
   const { containerVariants, elementVariants, animate, words } =
     useAnimatedSectionTitle({
       text,
@@ -35,4 +35,4 @@ const AnimatedHeroSectionTitle: FC<IProps> = ({ text, inView }) => {
   );
 };
 
-export default AnimatedHeroSectionTitle;
+export default AnimatedSymbolsSectionTitle;
