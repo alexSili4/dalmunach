@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-export const Container = styled(motion.div)``;
-
 export const Title = styled(motion.h2)``;
 
 export const Word = styled.span`

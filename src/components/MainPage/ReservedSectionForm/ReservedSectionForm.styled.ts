@@ -30,24 +30,6 @@ export const TitleWrap = styled.div`
   }
 `;
 
-export const Title = styled.p`
-  color: #222222;
-  font-family: ${({ theme }) => theme.fontFamily.playfairDisplay};
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 30px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    font-size: 40px;
-  }
-`;
-
 export const PostCardImg = styled.img`
   align-self: center;
   width: 100%;

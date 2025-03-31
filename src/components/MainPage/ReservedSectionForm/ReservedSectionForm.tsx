@@ -13,7 +13,6 @@ import {
   InputsWrap,
   TitleWrap,
   PostCardImg,
-  Title,
   BtnTitle,
   BtnTitleWrap,
 } from './ReservedSectionForm.styled';
@@ -21,8 +20,9 @@ import Input from '@MainPageComponents/Input';
 import postCard from '@/images/main/reserved/post-card-min.png';
 import { useAppStore } from '@/store/store';
 import { selectGetReservedInfo } from '@/store/app/selectors';
+import AnimatedReservedSectionFormTitle from '@AnimatedComponents/AnimatedReseRvedSectionFormTitle';
 
-const ReseRvedSectionForm: FC<IProps> = ({ updateError }) => {
+const ReseRvedSectionForm: FC<IProps> = ({ updateError, inView }) => {
   const [disabled, setDisabled] = useState<boolean>(false);
   const { register, handleSubmit } = useForm<IReservedFormData>();
   const getReservedInfo = useAppStore(selectGetReservedInfo);
@@ -55,8 +55,10 @@ const ReseRvedSectionForm: FC<IProps> = ({ updateError }) => {
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <Container>
         <TitleWrap>
-          <AnimatedReseRvedSectionFormTitle />
-          {/* <Title>Надішліть свої контактні дані для передзамовлення</Title> */}
+          <AnimatedReservedSectionFormTitle
+            text='Надішліть свої контактні дані для передзамовлення'
+            inView={inView}
+          />
           <PostCardImg src={postCard} alt='Фон' />
         </TitleWrap>
         <Content>
