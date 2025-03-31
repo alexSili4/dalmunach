@@ -11,6 +11,9 @@ import {
   SectionBgTablet,
   SectionBgDesk,
   BarrelLidImg,
+  CutImgMob,
+  CutImgTablet,
+  CutImgDesk,
 } from './DistillerySection.styled';
 import bottle from '@/images/main/distillery/bottle-min.png';
 import yeyMob from '@/images/main/distillery/yey-mob-min.png';
@@ -22,6 +25,10 @@ import barrelLid from '@/images/main/distillery/barrel-lid-min.png';
 import { theme } from '@/constants';
 import AnimatedDistillerySectionTitle from '@AnimatedComponents/AnimatedDistillerySectionTitle';
 import AnimatedDistillerySectionText from '@AnimatedComponents/AnimatedDistillerySectionText';
+import AnimatedDistillerySectionImages from '@AnimatedComponents/AnimatedDistillerySectionImages';
+import cutMob from '@/images/main/distillery/other-section-bg-cut-mob-min.png';
+import cutTablet from '@/images/main/distillery/other-section-bg-cut-tablet-min.png';
+import cutDesk from '@/images/main/distillery/other-section-bg-cut-desk-min.png';
 
 const DistillerySection: FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -37,6 +44,10 @@ const DistillerySection: FC = () => {
         <SectionBgTablet src={otherSectionBgTablet} alt='Фон' />
         <SectionBgDesk src={otherSectionBgDesk} alt='Фон' />
         <BarrelLidImg src={barrelLid} alt='Кришка бочки' />
+        <AnimatedDistillerySectionImages />
+        <CutImgMob src={cutMob} alt='Зріз' />
+        <CutImgTablet src={cutTablet} alt='Зріз' />
+        <CutImgDesk src={cutDesk} alt='Зріз' />
       </SectionBgWrap>
       <BottleImg src={bottle} alt='Пляшка' />
       <YeyPicture>

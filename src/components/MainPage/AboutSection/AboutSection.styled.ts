@@ -162,7 +162,7 @@ export const BirdMobImg = styled.img`
   left: 18px;
   width: 158px;
   height: 113px;
-  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
+  animation: ${animations.montyPythonLite} 8s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
@@ -175,7 +175,7 @@ export const BirdDeskImg = styled.img`
   left: 135px;
   width: 290px;
   height: 239px;
-  animation: ${animations.montyPythonLite} 6s steps(1) infinite;
+  animation: ${animations.montyPythonLite} 8s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 117px;

@@ -32,7 +32,7 @@ export const DeliciousImg = styled.img`
   left: 0;
   width: 176px;
   height: 327px;
-  animation: ${animations.montyPythonLiteReverse} 6s steps(1) infinite;
+  animation: ${animations.montyPythonLiteReverse} 7s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 422px;

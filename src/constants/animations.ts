@@ -810,6 +810,30 @@ const montyPython = keyframes`
   100% { transform: rotate(0deg); }
 `;
 
+const montyPythonReverse = keyframes`
+   0%   { transform: rotate(0deg); }
+  5%   { transform: rotate(-5deg); }
+  10%  { transform: rotate(7deg); }
+  15%  { transform: rotate(-10deg); }
+  20%  { transform: rotate(9deg); }
+  25%  { transform: rotate(-6deg); }
+  30%  { transform: rotate(4deg); }
+  35%  { transform: rotate(-8deg); }
+  40%  { transform: rotate(6deg); }
+  45%  { transform: rotate(-5deg); }
+  50%  { transform: rotate(3deg); }
+  55%  { transform: rotate(-2deg); }
+  60%  { transform: rotate(5deg); }
+  65%  { transform: rotate(-4deg); }
+  70%  { transform: rotate(7deg); }
+  75%  { transform: rotate(-3deg); }
+  80%  { transform: rotate(4deg); }
+  85%  { transform: rotate(-6deg); }
+  90%  { transform: rotate(5deg); }
+  95%  { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+`;
+
 const montyPythonLite = keyframes`
 0%   { transform: rotate(0deg); }
 5%   { transform: rotate(4deg); }
@@ -873,6 +897,7 @@ const scanner = keyframes`
 const animations = {
   barrelLidRotate,
   montyPython,
+  montyPythonReverse,
   montyPythonLite,
   montyPythonLiteReverse,
   deregentMob,

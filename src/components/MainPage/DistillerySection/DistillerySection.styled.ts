@@ -98,7 +98,16 @@ export const SectionBgWrap = styled.div`
   display: flex;
   width: 100%;
   min-width: 618px;
+  padding-bottom: 87px;
   transform: translateX(-50%);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    padding-bottom: ${({ theme }) => theme.spacing(8)}px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding-bottom: ${({ theme }) => theme.spacing(11)}px;
+  }
 `;
 
 export const SectionBgMob = styled.img`
@@ -140,5 +149,42 @@ export const BarrelLidImg = styled.img`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     right: 3.3%;
     bottom: 46%;
+  }
+`;
+
+export const CutImgMob = styled.img`
+  position: absolute;
+  bottom: 87px;
+  left: 0;
+  width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    display: none;
+  }
+`;
+
+export const CutImgTablet = styled.img`
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    display: none;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: none;
+  }
+`;
+
+export const CutImgDesk = styled.img`
+  position: absolute;
+  bottom: 42px;
+  left: 0;
+  width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: none;
   }
 `;

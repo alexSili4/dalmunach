@@ -13,7 +13,7 @@ const useAnimatedSectionTitle = ({
   const words = text.split(Symbols.space);
 
   const transition = {
-    duration: 0.9,
+    duration: 0.8,
     ease: [0.25, 0.1, 0.25, 1],
   };
 

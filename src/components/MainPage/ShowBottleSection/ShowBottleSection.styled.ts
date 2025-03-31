@@ -117,7 +117,7 @@ export const SculptureImg = styled.img`
   left: -35px;
   width: 240px;
   height: 232px;
-  animation: ${animations.montyPython} 6s steps(1) infinite;
+  animation: ${animations.montyPythonReverse} 7s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 170px;

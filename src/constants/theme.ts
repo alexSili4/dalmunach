@@ -29,6 +29,7 @@ interface ITheme {
     counter: number;
     heroTitle: number;
     bottle: number;
+    saxophonist: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => number;
@@ -56,6 +57,7 @@ const theme: ITheme = {
   zIndex: {
     counter: 10,
     heroTitle: 10,
+    saxophonist: 10,
     bottle: 100,
   },
   // shadows: {  },
