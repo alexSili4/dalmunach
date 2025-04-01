@@ -6,31 +6,15 @@ import {
   Section,
   BottleImg,
   YeyPicture,
-  SectionBgWrap,
-  SectionBgMob,
-  SectionBgTablet,
-  SectionBgDesk,
-  BarrelLidImg,
-  CutImgMob,
-  CutImgTablet,
-  CutImgDesk,
-  HouseImg,
 } from './DistillerySection.styled';
 import bottle from '@/images/main/distillery/bottle-min.png';
 import yeyMob from '@/images/main/distillery/yey-mob-min.png';
 import yeyDesk from '@/images/main/distillery/yey-desk-min.png';
-import otherSectionBgMob from '@/images/main/distillery/other-section-bg-mob-min.png';
-import otherSectionBgTablet from '@/images/main/distillery/other-section-bg-tablet-min.png';
-import otherSectionBgDesk from '@/images/main/distillery/other-section-bg-desk-min.png';
-import barrelLid from '@/images/main/distillery/barrel-lid-min.png';
+
 import { theme } from '@/constants';
 import AnimatedDistillerySectionTitle from '@AnimatedComponents/AnimatedDistillerySectionTitle';
 import AnimatedDistillerySectionText from '@AnimatedComponents/AnimatedDistillerySectionText';
-import AnimatedDistillerySectionImages from '@AnimatedComponents/AnimatedDistillerySectionImages';
-import cutMob from '@/images/main/distillery/other-section-bg-cut-mob-min.png';
-import cutTablet from '@/images/main/distillery/other-section-bg-cut-tablet-min.png';
-import cutDesk from '@/images/main/distillery/other-section-bg-cut-desk-min.png';
-import house from '@/images/main/distillery/other-section-bg-house-min.png';
+import DistillerySectionBg from '@MainPageComponents/DistillerySectionBg';
 
 const DistillerySection: FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -41,17 +25,7 @@ const DistillerySection: FC = () => {
 
   return (
     <Section ref={sectionRef}>
-      <SectionBgWrap>
-        <SectionBgMob src={otherSectionBgMob} alt='Фон' />
-        <SectionBgTablet src={otherSectionBgTablet} alt='Фон' />
-        <SectionBgDesk src={otherSectionBgDesk} alt='Фон' />
-        <BarrelLidImg src={barrelLid} alt='Кришка бочки' />
-        <AnimatedDistillerySectionImages />
-        <CutImgMob src={cutMob} alt='Зріз' />
-        <CutImgTablet src={cutTablet} alt='Зріз' />
-        <CutImgDesk src={cutDesk} alt='Зріз' />
-        <HouseImg src={house} alt='Будинок' />
-      </SectionBgWrap>
+      <DistillerySectionBg />
       <BottleImg src={bottle} alt='Пляшка' />
       <YeyPicture>
         <source srcSet={yeyDesk} media={yeyPictureMedia} />

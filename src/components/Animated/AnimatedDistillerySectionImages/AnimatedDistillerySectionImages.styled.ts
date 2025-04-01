@@ -17,10 +17,6 @@ export const SaxophonistImgWrap = styled(motion.div)`
     bottom: 133px;
     left: 240px;
   }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    z-index: ${({ theme }) => theme.zIndex.saxophonist};
-  }
 `;
 
 export const SaxophonistImg = styled(motion.img)`
