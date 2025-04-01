@@ -14,6 +14,7 @@ import {
   CutImgMob,
   CutImgTablet,
   CutImgDesk,
+  HouseImg,
 } from './DistillerySection.styled';
 import bottle from '@/images/main/distillery/bottle-min.png';
 import yeyMob from '@/images/main/distillery/yey-mob-min.png';
@@ -29,6 +30,7 @@ import AnimatedDistillerySectionImages from '@AnimatedComponents/AnimatedDistill
 import cutMob from '@/images/main/distillery/other-section-bg-cut-mob-min.png';
 import cutTablet from '@/images/main/distillery/other-section-bg-cut-tablet-min.png';
 import cutDesk from '@/images/main/distillery/other-section-bg-cut-desk-min.png';
+import house from '@/images/main/distillery/other-section-bg-house-min.png';
 
 const DistillerySection: FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -48,6 +50,7 @@ const DistillerySection: FC = () => {
         <CutImgMob src={cutMob} alt='Зріз' />
         <CutImgTablet src={cutTablet} alt='Зріз' />
         <CutImgDesk src={cutDesk} alt='Зріз' />
+        <HouseImg src={house} alt='Будинок' />
       </SectionBgWrap>
       <BottleImg src={bottle} alt='Пляшка' />
       <YeyPicture>

@@ -188,3 +188,22 @@ export const CutImgDesk = styled.img`
     display: none;
   }
 `;
+
+export const HouseImg = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 238px;
+  height: 150px;
+  transform: translateX(-50%);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 555px;
+    height: 350px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 740px;
+    height: 466px;
+  }
+`;
