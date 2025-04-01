@@ -17,6 +17,11 @@ export const StyledInput = styled.input`
     color: #222222;
   }
 
+  &:-webkit-autofill {
+    background-color: transparent !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(3)}px;
     padding-bottom: ${({ theme }) => theme.spacing(3)}px;

@@ -4,16 +4,11 @@ import { motion } from 'framer-motion';
 export const Container = styled.span`
   display: inline-block;
   overflow-y: hidden;
-`;
-
-export const Word = styled(motion.span)`
-  display: inline-block;
-  white-space: pre;
   color: #222222;
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.35;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 15px;
@@ -22,4 +17,9 @@ export const Word = styled(motion.span)`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     font-size: 20px;
   }
+`;
+
+export const Word = styled(motion.span)`
+  display: inline-block;
+  white-space: pre;
 `;

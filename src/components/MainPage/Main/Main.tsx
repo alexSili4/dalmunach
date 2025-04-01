@@ -11,6 +11,7 @@ import ReservedSection from '@MainPageComponents/ReservedSection';
 import Footer from '@GeneralComponents/Footer';
 import { useInView, useScroll, useTransform } from 'framer-motion';
 import DecorativeBottle from '@MainPageComponents/DecorativeBottle';
+import { bottleImgs } from '@/constants';
 
 const Main: FC = () => {
   const aboutSectionRef = useRef<HTMLDivElement>(null);
@@ -24,14 +25,27 @@ const Main: FC = () => {
   const showBottleSectionRef = useRef<HTMLDivElement>(null);
   const showBottleSectionInView = useInView(showBottleSectionRef);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: generalScrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start end', 'end start'],
   });
   const bottleScale = useTransform(
-    scrollYProgress,
+    generalScrollYProgress,
     [0, 0.07, 0.27, 0.4, 1],
     [1, 1, 1.75, 1, 1]
+  );
+  const { scrollYProgress: showBottleSectionScrollYProgress } = useScroll({
+    target: showBottleSectionRef,
+    offset: ['start end', 'end start'],
+  });
+  const bottleImgsLength = bottleImgs.length;
+  const decorativeBottleActiveIndex = useTransform(
+    showBottleSectionScrollYProgress,
+    [0, 1],
+    [0, bottleImgsLength - 1],
+    {
+      clamp: true,
+    }
   );
 
   return (
@@ -40,6 +54,8 @@ const Main: FC = () => {
         symbolsSectionInView={symbolsSectionInView}
         bottleScale={bottleScale}
         showBottleSectionInView={showBottleSectionInView}
+        activeIndex={decorativeBottleActiveIndex}
+        bottleImgs={bottleImgs}
       />
       <HeroSection />
       <AboutSection sectionRef={aboutSectionRef} inView={aboutSectionInView} />

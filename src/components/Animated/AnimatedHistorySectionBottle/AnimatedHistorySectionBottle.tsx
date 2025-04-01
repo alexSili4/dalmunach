@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import bottle from '@/images/main/bottle/bottle-min.png';
 import { Bottle } from './AnimatedHistorySectionBottle.styled';
+import { bottleImgs } from '@/constants';
 
 const AnimatedHistorySectionBottle: FC = () => {
   return (
     <Bottle
-      src={bottle}
+      src={bottleImgs[0]}
       alt='Пляшка'
       initial={{ opacity: 0, x: '-80%' }}
       whileInView={{ opacity: 1, x: 0 }}

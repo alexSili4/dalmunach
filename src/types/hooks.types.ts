@@ -1,5 +1,5 @@
 import { VariantLabels, Variants } from 'framer-motion';
-import { Strings } from './types';
+import { MotionValueNumber, Strings } from './types';
 
 export interface IUseAnimatedSectionTitleProps {
   text?: string;
@@ -23,4 +23,9 @@ export interface IUseAnimatedSectionText {
   containerVariants: Variants;
   animate: VariantLabels;
   words: Strings;
+}
+
+export interface IUseBottleImgOpacityProps {
+  index: number;
+  activeIndex: MotionValueNumber;
 }

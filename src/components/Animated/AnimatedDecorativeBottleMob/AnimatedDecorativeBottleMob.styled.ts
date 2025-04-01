@@ -22,31 +22,25 @@ export const StickyBottleWrap = styled.div`
   overflow: hidden;
 `;
 
-export const BottleWrap = styled(motion.div)`
+export const BottleWrap = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 240px;
-  transform: translateX(-35%) translateY(-45%);
-`;
-
-export const Bottle = styled(motion.img)`
-  position: relative;
-  width: 240px;
+  transform: translateX(-50%) translateY(-45%);
 `;
 
 export const HandImg = styled(motion.img)`
   position: absolute;
   top: -125px;
-  left: -73px;
+  left: -86px;
   max-width: 2000px;
   height: 209px;
 `;
 
 export const StandImg = styled(motion.img)`
   position: absolute;
-  left: -115px;
-  bottom: -110px;
+  left: -128px;
+  bottom: -131px;
   max-width: 2000px;
   width: 431px;
   height: 242px;

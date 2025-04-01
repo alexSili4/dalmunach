@@ -1,6 +1,8 @@
-import { MotionValueNumber } from '@/types/types';
+import { MotionValueNumber, Strings } from '@/types/types';
 
 export interface IProps {
   scale: MotionValueNumber;
   inView: boolean;
+  activeIndex: MotionValueNumber;
+  bottleImgs: Strings;
 }

@@ -1,10 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
-import bottle from '@/images/main/bottle/bottle-min.png';
 import hand from '@/images/main/bottle/hand-min.png';
 import stand from '@/images/main/bottle/stand-min.png';
 import {
-  Bottle,
   BottleWrap,
   Container,
   HandImg,
@@ -12,8 +10,13 @@ import {
   StickyBottleWrap,
 } from './AnimatedDecorativeBottleMob.styled';
 import { IProps } from './AnimatedDecorativeBottleMob.types';
+import AnimatedDecorativeBottleMobImages from '@AnimatedComponents/AnimatedDecorativeBottleMobImages';
 
-const AnimatedDecorativeBottleMob: FC<IProps> = ({ inView }) => {
+const AnimatedDecorativeBottleMob: FC<IProps> = ({
+  inView,
+  activeIndex,
+  bottleImgs,
+}) => {
   return (
     <Container>
       <StickyBottleWrap>
@@ -31,14 +34,9 @@ const AnimatedDecorativeBottleMob: FC<IProps> = ({ inView }) => {
               />
             )}
             {inView && (
-              <Bottle
-                src={bottle}
-                alt='Пляшка'
-                key='bottle-mob'
-                initial={{ opacity: 0, x: '-80%' }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: '-80%' }}
-                transition={{ duration: 1.2, delay: 1.2 }}
+              <AnimatedDecorativeBottleMobImages
+                bottleImgs={bottleImgs}
+                activeIndex={activeIndex}
               />
             )}
             {inView && (

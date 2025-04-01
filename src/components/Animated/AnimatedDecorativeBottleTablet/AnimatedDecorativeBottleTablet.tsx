@@ -1,24 +1,28 @@
 import { FC } from 'react';
 import {
-  Bottle,
   BottleWrap,
   Container,
   HandImg,
   StandImg,
 } from './AnimatedDecorativeBottleTablet.styled';
 import { IProps } from './AnimatedDecorativeBottleTablet.types';
-import bottle from '@/images/main/bottle/bottle-min.png';
 import hand from '@/images/main/bottle/hand-min.png';
 import stand from '@/images/main/bottle/stand-min.png';
 import { AnimatePresence } from 'framer-motion';
+import AnimatedDecorativeBottleTabletImages from '@AnimatedComponents/AnimatedDecorativeBottleTabletImages';
 
-const AnimatedDecorativeBottleTablet: FC<IProps> = ({ scale, inView }) => {
+const AnimatedDecorativeBottleTablet: FC<IProps> = ({
+  scale,
+  inView,
+  activeIndex,
+  bottleImgs,
+}) => {
   return (
     <Container>
       <BottleWrap
         style={{
           scale,
-          translateX: '-30%',
+          translateX: '-50%',
           translateY: '-45%',
           transformOrigin: 'center bottom',
         }}
@@ -35,7 +39,10 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({ scale, inView }) => {
               transition={{ duration: 1.2 }}
             />
           )}
-          <Bottle src={bottle} alt='Пляшки' key='bottle-tablet' />
+          <AnimatedDecorativeBottleTabletImages
+            activeIndex={activeIndex}
+            bottleImgs={bottleImgs}
+          />
           {inView && (
             <HandImg
               src={hand}

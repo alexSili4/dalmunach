@@ -105,7 +105,7 @@ export const GirlImg = styled.img`
   width: 544px;
   height: 726px;
   transform: rotate(-10.21deg);
-  animation: ${animations.montyPython} 6s steps(1) infinite;
+  animation: ${animations.montyPython} 5s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 650px;
