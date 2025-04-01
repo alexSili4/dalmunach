@@ -15,9 +15,6 @@ import {
   Content,
   SaleClosedWrap,
   SaleClosedTitle,
-  ReservedLink,
-  ReservedLinkTitle,
-  ReservedLinkTitleWrap,
 } from './HeroSectionGoodsCounter.styled';
 import Bottle from '@/icons/hero/bottle.svg?react';
 import { ClassNames } from '@/constants';
@@ -29,6 +26,7 @@ import { getCounterProgress } from '@/utils';
 import { SectionsIds } from '@/constants';
 import { useAppStore } from '@/store/store';
 import { selectMaxBottles, selectOrdersCount } from '@/store/app/selectors';
+import HeroSectionGoodsCounterReservedLink from '@MainPageComponents/HeroSectionGoodsCounterReservedLink';
 
 const HeroSectionGoodsCounter: FC = () => {
   const ordersCount = useAppStore(selectOrdersCount);
@@ -69,11 +67,7 @@ const HeroSectionGoodsCounter: FC = () => {
           <Bottle className={ClassNames.bottle} />
         </BottleWrap>
       </Content>
-      <ReservedLink href={reservedLink}>
-        <ReservedLinkTitleWrap>
-          <ReservedLinkTitle>ПЕРЕДЗАМОВИТИ</ReservedLinkTitle>
-        </ReservedLinkTitleWrap>
-      </ReservedLink>
+      <HeroSectionGoodsCounterReservedLink reservedLink={reservedLink} />
     </Container>
   );
 };
