@@ -6,6 +6,7 @@ export const Container = styled.div`
   z-index: ${({ theme }) => theme.zIndex.bottle};
   top: 50%;
   left: 0;
+  pointer-events: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;

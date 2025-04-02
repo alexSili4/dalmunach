@@ -7,6 +7,7 @@ export const Container = styled.div`
   top: 50%;
   left: 0;
   width: 100%;
+  pointer-events: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
