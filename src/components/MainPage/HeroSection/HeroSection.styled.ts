@@ -61,7 +61,7 @@ export const TextWrap = styled.div`
 `;
 
 export const Subtitle = styled.h2`
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 14px;
   font-weight: 400;

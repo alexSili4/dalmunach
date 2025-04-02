@@ -10,6 +10,8 @@ export type Strings = Array<string>;
 
 export type NumberOrNull = number | null;
 
+export type StringsOrNull = Strings | null;
+
 export type StringOrNull = string | null;
 
 export type InputType = 'text' | 'email' | 'tel';

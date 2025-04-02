@@ -2,7 +2,12 @@ import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
 import { theme } from '@/constants';
-import { playfairDisplayBold, sofiaSansRegular } from '@/fonts';
+import {
+  playfairDisplayBold,
+  sofiaSansRegular,
+  sofiaSansExtraBold,
+  sofiaSansMedium,
+} from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
@@ -15,10 +20,24 @@ const GlobalStyles: FC = () => (
       }
 
       @font-face {
+        font-family: ${theme.fontFamily.sofiaSans};
+        src: local(${theme.fontFamily.sofiaSans}),
+          url(${sofiaSansMedium}) format('truetype');
+        font-weight: 500;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.sofiaSans};
+        src: local(${theme.fontFamily.sofiaSans}),
+          url(${sofiaSansExtraBold}) format('truetype');
+        font-weight: 800;
+      }
+
+      @font-face {
         font-family: ${theme.fontFamily.playfairDisplay};
         src: local(${theme.fontFamily.playfairDisplay}),
           url(${playfairDisplayBold}) format('truetype');
-        font-weight: 400;
+        font-weight: 700;
       }
 
       html {

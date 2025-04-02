@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p`
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 14px;
   font-weight: 500;
@@ -78,8 +78,8 @@ export const NumberBg = styled.div`
 
 export const Number = styled.p`
   position: relative;
-  color: rgb(34, 34, 34);
-  font-family: Sofia Sans;
+  color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 32px;
   font-weight: 500;
   line-height: 100%;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Error = styled.p`
-  color: #b75048;
+  color: ${({ theme }) => theme.colors.error};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 14px;
   font-weight: 800;

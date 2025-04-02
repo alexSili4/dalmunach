@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Container = styled.span`
   display: inline-block;
   overflow-y: hidden;
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 16px;
   font-weight: 400;

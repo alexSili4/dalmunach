@@ -9,7 +9,7 @@ export const Container = styled.span`
 export const Word = styled(motion.span)`
   display: inline-block;
   white-space: pre;
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.playfairDisplay};
   font-size: 40px;
   font-weight: 700;

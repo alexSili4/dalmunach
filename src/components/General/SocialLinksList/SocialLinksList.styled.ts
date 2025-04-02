@@ -17,7 +17,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p`
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.playfairDisplay};
   font-size: 16px;
   font-weight: 700;

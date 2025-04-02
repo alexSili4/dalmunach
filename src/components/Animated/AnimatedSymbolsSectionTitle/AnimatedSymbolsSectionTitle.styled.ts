@@ -12,7 +12,7 @@ export const SymbolContainer = styled.span``;
 
 export const Symbol = styled(motion.span)`
   display: inline-block;
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.playfairDisplay};
   font-size: 40px;
   font-weight: 700;

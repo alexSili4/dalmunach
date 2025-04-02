@@ -1,9 +1,11 @@
-import { StringOrNull, Strings } from './types';
+import { StringOrNull, StringsOrNull, Strings } from './types';
 
 export interface IGetCounterProgressProps {
   ordersCount: number;
   maxBottles: number;
 }
+
+export type SetStringsOrNullFunc = (data: StringsOrNull) => void;
 
 export type SetStringOrNullFunc = (data: StringOrNull) => void;
 

@@ -92,7 +92,7 @@ export const ScyfionImg = styled.img`
 export const DalmunachImg = styled.img``;
 
 export const Title = styled.p`
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 16px;
   font-weight: 500;
@@ -124,7 +124,7 @@ export const AcceptBtn = styled.button`
   background-color: transparent;
   padding: ${({ theme }) => theme.spacing()}px;
   border: 1px solid;
-  border-color: #222222;
+  border-color: ${({ theme }) => theme.colors.primary};
   border-radius: 100px;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
 
@@ -136,7 +136,7 @@ export const AcceptBtn = styled.button`
 export const GoBackLink = styled.a`
   display: flex;
   border: 1px solid;
-  border-color: #222222;
+  border-color: ${({ theme }) => theme.colors.primary};
   border-radius: 100px;
   padding: ${({ theme }) => theme.spacing()}px;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
@@ -151,7 +151,7 @@ export const ControlTitleWrap = styled.span`
   width: 100%;
   padding: ${({ theme }) => theme.spacing(6)}px;
   border: 1px solid;
-  border-color: #222222;
+  border-color: ${({ theme }) => theme.colors.primary};
   border-radius: 100px;
   background-color: transparent;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc},
@@ -165,7 +165,7 @@ export const ControlTitleWrap = styled.span`
 
 export const ControlTitle = styled.span`
   width: 100%;
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 16px;
   font-weight: 500;

@@ -6,7 +6,7 @@ export const ReservedLink = styled.a`
   width: 100%;
   padding: ${({ theme }) => theme.spacing()}px;
   border: 1px solid;
-  border-color: #222222;
+  border-color: ${({ theme }) => theme.colors.primary};
   border-radius: 100px;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
 
@@ -29,7 +29,7 @@ export const ReservedLinkTitleWrap = styled.span`
   justify-content: center;
   width: 100%;
   border: 1px solid;
-  border-color: #222222;
+  border-color: ${({ theme }) => theme.colors.primary};
   border-radius: 100px;
   background-color: transparent;
   padding: ${({ theme }) => theme.spacing(6)}px;
@@ -43,7 +43,7 @@ export const ReservedLinkTitleWrap = styled.span`
 `;
 
 export const ReservedLinkTitle = styled.span`
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 16px;
   font-weight: 500;

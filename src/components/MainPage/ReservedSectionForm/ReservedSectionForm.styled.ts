@@ -5,49 +5,6 @@ export const Form = styled.form``;
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)}px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: ${({ theme }) => theme.spacing(5)}px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    gap: ${({ theme }) => theme.spacing(6)}px;
-  }
-`;
-
-export const TitleWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)}px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: ${({ theme }) => theme.spacing(5)}px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    gap: ${({ theme }) => theme.spacing(6)}px;
-  }
-`;
-
-export const PostCardImg = styled.img`
-  align-self: center;
-  width: 100%;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    width: 391px;
-    height: 126px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 522px;
-    height: 168px;
-  }
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
   gap: ${({ theme }) => theme.spacing(10)}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
@@ -77,7 +34,7 @@ export const Button = styled.button`
   display: flex;
   padding: ${({ theme }) => theme.spacing()}px;
   border: 1px solid;
-  border-color: #222222;
+  border-color: ${({ theme }) => theme.colors.primary};
   border-radius: 100px;
   background-color: transparent;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
@@ -90,7 +47,7 @@ export const Button = styled.button`
 export const BtnTitleWrap = styled.span`
   width: 100%;
   border: 1px solid;
-  border-color: #222222;
+  border-color: ${({ theme }) => theme.colors.primary};
   border-radius: 100px;
   padding: ${({ theme }) => theme.spacing(6)}px;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc},
@@ -111,7 +68,7 @@ export const BtnTitleWrap = styled.span`
 `;
 
 export const BtnTitle = styled.span`
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 16px;
   font-weight: 500;

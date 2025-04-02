@@ -9,20 +9,22 @@ import {
   Form,
   Button,
   Container,
-  Content,
   InputsWrap,
-  TitleWrap,
-  PostCardImg,
   BtnTitle,
   BtnTitleWrap,
 } from './ReservedSectionForm.styled';
 import Input from '@MainPageComponents/Input';
-import postCard from '@/images/main/reserved/post-card-min.png';
 import { useAppStore } from '@/store/store';
 import { selectGetReservedInfo } from '@/store/app/selectors';
-import AnimatedReservedSectionFormTitle from '@AnimatedComponents/AnimatedReseRvedSectionFormTitle';
 
-const ReseRvedSectionForm: FC<IProps> = ({ updateError, inView }) => {
+const ReseRvedSectionForm: FC<IProps> = ({
+  isInvalidEmailField,
+  isInvalidPhoneField,
+  isInvalidNameField,
+  updateError,
+  updateIsSuccess,
+  updateInvalidFields,
+}) => {
   const [disabled, setDisabled] = useState<boolean>(false);
   const { register, handleSubmit } = useForm<IReservedFormData>();
   const getReservedInfo = useAppStore(selectGetReservedInfo);
@@ -33,17 +35,23 @@ const ReseRvedSectionForm: FC<IProps> = ({ updateError, inView }) => {
 
   const handleFormSubmit: SubmitHandler<IReservedFormData> = async (data) => {
     try {
+      updateInvalidFields(null);
       updateError(null);
       updateDisabled(true);
 
       await appService.reserved(data);
+      updateIsSuccess(true);
       await getReservedInfo();
     } catch (error) {
       if (error instanceof AxiosError && error.status === 422) {
         const errorMessage = error.response?.data
           .map(({ message }: IErrorMessage) => message)
           .join(Symbols.break);
+        const invalidFields = error.response?.data.map(
+          ({ field }: IErrorMessage) => field
+        );
 
+        updateInvalidFields(invalidFields);
         updateError(errorMessage);
       }
     } finally {
@@ -54,48 +62,42 @@ const ReseRvedSectionForm: FC<IProps> = ({ updateError, inView }) => {
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <Container>
-        <TitleWrap>
-          <AnimatedReservedSectionFormTitle
-            text='Надішліть свої контактні дані для передзамовлення'
-            inView={inView}
+        <InputsWrap>
+          <Input
+            isInvalidField={isInvalidNameField}
+            placeholder="Моє ім'я"
+            settings={{
+              ...register('name', {
+                required: true,
+              }),
+            }}
           />
-          <PostCardImg src={postCard} alt='Фон' />
-        </TitleWrap>
-        <Content>
-          <InputsWrap>
-            <Input
-              placeholder="Моє ім'я"
-              settings={{
-                ...register('name', {
-                  required: true,
-                }),
-              }}
-            />
-            <Input
-              placeholder='Номер телефону'
-              settings={{
-                ...register('phone', {
-                  required: true,
-                  pattern: regExp.phone,
-                }),
-              }}
-            />
-            <Input
-              placeholder='Електронна пошта'
-              settings={{
-                ...register('email', {
-                  required: true,
-                  pattern: regExp.email,
-                }),
-              }}
-            />
-          </InputsWrap>
-          <Button type='submit' disabled={disabled}>
-            <BtnTitleWrap>
-              <BtnTitle>ПЕРЕДЗАМОВИТИ</BtnTitle>
-            </BtnTitleWrap>
-          </Button>
-        </Content>
+          <Input
+            isInvalidField={isInvalidPhoneField}
+            placeholder='Номер телефону'
+            settings={{
+              ...register('phone', {
+                required: true,
+                pattern: regExp.phone,
+              }),
+            }}
+          />
+          <Input
+            isInvalidField={isInvalidEmailField}
+            placeholder='Електронна пошта'
+            settings={{
+              ...register('email', {
+                required: true,
+                pattern: regExp.email,
+              }),
+            }}
+          />
+        </InputsWrap>
+        <Button type='submit' disabled={disabled}>
+          <BtnTitleWrap>
+            <BtnTitle>ПЕРЕДЗАМОВИТИ</BtnTitle>
+          </BtnTitleWrap>
+        </Button>
       </Container>
     </Form>
   );

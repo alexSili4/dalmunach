@@ -1,20 +1,43 @@
 import styled from '@emotion/styled';
+import { IStyledInputProps, IStyledContainerProps } from './Input.types';
 
-export const StyledInput = styled.input`
+export const Container = styled.div<IStyledContainerProps>`
+  position: relative;
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 19px;
+    height: 19px;
+    transform: translateY(-50%);
+    opacity: ${({ isInvalidField }) => (isInvalidField ? 1 : 0)};
+    transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  }
+`;
+
+export const StyledInput = styled.input<IStyledInputProps>`
+  width: 100%;
   padding-top: ${({ theme }) => theme.spacing(4)}px;
   padding-bottom: ${({ theme }) => theme.spacing(4)}px;
   border: none;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+  border-bottom: 1px solid;
+  border-bottom-color: ${({ isInvalidField, theme: { colors } }) =>
+    isInvalidField ? colors.error : colors.black};
   background-color: transparent;
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
   outline: none;
+  transition: border-bottom-color
+    ${({ theme }) => theme.transitionDurationAndFunc};
 
   &::placeholder {
-    color: #222222;
+    color: ${({ isInvalidField, theme: { colors } }) =>
+      isInvalidField ? colors.error : colors.primary};
+    transition: color ${({ theme }) => theme.transitionDurationAndFunc};
   }
 
   &:-webkit-autofill {
