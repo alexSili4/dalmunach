@@ -40,7 +40,7 @@ const AnimatedDistillerySectionImages: FC = () => {
     },
   };
 
-  const manImgVariants: Variants = {
+  const saxophonistTextImgVariants: Variants = {
     hidden: {
       x: '-50%',
       y: '50%',
@@ -74,7 +74,7 @@ const AnimatedDistillerySectionImages: FC = () => {
         <SaxophonistTextImg
           src={saxophonistText}
           alt='Надпис'
-          variants={manImgVariants}
+          variants={saxophonistTextImgVariants}
         />
         <SaxophonistImg
           src={saxophonist}

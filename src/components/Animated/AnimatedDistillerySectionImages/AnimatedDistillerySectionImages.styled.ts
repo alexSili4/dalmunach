@@ -41,6 +41,7 @@ export const SaxophonistTextImg = styled(motion.img)`
   left: 87px;
   width: 137px;
   height: 155px;
+  animation: ${animations.saxophonistText} 6s infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     bottom: 233px;
