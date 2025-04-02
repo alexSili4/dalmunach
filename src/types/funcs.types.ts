@@ -27,3 +27,8 @@ export interface IGetTextWordProps {
   word: string;
   index: number;
 }
+
+export interface IGetCounterNumbersProps {
+  maxBottles: number;
+  ordersCount: number;
+}

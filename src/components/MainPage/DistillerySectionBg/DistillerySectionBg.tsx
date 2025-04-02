@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import AnimatedDistillerySectionImages from '@AnimatedComponents/AnimatedDistillerySectionImages';
 import house from '@/images/main/distillery/other-section-bg-house-min.png';
-import otherSectionBgMob from '@/images/main/distillery/other-section-bg-mob.png';
-import otherSectionBgTablet from '@/images/main/distillery/other-section-bg-tablet.png';
-import otherSectionBgDesk from '@/images/main/distillery/other-section-bg-desk.png';
+import otherSectionBgMob from '@/images/main/distillery/other-section-bg-mob-min.png';
+import otherSectionBgTablet from '@/images/main/distillery/other-section-bg-tablet-min.png';
+import otherSectionBgDesk from '@/images/main/distillery/other-section-bg-desk-min.png';
 import barrelLid from '@/images/main/distillery/barrel-lid-min.png';
 import {
   Container,
@@ -17,9 +17,9 @@ import {
   CutImgTablet,
   CutImgMob,
 } from './DistillerySectionBg.styled';
-import cutMob from '@/images/main/distillery/other-section-bg-cut-mob.png';
-import cutTablet from '@/images/main/distillery/other-section-bg-cut-tablet.png';
-import cutDesk from '@/images/main/distillery/other-section-bg-cut-desk.png';
+import cutMob from '@/images/main/distillery/other-section-bg-cut-mob-min.png';
+import cutTablet from '@/images/main/distillery/other-section-bg-cut-tablet-min.png';
+import cutDesk from '@/images/main/distillery/other-section-bg-cut-desk-min.png';
 
 const DistillerySectionBg: FC = () => {
   return (

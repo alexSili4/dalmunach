@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const ReservedLink = styled.a`
   flex-shrink: 0;
   display: flex;
+  width: 100%;
   padding: ${({ theme }) => theme.spacing()}px;
   border: 1px solid;
   border-color: #222222;

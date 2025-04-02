@@ -35,7 +35,7 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(8)}px;
+  gap: ${({ theme }) => theme.spacing(18)}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: 0px;
