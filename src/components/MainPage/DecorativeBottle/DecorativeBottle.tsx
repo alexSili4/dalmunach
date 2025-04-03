@@ -16,6 +16,7 @@ const DecorativeBottle: FC<IProps> = ({
         showAnimation={showAnimation}
         activeIndex={activeIndex}
         bottleImgs={bottleImgs}
+        onAnimationComplete={onAnimationComplete}
       />
       <AnimatedDecorativeBottleTablet
         scale={bottleScale}
