@@ -6,7 +6,6 @@ import { Container } from './AnimatedDecorativeBottleMobImages.styled';
 const AnimatedDecorativeBottleMobImages: FC<IProps> = ({
   bottleImgs,
   activeIndex,
-  onAnimationComplete,
 }) => {
   return (
     <Container
@@ -14,8 +13,7 @@ const AnimatedDecorativeBottleMobImages: FC<IProps> = ({
       initial={{ opacity: 0, x: '-80%' }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: '-80%' }}
-      transition={{ duration: 1.2, delay: 1.2 }}
-      onAnimationComplete={onAnimationComplete}
+      transition={{ duration: 0.8 }}
     >
       {bottleImgs.map((img, index) => {
         const isPositionAbsolute = index !== 0;

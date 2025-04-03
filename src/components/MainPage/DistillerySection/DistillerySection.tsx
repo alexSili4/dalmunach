@@ -10,7 +10,6 @@ import {
 import bottle from '@/images/main/distillery/bottle-min.png';
 import yeyMob from '@/images/main/distillery/yey-mob-min.png';
 import yeyDesk from '@/images/main/distillery/yey-desk-min.png';
-
 import { theme } from '@/constants';
 import AnimatedDistillerySectionTitle from '@AnimatedComponents/AnimatedDistillerySectionTitle';
 import AnimatedDistillerySectionText from '@AnimatedComponents/AnimatedDistillerySectionText';

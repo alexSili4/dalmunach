@@ -903,30 +903,6 @@ const ellipse = keyframes`
   }
 `;
 
-const saxophonistText = keyframes`
-0.00% {
-  transform: translateX(0) translateY(0) scale(1) rotate(0deg)
-}
-16.67% {
-  transform: translateX(-50%) translateY(50%) scale(0.1) rotate(0deg)
-}
-33.33% {
-  transform: translateX(-15%) translateY(-35%) scale(1) rotate(-20deg)
-}
-50.00% {
-  transform: translateX(-50%) translateY(50%) scale(0.1) rotate(0deg)
-}
-66.67% {
-  transform: translateX(30%) translateY(0) scale(1) rotate(15deg)
-}
-83.33% {
-  transform: translateX(-50%) translateY(50%) scale(0.1) rotate(0deg)
-}
-100.00% {
-  transform: translateX(0) translateY(0) scale(1) rotate(0deg)
-}
-`;
-
 const animations = {
   barrelLidRotate,
   montyPython,
@@ -936,7 +912,6 @@ const animations = {
   deregentMob,
   deregent,
   scanner,
-  saxophonistText,
   ellipse,
 };
 

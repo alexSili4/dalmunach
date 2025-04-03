@@ -18,7 +18,7 @@ import peopleMob from '@/images/main/showBottle/people-mob-min.png';
 import ray from '@/images/main/showBottle/ray-min.png';
 import sculpture from '@/images/main/showBottle/sculpture-min.png';
 import { IProps } from './ShowBottleSection.types';
-import { preventArrowKeys, preventDefault } from '@/utils';
+import { disableScroll } from '@/utils';
 
 const ShowBottleSection: FC<IProps> = ({
   containerRef,
@@ -37,17 +37,13 @@ const ShowBottleSection: FC<IProps> = ({
         const roundContainerTop = Math.round(containerTop);
         const roundTop = Math.round(top);
         const shouldShowHandAnimation = roundContainerTop === roundTop;
+        const shouldDisableScroll =
+          shouldShowHandAnimation && !showHandAnimation;
 
         updateShowHandAnimation(shouldShowHandAnimation);
 
-        if (shouldShowHandAnimation && !showHandAnimation) {
-          window.addEventListener('wheel', preventDefault, { passive: false });
-          window.addEventListener('touchmove', preventDefault, {
-            passive: false,
-          });
-          window.addEventListener('keydown', preventArrowKeys, {
-            passive: false,
-          });
+        if (shouldDisableScroll) {
+          disableScroll();
         }
       }
     };

@@ -18,6 +18,14 @@ const AnimatedDecorativeBottleMob: FC<IProps> = ({
   bottleImgs,
   onAnimationComplete,
 }) => {
+  const transitionWithDelay: Transition = {
+    type: 'spring',
+    stiffness: 100,
+    damping: 10,
+    duration: 0.8,
+    delay: 0.8,
+  };
+
   const transition: Transition = {
     type: 'spring',
     stiffness: 100,
@@ -45,7 +53,6 @@ const AnimatedDecorativeBottleMob: FC<IProps> = ({
               <AnimatedDecorativeBottleMobImages
                 bottleImgs={bottleImgs}
                 activeIndex={activeIndex}
-                onAnimationComplete={onAnimationComplete}
               />
             )}
             {showAnimation && (
@@ -56,7 +63,8 @@ const AnimatedDecorativeBottleMob: FC<IProps> = ({
                 initial={{ opacity: 0, x: '80%' }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: '-80%' }}
-                transition={transition}
+                transition={transitionWithDelay}
+                onAnimationComplete={onAnimationComplete}
               />
             )}
           </AnimatePresence>

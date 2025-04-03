@@ -12,7 +12,8 @@ import Footer from '@GeneralComponents/Footer';
 import { useInView, useScroll, useTransform } from 'framer-motion';
 import DecorativeBottle from '@MainPageComponents/DecorativeBottle';
 import { bottleImgs } from '@/constants';
-import { preventArrowKeys, preventDefault } from '@/utils';
+import { unDisableScroll } from '@/utils';
+import ProjectOwnersSection from '@MainPageComponents/ProjectOwnersSection';
 
 const Main: FC = () => {
   const [showHandAnimation, setShowHandAnimation] = useState<boolean>(false);
@@ -57,9 +58,7 @@ const Main: FC = () => {
   };
 
   const onHandAnimationComplete = () => {
-    window.removeEventListener('wheel', preventDefault);
-    window.removeEventListener('touchmove', preventDefault);
-    window.removeEventListener('keydown', preventArrowKeys);
+    unDisableScroll();
   };
 
   useEffect(() => {
@@ -94,6 +93,7 @@ const Main: FC = () => {
           inView={symbolsSectionInView}
         />
         <DistillerySection />
+        <ProjectOwnersSection />
         <ReservedSection />
         <Footer />
       </OtherSectionsWrap>
