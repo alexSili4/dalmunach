@@ -8,6 +8,8 @@ export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 // other
 export type Strings = Array<string>;
 
+export type Numbers = Array<number>;
+
 export type NumberOrNull = number | null;
 
 export type StringsOrNull = Strings | null;

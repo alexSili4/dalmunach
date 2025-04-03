@@ -13,7 +13,7 @@ import { IProps } from './AnimatedDecorativeBottleMob.types';
 import AnimatedDecorativeBottleMobImages from '@AnimatedComponents/AnimatedDecorativeBottleMobImages';
 
 const AnimatedDecorativeBottleMob: FC<IProps> = ({
-  inView,
+  showAnimation,
   activeIndex,
   bottleImgs,
 }) => {
@@ -22,7 +22,7 @@ const AnimatedDecorativeBottleMob: FC<IProps> = ({
       <StickyBottleWrap>
         <BottleWrap>
           <AnimatePresence>
-            {inView && (
+            {showAnimation && (
               <StandImg
                 src={stand}
                 alt='Стенд'
@@ -33,13 +33,13 @@ const AnimatedDecorativeBottleMob: FC<IProps> = ({
                 transition={{ duration: 1.2 }}
               />
             )}
-            {inView && (
+            {showAnimation && (
               <AnimatedDecorativeBottleMobImages
                 bottleImgs={bottleImgs}
                 activeIndex={activeIndex}
               />
             )}
-            {inView && (
+            {showAnimation && (
               <HandImg
                 src={hand}
                 alt='Рука'

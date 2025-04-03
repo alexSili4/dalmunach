@@ -8,15 +8,23 @@ import {
 import { IProps } from './AnimatedDecorativeBottleTablet.types';
 import hand from '@/images/main/bottle/hand-min.png';
 import stand from '@/images/main/bottle/stand-min.png';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, Transition } from 'framer-motion';
 import AnimatedDecorativeBottleTabletImages from '@AnimatedComponents/AnimatedDecorativeBottleTabletImages';
 
 const AnimatedDecorativeBottleTablet: FC<IProps> = ({
   scale,
-  inView,
+  showAnimation,
   activeIndex,
   bottleImgs,
+  onAnimationComplete,
 }) => {
+  const transition: Transition = {
+    type: 'spring',
+    stiffness: 100,
+    damping: 10,
+    duration: 0.8,
+  };
+
   return (
     <Container>
       <BottleWrap
@@ -28,30 +36,31 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({
         }}
       >
         <AnimatePresence>
-          {inView && (
+          {showAnimation && (
             <StandImg
               src={stand}
               alt='Стенд'
               key='stand-tablet'
-              initial={{ opacity: 0, x: '-80%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '80%' }}
-              transition={{ duration: 1.2 }}
+              initial={{ x: '-80%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '80%' }}
+              transition={transition}
             />
           )}
           <AnimatedDecorativeBottleTabletImages
             activeIndex={activeIndex}
             bottleImgs={bottleImgs}
           />
-          {inView && (
+          {showAnimation && (
             <HandImg
               src={hand}
               alt='Рука'
               key='hand-tablet'
-              initial={{ opacity: 0, x: '80%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '-80%' }}
-              transition={{ duration: 1.2 }}
+              initial={{ x: '80%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-80%' }}
+              transition={transition}
+              onAnimationComplete={onAnimationComplete}
             />
           )}
         </AnimatePresence>

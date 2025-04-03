@@ -5,25 +5,24 @@ import { IProps } from './DecorativeBottle.types';
 
 const DecorativeBottle: FC<IProps> = ({
   bottleScale,
-  showBottleSectionInView,
-  symbolsSectionInView,
   activeIndex,
   bottleImgs,
+  showAnimation,
+  onAnimationComplete,
 }) => {
-  const bottleMobInView = showBottleSectionInView && !symbolsSectionInView;
-
   return (
     <>
       <AnimatedDecorativeBottleMob
-        inView={bottleMobInView}
+        showAnimation={showAnimation}
         activeIndex={activeIndex}
         bottleImgs={bottleImgs}
       />
       <AnimatedDecorativeBottleTablet
         scale={bottleScale}
         activeIndex={activeIndex}
-        inView={showBottleSectionInView}
+        showAnimation={showAnimation}
         bottleImgs={bottleImgs}
+        onAnimationComplete={onAnimationComplete}
       />
     </>
   );

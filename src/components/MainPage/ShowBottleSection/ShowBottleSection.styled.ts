@@ -7,7 +7,6 @@ import { IStyledContainerProps } from './ShowBottleSection.types';
 
 export const Section = styled.section`
   position: relative;
-  height: 2500px;
   padding-top: ${({ theme }) => theme.spacing(16)}px;
   background-image: url(${sectionBgMob});
   background-position: 0 0;
@@ -26,7 +25,11 @@ export const Section = styled.section`
   }
 `;
 
-export const Container = styled.div<IStyledContainerProps>`
+export const Container = styled.div`
+  height: 2500px;
+`;
+
+export const Content = styled.div<IStyledContainerProps>`
   position: sticky;
   top: ${({ top }) => top}px;
   left: 0;
