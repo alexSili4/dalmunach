@@ -894,6 +894,15 @@ const scanner = keyframes`
   }
 `;
 
+const ellipse = keyframes`
+  0% {
+    transform: translateX(-50%) scale(0);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+`;
+
 const saxophonistText = keyframes`
 0.00% {
   transform: translateX(0) translateY(0) scale(1) rotate(0deg)
@@ -928,6 +937,7 @@ const animations = {
   deregent,
   scanner,
   saxophonistText,
+  ellipse,
 };
 
 export default animations;

@@ -4,11 +4,9 @@ import {
   Container,
   Content,
   Title,
-  Number,
-  NumberWrap,
-  NumberBg,
   DecorativeElement,
 } from './HeroSectionGoodsCounterTotal.styled';
+import HeroSectionGoodsCounterNumber from '@MainPageComponents/HeroSectionGoodsCounterNumber';
 
 const HeroSectionGoodsCounterTotal: FC<IProps> = ({ numbers }) => {
   return (
@@ -17,10 +15,7 @@ const HeroSectionGoodsCounterTotal: FC<IProps> = ({ numbers }) => {
       <Content>
         <DecorativeElement></DecorativeElement>
         {numbers.map((number, index) => (
-          <NumberWrap key={index}>
-            <NumberBg></NumberBg>
-            <Number>{number}</Number>
-          </NumberWrap>
+          <HeroSectionGoodsCounterNumber key={index} number={Number(number)} />
         ))}
       </Content>
     </Container>

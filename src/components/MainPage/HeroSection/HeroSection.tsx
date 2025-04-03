@@ -5,7 +5,6 @@ import {
   Section,
   Subtitle,
   TextWrap,
-  Ellipse,
   GirlImg,
   BirdImgWrap,
   BirdImgBg,
@@ -18,6 +17,7 @@ import bird from '@/images/main/hero/bird-min.png';
 import AnimatedHeroSectionBottle from '@AnimatedComponents/AnimatedHeroSectionBottle';
 import { useInView } from 'framer-motion';
 import AnimatedHeroSectionTitle from '@AnimatedComponents/AnimatedHeroSectionTitle';
+import Ellipse from '@MainPageComponents/Ellipse';
 
 const HeroSection: FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

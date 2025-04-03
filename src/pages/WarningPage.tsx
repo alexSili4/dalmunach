@@ -1,21 +1,27 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import Warning from '@WarningPageComponents/Warning';
-import { Func, SetBooleanFunc } from '@/types/funcs.types';
+import { SetBooleanFunc } from '@/types/funcs.types';
+import Loader from '@WarningPageComponents/Loader';
 
 export interface IProps {
   updateIsLegalDrinkingAgeUser: SetBooleanFunc;
-  onSectionLoaded: Func;
 }
 
-const WarningPage: FC<IProps> = ({
-  updateIsLegalDrinkingAgeUser,
-  onSectionLoaded,
-}) => {
+const WarningPage: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+  const onSectionLoaded = () => {
+    setIsLoaded(true);
+  };
+
   return (
-    <Warning
-      updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
-      onSectionLoaded={onSectionLoaded}
-    />
+    <>
+      <Warning
+        updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
+        onSectionLoaded={onSectionLoaded}
+      />
+      {!isLoaded && <Loader />}
+    </>
   );
 };
 

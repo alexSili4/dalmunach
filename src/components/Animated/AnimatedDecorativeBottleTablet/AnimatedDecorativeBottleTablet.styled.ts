@@ -21,29 +21,29 @@ export const BottleWrap = styled(motion.div)`
 
 export const HandImg = styled(motion.img)`
   position: absolute;
-  top: -162px;
-  left: -131px;
+  top: -164px;
+  left: -146px;
   max-width: 2000px;
   height: 289px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: -216px;
-    left: -174px;
+    top: -243px;
+    left: -195px;
     height: 385px;
   }
 `;
 
 export const StandImg = styled(motion.img)`
   position: absolute;
-  left: -220px;
-  bottom: -200px;
+  left: -227px;
+  bottom: -187px;
   max-width: 2000px;
   width: 646px;
   height: 363px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    bottom: -267px;
-    left: -293px;
+    bottom: -250px;
+    left: -303px;
     width: 861px;
     height: 484px;
   }
