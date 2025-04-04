@@ -7,23 +7,13 @@ import {
   Subtitle,
   Text,
   Title,
-  BgCutPicture,
-  BgCutImg,
-  CheersImg,
   TitleWrap,
   TextWrap,
 } from './ProjectOwnersSection.styled';
-import { theme } from '@/constants';
-import bgCutDesk from '@/images/main/projectOwners/section-bg-cut-desk-min.png';
-import bgCutTablet from '@/images/main/projectOwners/section-bg-cut-tablet-min.png';
-import bgCutMob from '@/images/main/projectOwners/section-bg-cut-mob-min.png';
-import cheers from '@/images/main/projectOwners/cheers-min.png';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
+import ProjectOwnersSectionBgImages from '@MainPageComponents/ProjectOwnersSectionBgImages';
 
 const ProjectOwnersSection: FC = () => {
-  const bgCutPictureTabletMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
-  const bgCutPictureDeskMedia = `(min-width: ${theme.breakpoints.desktop}px)`;
-
   return (
     <Section>
       <HiddenSectionTitle title='Співвласники проекту Scyfion' />
@@ -44,7 +34,7 @@ const ProjectOwnersSection: FC = () => {
               </TitleWrap>
             </TextWrap>
           </Comment>
-          <Comment>
+          <Comment isFlexEnd>
             <TextWrap>
               <Text>
                 Вискі, створені з любов'ю та майстерністю, розкривають унікальні
@@ -61,12 +51,7 @@ const ProjectOwnersSection: FC = () => {
           </Comment>
         </Container>
       </GeneralContainer>
-      <BgCutPicture>
-        <source srcSet={bgCutDesk} media={bgCutPictureDeskMedia} />
-        <source srcSet={bgCutTablet} media={bgCutPictureTabletMedia} />
-        <BgCutImg src={bgCutMob} alt='Зріз' />
-      </BgCutPicture>
-      <CheersImg src={cheers} alt='Декоративний надпис' />
+      <ProjectOwnersSectionBgImages />
     </Section>
   );
 };

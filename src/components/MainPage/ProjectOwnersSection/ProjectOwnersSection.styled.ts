@@ -6,6 +6,8 @@ import commentBgMob from '@/images/main/projectOwners/comment-bg-mob-min.png';
 import commentBgTablet from '@/images/main/projectOwners/comment-bg-tablet-min.png';
 import commentBgDesk from '@/images/main/projectOwners/comment-bg-desk-min.png';
 import quotes from '@/icons/projectOwners/quotes.svg';
+import { IStyledCommentProps } from './ProjectOwnersSection.types';
+
 export const Section = styled.section`
   position: relative;
   padding-top: ${({ theme }) => theme.spacing(24)}px;
@@ -28,9 +30,25 @@ export const Section = styled.section`
   }
 `;
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(108)}px;
+  margin-left: auto;
+  margin-right: auto;
 
-export const Comment = styled.div`
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    gap: ${({ theme }) => theme.spacing()}px;
+    width: 690px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 920px;
+  }
+`;
+
+export const Comment = styled.div<IStyledCommentProps>`
+  align-self: ${({ isFlexEnd }) => isFlexEnd && 'flex-end'};
   width: 100%;
   padding: ${({ theme: { spacing } }) => `${spacing(16)}px ${spacing(6)}px`};
   background-image: url(${quotes}), url(${commentBgMob});
@@ -132,37 +150,5 @@ export const Subtitle = styled.p`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     font-size: 16px;
-  }
-`;
-
-export const BgCutPicture = styled.picture`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-`;
-
-export const BgCutImg = styled.img`
-  width: 100%;
-`;
-
-export const CheersImg = styled.img`
-  position: absolute;
-  top: 755px;
-  left: 50%;
-  width: 340px;
-  transform: translateX(-50%);
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 203px;
-    left: calc(50% + 123px);
-    width: 660px;
-    transform: none;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 271px;
-    left: calc(50% + 165px);
-    width: 880px;
   }
 `;
