@@ -2,15 +2,11 @@ import { FC } from 'react';
 import { IProps } from './Warning.types';
 import HeroSection from '@WarningPageComponents/HeroSection';
 
-const Warning: FC<IProps> = ({
-  updateIsLegalDrinkingAgeUser,
-  onSectionLoaded,
-}) => {
+const Warning: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
   return (
     <>
       <HeroSection
         updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
-        onSectionLoaded={onSectionLoaded}
       />
     </>
   );

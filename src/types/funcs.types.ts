@@ -34,3 +34,8 @@ export interface IGetCounterNumbersProps {
   maxBottles: number;
   ordersCount: number;
 }
+
+export interface IGetInvalidFormFields {
+  errorMessage: string;
+  invalidFields: Strings;
+}

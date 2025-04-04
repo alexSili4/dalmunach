@@ -1,26 +1,20 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import Warning from '@WarningPageComponents/Warning';
 import { SetBooleanFunc } from '@/types/funcs.types';
 import Loader from '@WarningPageComponents/Loader';
+import { useAllImagesVisible } from '@/hooks';
 
 export interface IProps {
   updateIsLegalDrinkingAgeUser: SetBooleanFunc;
 }
 
 const WarningPage: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-
-  const onSectionLoaded = () => {
-    setIsLoaded(true);
-  };
+  const allImagesVisible = useAllImagesVisible();
 
   return (
     <>
-      <Warning
-        updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
-        onSectionLoaded={onSectionLoaded}
-      />
-      {!isLoaded && <Loader />}
+      <Warning updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser} />
+      {!allImagesVisible && <Loader />}
     </>
   );
 };

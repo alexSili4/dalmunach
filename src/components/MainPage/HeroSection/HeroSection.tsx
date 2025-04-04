@@ -45,7 +45,7 @@ const HeroSection: FC = () => {
         <BirdImgBg src={birdBg} alt='Фон' />
         <BirdImg src={bird} alt='Птах' />
       </BirdImgWrap>
-      <AnimatedHeroSectionBottle inView={inView} />
+      <AnimatedHeroSectionBottle />
     </Section>
   );
 };

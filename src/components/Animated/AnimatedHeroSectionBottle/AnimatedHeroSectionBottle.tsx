@@ -1,24 +1,49 @@
-import { FC } from 'react';
-import { Bottle } from './AnimatedHeroSectionBottle.styled';
-import { IProps } from './AnimatedHeroSectionBottle.types';
-import { AnimatePresence } from 'framer-motion';
+import { FC, useRef } from 'react';
+import { Bottle, Container } from './AnimatedHeroSectionBottle.styled';
+import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
 import { bottleImgs } from '@/constants';
 
-const AnimatedHeroSectionBottle: FC<IProps> = ({ inView }) => {
+const AnimatedHeroSectionBottle: FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(containerRef, {
+    margin: '-250px 0px -230px 0px',
+  });
+  const animate: VariantLabels = inView ? 'visible' : 'hidden';
+
+  const transition: Transition = {
+    type: 'spring',
+    stiffness: 100,
+    damping: 10,
+    duration: 0.8,
+  };
+
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {},
+  };
+
+  const elementVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      x: 100,
+      transition,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition,
+    },
+  };
+
   return (
-    <AnimatePresence>
-      {inView && (
-        <Bottle
-          src={bottleImgs[0]}
-          alt='Пляшка'
-          initial={{ opacity: 0, x: '80%' }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: '80%' }}
-          transition={{ duration: 0.8 }}
-          key='hero-bottle-mob'
-        />
-      )}
-    </AnimatePresence>
+    <Container
+      ref={containerRef}
+      variants={containerVariants}
+      initial='hidden'
+      animate={animate}
+    >
+      <Bottle src={bottleImgs[0]} alt='Пляшка' variants={elementVariants} />
+    </Container>
   );
 };
 

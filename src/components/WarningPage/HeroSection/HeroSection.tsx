@@ -27,10 +27,7 @@ import drinkSetter from '@/images/warning/hero/drink-setter-min.png';
 import scyfion from '@/images/warning/hero/scyfion-min.png';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 
-const HeroSection: FC<IProps> = ({
-  updateIsLegalDrinkingAgeUser,
-  onSectionLoaded,
-}) => {
+const HeroSection: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
   const onAcceptBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
@@ -38,7 +35,7 @@ const HeroSection: FC<IProps> = ({
   };
 
   return (
-    <Section onLoad={onSectionLoaded}>
+    <Section>
       <GeneralContainer>
         <Background>
           <Container>

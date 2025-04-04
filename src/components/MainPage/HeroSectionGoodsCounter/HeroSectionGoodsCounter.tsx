@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Container } from './HeroSectionGoodsCounter.styled';
 import { SectionsIds } from '@/constants';
 import { useAppStore } from '@/store/store';
@@ -8,11 +8,11 @@ import HeroSectionGoodsCounterTotal from '@MainPageComponents/HeroSectionGoodsCo
 import { getCounterNumbers } from '@/utils';
 
 const HeroSectionGoodsCounter: FC = () => {
-  const [ordersCount] = useState(100);
-  const [maxBottles] = useState(325);
+  // const [ordersCount] = useState(100);
+  // const [maxBottles] = useState(325);
 
-  // const ordersCount = useAppStore(selectOrdersCount);
-  // const maxBottles = useAppStore(selectMaxBottles);
+  const ordersCount = useAppStore(selectOrdersCount);
+  const maxBottles = useAppStore(selectMaxBottles);
 
   const reservedLink = `#${SectionsIds.preOrder}`;
   const counterNumbers = getCounterNumbers({ maxBottles, ordersCount });

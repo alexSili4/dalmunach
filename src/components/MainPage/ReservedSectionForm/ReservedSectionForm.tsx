@@ -1,6 +1,6 @@
-import { FC, useState } from 'react';
-import { regExp, Symbols } from '@/constants';
-import { IErrorMessage, IReservedFormData } from '@/types/reserved.types';
+import { FC, useEffect, useState } from 'react';
+import { FormErrorMessages, GeneralSettings, regExp } from '@/constants';
+import { IReservedFormData } from '@/types/reserved.types';
 import { AxiosError } from 'axios';
 import appService from '@/services/app.service';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -16,6 +16,7 @@ import {
 import Input from '@MainPageComponents/Input';
 import { useAppStore } from '@/store/store';
 import { selectGetReservedInfo } from '@/store/app/selectors';
+import { getInvalidFormFields, getReservedFormErrorMessages } from '@/utils';
 
 const ReseRvedSectionForm: FC<IProps> = ({
   isInvalidEmailField,
@@ -26,7 +27,11 @@ const ReseRvedSectionForm: FC<IProps> = ({
   updateInvalidFields,
 }) => {
   const [disabled, setDisabled] = useState<boolean>(false);
-  const { register, handleSubmit } = useForm<IReservedFormData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting, errors },
+  } = useForm<IReservedFormData>();
   const getReservedInfo = useAppStore(selectGetReservedInfo);
 
   const updateDisabled = (data: boolean) => {
@@ -44,12 +49,8 @@ const ReseRvedSectionForm: FC<IProps> = ({
       await getReservedInfo();
     } catch (error) {
       if (error instanceof AxiosError && error.status === 422) {
-        const errorMessage = error.response?.data
-          .map(({ message }: IErrorMessage) => message)
-          .join(Symbols.break);
-        const invalidFields = error.response?.data.map(
-          ({ field }: IErrorMessage) => field
-        );
+        const errors = error.response?.data;
+        const { errorMessage, invalidFields } = getInvalidFormFields(errors);
 
         updateInvalidFields(invalidFields);
         updateError(errorMessage);
@@ -58,6 +59,18 @@ const ReseRvedSectionForm: FC<IProps> = ({
       updateDisabled(false);
     }
   };
+
+  useEffect(() => {
+    const errorMessages = getReservedFormErrorMessages(errors);
+
+    if (errorMessages.length) {
+      const { errorMessage, invalidFields } =
+        getInvalidFormFields(errorMessages);
+
+      updateInvalidFields(invalidFields);
+      updateError(errorMessage);
+    }
+  }, [isSubmitting, errors]);
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -68,7 +81,10 @@ const ReseRvedSectionForm: FC<IProps> = ({
             placeholder="Моє ім'я"
             settings={{
               ...register('name', {
-                required: true,
+                required: {
+                  message: FormErrorMessages.nameReqErr,
+                  value: true,
+                },
               }),
             }}
           />
@@ -77,8 +93,18 @@ const ReseRvedSectionForm: FC<IProps> = ({
             placeholder='Номер телефону'
             settings={{
               ...register('phone', {
-                required: true,
-                pattern: regExp.phone,
+                required: {
+                  value: true,
+                  message: FormErrorMessages.phoneReqErr,
+                },
+                pattern: {
+                  value: regExp.phone,
+                  message: FormErrorMessages.phoneRegExpErr,
+                },
+                minLength: {
+                  value: GeneralSettings.phoneMinLength,
+                  message: FormErrorMessages.phoneMinLengthErr,
+                },
               }),
             }}
           />
@@ -87,8 +113,14 @@ const ReseRvedSectionForm: FC<IProps> = ({
             placeholder='Електронна пошта'
             settings={{
               ...register('email', {
-                required: true,
-                pattern: regExp.email,
+                required: {
+                  value: true,
+                  message: FormErrorMessages.emailReqErr,
+                },
+                pattern: {
+                  value: regExp.email,
+                  message: FormErrorMessages.emailRegExpErr,
+                },
               }),
             }}
           />

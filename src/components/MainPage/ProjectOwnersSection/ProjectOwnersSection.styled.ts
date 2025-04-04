@@ -11,6 +11,7 @@ export const Section = styled.section`
   background-position: 0 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(63)}px;

@@ -7,3 +7,5 @@ export { default as regExp } from './regExp';
 export { default as SectionsIds } from './sectionsIds';
 export { default as animations } from './animations';
 export { default as bottleImgs } from './bottleImgs';
+export { default as FormErrorMessages } from './formErrorMessages';
+export { default as GeneralSettings } from './generalSettings';
