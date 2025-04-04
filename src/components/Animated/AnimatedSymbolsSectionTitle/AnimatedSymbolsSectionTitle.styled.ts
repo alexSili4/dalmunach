@@ -23,7 +23,7 @@ export const Symbol = styled(motion.span)`
     font-size: 45px;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     font-size: 60px;
   }
 `;

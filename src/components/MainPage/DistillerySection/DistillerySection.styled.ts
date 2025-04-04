@@ -30,7 +30,7 @@ export const Section = styled.section`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(43)}px;
+  gap: ${({ theme }) => theme.spacing(63)}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(5)}px;
@@ -43,9 +43,9 @@ export const Container = styled.div`
   }
 `;
 
-export const BottleImg = styled.img`
+export const BottlePicture = styled.picture`
   position: absolute;
-  top: 192px;
+  top: 233px;
   left: 16px;
   width: 44px;
   height: 122px;
@@ -68,7 +68,7 @@ export const BottleImg = styled.img`
 
 export const YeyPicture = styled.picture`
   position: absolute;
-  top: 192px;
+  top: 237px;
   right: 14px;
   width: 302px;
   height: 114px;

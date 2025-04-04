@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 
 export const DiagramsImgWrap = styled(motion.div)`
   position: absolute;
-  top: 707px;
+  top: 907px;
   right: 12px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 943px;
+    top: 1143px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
@@ -15,7 +15,7 @@ export const DiagramsImgWrap = styled(motion.div)`
   }
 `;
 
-export const DiagramsImg = styled.img`
+export const DiagramsImg = styled(motion.img)`
   width: 440px;
   height: 509px;
 
@@ -27,33 +27,34 @@ export const DiagramsImg = styled.img`
 
 export const BookletImgWrap = styled(motion.div)`
   position: absolute;
-  top: 385px;
-  left: calc(50% - 215px);
+  top: 585px;
+  right: 50%;
+  transform: translateX(50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 280px;
-    left: 118px;
+    top: 480px;
+    right: calc(50% + 67px);
     transform: none;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 373px;
-    left: 157px;
+    top: 573px;
+    right: calc(50% + 90px);
   }
 `;
 
-export const BookletImg = styled.img`
-  width: 428px;
+export const BookletImg = styled(motion.img)`
+  width: 371px;
   max-width: 6000px;
-  height: 617px;
+  height: 535px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    width: 571px;
-    height: 824px;
+    width: 499px;
+    height: 720px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 762px;
-    height: 1099px;
+    width: 665px;
+    height: 960px;
   }
 `;

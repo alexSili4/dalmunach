@@ -1,3 +1,4 @@
+import { animations } from '@/constants';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
@@ -6,6 +7,7 @@ export const ManImgWrap = styled(motion.div)`
   top: 787px;
   left: calc(50% - 32px);
   transform-origin: bottom right;
+  animation: ${animations.man} 8s infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 569px;

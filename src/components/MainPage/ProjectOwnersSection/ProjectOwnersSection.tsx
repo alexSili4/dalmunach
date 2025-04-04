@@ -1,57 +1,30 @@
 import HiddenSectionTitle from '@GeneralComponents/HiddenSectionTitle';
 import { FC } from 'react';
-import {
-  Section,
-  Comment,
-  Container,
-  Subtitle,
-  Text,
-  Title,
-  TitleWrap,
-  TextWrap,
-} from './ProjectOwnersSection.styled';
+import { Section, BgCutImg, BgCutPicture } from './ProjectOwnersSection.styled';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import ProjectOwnersSectionBgImages from '@MainPageComponents/ProjectOwnersSectionBgImages';
+import bgCutDesk from '@/images/main/projectOwners/section-bg-cut-desk-min.png';
+import bgCutTablet from '@/images/main/projectOwners/section-bg-cut-tablet-min.png';
+import bgCutMob from '@/images/main/projectOwners/section-bg-cut-mob-min.png';
+import { theme } from '@/constants';
+import AnimatedProjectOwnersSectionComments from '@AnimatedComponents/AnimatedProjectOwnersSectionComments';
 
 const ProjectOwnersSection: FC = () => {
+  const bgCutPictureTabletMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
+  const bgCutPictureDeskMedia = `(min-width: ${theme.breakpoints.desktop}px)`;
+
   return (
     <Section>
       <HiddenSectionTitle title='Співвласники проекту Scyfion' />
-      <GeneralContainer>
-        <Container>
-          <Comment>
-            <TextWrap>
-              <Text>
-                Вискі, створені з любов'ю та майстерністю, розкривають унікальні
-                смаки та аромати, які відображають характер кожного регіону.
-                Кожна пляшка - це історія, що поєднує традиції та інновації.
-                Досліджуйте світ виски, де кожен ковток приносить нові враження
-                та відкриття.
-              </Text>
-              <TitleWrap>
-                <Title>Замосковний Руслан</Title>
-                <Subtitle>Співвласник проекту Scyfion</Subtitle>
-              </TitleWrap>
-            </TextWrap>
-          </Comment>
-          <Comment isFlexEnd>
-            <TextWrap>
-              <Text>
-                Вискі, створені з любов'ю та майстерністю, розкривають унікальні
-                смаки та аромати, які відображають характер кожного регіону.
-                Кожна пляшка - це історія, що поєднує традиції та інновації.
-                Досліджуйте світ виски, де кожен ковток приносить нові враження
-                та відкриття.
-              </Text>
-              <TitleWrap>
-                <Title>Близнюк Платон</Title>
-                <Subtitle>Співвласник проекту Scyfion</Subtitle>
-              </TitleWrap>
-            </TextWrap>
-          </Comment>
-        </Container>
-      </GeneralContainer>
       <ProjectOwnersSectionBgImages />
+      <GeneralContainer>
+        <AnimatedProjectOwnersSectionComments />
+      </GeneralContainer>
+      <BgCutPicture>
+        <source srcSet={bgCutDesk} media={bgCutPictureDeskMedia} />
+        <source srcSet={bgCutTablet} media={bgCutPictureTabletMedia} />
+        <BgCutImg src={bgCutMob} alt='Зріз' />
+      </BgCutPicture>
     </Section>
   );
 };

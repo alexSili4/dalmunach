@@ -26,7 +26,7 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  height: 2500px;
+  height: 3750px;
 `;
 
 export const Content = styled.div<IStyledContainerProps>`
@@ -182,7 +182,7 @@ export const EllipseRight = styled.div`
   right: -206px;
   width: 300px;
   aspect-ratio: 1 / 1;
-  background-color: #234d73;
+  background-color: ${({ theme }) => theme.colors.blue};
   border-radius: 50%;
   opacity: 0.5;
 

@@ -23,10 +23,6 @@ const Main: FC = () => {
   const aboutSectionInView = useInView(aboutSectionRef, {
     margin: '-300px 0px -300px 0px',
   });
-  const symbolsSectionRef = useRef<HTMLDivElement>(null);
-  const symbolsSectionInView = useInView(symbolsSectionRef, {
-    margin: '-300px 0px -300px 0px',
-  });
   const showBottleSectionContainerRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: generalScrollYProgress } = useScroll({
@@ -46,7 +42,7 @@ const Main: FC = () => {
   const bottleImgsLength = bottleImgs.length;
   const decorativeBottleActiveIndex = useTransform(
     showBottleSectionContainerScrollYProgress,
-    [0.4, 0.6],
+    [0.25, 0.8],
     showBottleAnimation ? [0, bottleImgsLength - 1] : [0, 0],
     {
       clamp: true,
@@ -88,10 +84,7 @@ const Main: FC = () => {
         updateShowHandAnimation={updateShowHandAnimation}
       />
       <OtherSectionsWrap>
-        <SymbolsSection
-          sectionRef={symbolsSectionRef}
-          inView={symbolsSectionInView}
-        />
+        <SymbolsSection />
         <DistillerySection />
         <ProjectOwnersSection />
         <ReservedSection />

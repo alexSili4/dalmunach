@@ -70,6 +70,7 @@ const bottleImgs = [
   bottle32,
   bottle33,
   bottle34,
+  bottle,
 ];
 
 export default bottleImgs;

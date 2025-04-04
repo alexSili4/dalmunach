@@ -903,6 +903,35 @@ const ellipse = keyframes`
   }
 `;
 
+const man = keyframes`
+0% {transform: rotate(0deg);}
+40% {transform: rotate(0deg);}
+42.86% {transform: rotate(-0.5deg);}
+45.72% {transform: rotate(0.5deg);}
+48.58% {transform: rotate(-2deg);}
+51.44% {transform: rotate(2deg);}
+54.3% {transform: rotate(-0.5deg);}
+57.16% {transform: rotate(0.5deg);}
+60% {transform: rotate(0deg);}
+100% {transform: rotate(0deg);}
+`;
+
+const bird = keyframes`
+0% {transform: translateY(0px);}
+25% {transform: translateY(5px);}
+50% {transform: translateY(0px);}
+75% {transform: translateY(-5px);}
+100% {transform: translateY(0px);}
+`;
+
+const birdReverse = keyframes`
+0% {transform: translateY(0px);}
+25% {transform: translateY(-5px);}
+50% {transform: translateY(0px);}
+75% {transform: translateY(5px);}
+100% {transform: translateY(0px);}
+`;
+
 const animations = {
   barrelLidRotate,
   montyPython,
@@ -913,6 +942,9 @@ const animations = {
   deregent,
   scanner,
   ellipse,
+  man,
+  bird,
+  birdReverse,
 };
 
 export default animations;

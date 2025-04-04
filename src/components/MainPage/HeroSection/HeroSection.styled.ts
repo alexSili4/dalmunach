@@ -83,7 +83,7 @@ export const GirlImg = styled.img`
   width: 544px;
   height: 726px;
   transform: rotate(-10.21deg);
-  animation: ${animations.montyPython} 5s steps(1) infinite;
+  animation: ${animations.montyPython} 10s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 650px;
@@ -116,6 +116,7 @@ export const BirdImgWrap = styled.div`
 export const BirdImgBg = styled.img`
   width: 286px;
   height: 285px;
+  animation: ${animations.montyPythonLiteReverse} 6s steps(1) infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 381px;
@@ -129,7 +130,7 @@ export const BirdImg = styled.img`
   left: 23px;
   width: 210px;
   height: 151px;
-  animation: ${animations.montyPythonLiteReverse} 6s steps(1) infinite;
+  animation: ${animations.bird} 1s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 88px;

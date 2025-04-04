@@ -51,10 +51,10 @@ const AboutSection: FC<IProps> = ({ inView, sectionRef }) => {
         </Container>
       </GeneralContainer>
       <BirdWrap>
-        <BirdMobImg src={birdMob} alt='Птах' />
-        <BirdDeskImg src={birdDesk} alt='Птах' />
         <BirdBgMobImg src={birdBgMob} alt='Фон' />
         <BirdBgDeskImg src={birdBgDesk} alt='Фон' />
+        <BirdMobImg src={birdMob} alt='Птах' />
+        <BirdDeskImg src={birdDesk} alt='Птах' />
       </BirdWrap>
     </Section>
   );

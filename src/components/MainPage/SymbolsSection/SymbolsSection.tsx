@@ -1,19 +1,24 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import HiddenSectionTitle from '@/components/General/HiddenSectionTitle';
 import pluses from '@/images/main/symbols/pluses-min.png';
 import { Section, Container, PlusesImg } from './SymbolsSection.styled';
-import { IProps } from './SymbolsSection.types';
 import AnimatedSymbolsSectionImages from '@AnimatedComponents/AnimatedSymbolsSectionImages';
 import AnimatedSymbolsSectionTitle from '@AnimatedComponents/AnimatedSymbolsSectionTitle';
 import AnimatedSymbolsSectionText from '@AnimatedComponents/AnimatedSymbolsSectionText';
+import { useInView } from 'framer-motion';
 
-const SymbolsSection: FC<IProps> = ({ sectionRef, inView }) => {
+const SymbolsSection: FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(containerRef, {
+    margin: '-200px 0px -200px 0px',
+  });
+
   return (
-    <Section ref={sectionRef}>
+    <Section>
       <HiddenSectionTitle title='Про сенси символів' />
       <GeneralContainer>
-        <Container>
+        <Container ref={containerRef}>
           <AnimatedSymbolsSectionTitle
             text='Бажаєш розгадати сенси символів?'
             inView={inView}
@@ -25,7 +30,7 @@ const SymbolsSection: FC<IProps> = ({ sectionRef, inView }) => {
         </Container>
       </GeneralContainer>
       <PlusesImg src={pluses} alt='Декоративні символи' />
-      <AnimatedSymbolsSectionImages inView={inView} />
+      <AnimatedSymbolsSectionImages />
     </Section>
   );
 };

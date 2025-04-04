@@ -10,6 +10,7 @@ interface ITheme {
     primary: string;
     error: string;
     red: string;
+    blue: string;
   };
   fontFamily: {
     sofiaSans: string;
@@ -46,6 +47,7 @@ const theme: ITheme = {
     primary: '#222222',
     error: '#b75048',
     red: '#e63c00',
+    blue: '#234d73',
   },
   fontFamily: { sofiaSans: 'Sofia Sans', playfairDisplay: 'Playfair Display' },
   // fontWeight: {  },

@@ -4,10 +4,11 @@ import { FC, useRef } from 'react';
 import {
   Container,
   Section,
-  BottleImg,
+  BottlePicture,
   YeyPicture,
 } from './DistillerySection.styled';
 import bottle from '@/images/main/distillery/bottle-min.png';
+import bottleMob from '@/images/main/distillery/bottle-mob-min.png';
 import yeyMob from '@/images/main/distillery/yey-mob-min.png';
 import yeyDesk from '@/images/main/distillery/yey-desk-min.png';
 import { theme } from '@/constants';
@@ -20,14 +21,17 @@ const DistillerySection: FC = () => {
   const inView = useInView(sectionRef, {
     margin: '-300px 0px -300px 0px',
   });
-  const yeyPictureMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
+  const tabletPictureMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
 
   return (
     <Section ref={sectionRef}>
       <DistillerySectionBg />
-      <BottleImg src={bottle} alt='Пляшка' />
+      <BottlePicture>
+        <source srcSet={bottle} media={tabletPictureMedia} />
+        <img src={bottleMob} alt='Пляшка' />
+      </BottlePicture>
       <YeyPicture>
-        <source srcSet={yeyDesk} media={yeyPictureMedia} />
+        <source srcSet={yeyDesk} media={tabletPictureMedia} />
         <img src={yeyMob} alt='Око' />
       </YeyPicture>
       <GeneralContainer>

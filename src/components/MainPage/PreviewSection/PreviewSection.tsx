@@ -1,11 +1,10 @@
 import HiddenSectionTitle from '@GeneralComponents/HiddenSectionTitle';
 import { FC } from 'react';
-import { Section, DeliciousImg, HowGoodImg } from './PreviewSection.styled';
-import delicious from '@/images/main/preview/delicious-min.png';
-import howGood from '@/images/main/preview/how-good-min.png';
+import { Section } from './PreviewSection.styled';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import preview from '@/video/preview.mp4';
 import PreviewSectionPlayer from '@MainPageComponents/PreviewSectionPlayer';
+import AnimatedPreviewSectionImages from '@AnimatedComponents/AnimatedPreviewSectionImages';
 
 const PreviewSection: FC = () => {
   return (
@@ -14,8 +13,7 @@ const PreviewSection: FC = () => {
       <GeneralContainer>
         <PreviewSectionPlayer video={preview} />
       </GeneralContainer>
-      <DeliciousImg src={delicious} alt='Декоративне зображення' />
-      <HowGoodImg src={howGood} alt='Декоративне зображення' />
+      <AnimatedPreviewSectionImages />
     </Section>
   );
 };
