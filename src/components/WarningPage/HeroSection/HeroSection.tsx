@@ -18,6 +18,8 @@ import {
   Title,
   ControlTitle,
   ControlTitleWrap,
+  BgImgPicture,
+  BgImg,
 } from './HeroSection.styled';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent } from '@/types/types';
@@ -26,8 +28,13 @@ import dalmunach from '@/images/warning/hero/dalmunach-min.png';
 import drinkSetter from '@/images/warning/hero/drink-setter-min.png';
 import scyfion from '@/images/warning/hero/scyfion-min.png';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
+import bgImgMob from '@/images/warning/hero/section-bg-mob-min.jpg';
+import bgImgDesk from '@/images/warning/hero/section-bg-desk-min.jpg';
+import { theme } from '@/constants';
 
 const HeroSection: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
+  const bgImgMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
+
   const onAcceptBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
@@ -38,6 +45,10 @@ const HeroSection: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
     <Section>
       <GeneralContainer>
         <Background>
+          <BgImgPicture>
+            <source srcSet={bgImgDesk} media={bgImgMedia} />
+            <BgImg src={bgImgMob} alt='Фонове зображення' />
+          </BgImgPicture>
           <Container>
             <TitleWrap>
               <IconsWrap>

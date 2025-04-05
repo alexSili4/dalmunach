@@ -1,26 +1,32 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/warning/hero/section-bg-mob-min.jpg';
-import sectionBgDesk from '@/images/warning/hero/section-bg-desk-min.jpg';
 
-export const Section = styled.section`
-  background-image: url(${sectionBgMob});
-  background-position: 0 0;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    background-image: url(${sectionBgDesk});
-  }
-`;
+export const Section = styled.section``;
 
 export const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow: hidden;
+`;
+
+export const BgImgPicture = styled.picture`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+`;
+
+export const BgImg = styled.img`
+  max-width: none;
+  width: 100vw;
+  height: 100vh;
 `;
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)}px;

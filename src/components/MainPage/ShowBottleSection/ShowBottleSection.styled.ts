@@ -53,7 +53,8 @@ export const Content = styled.div<IStyledContainerProps>`
 
 export const DeregentImg = styled.img`
   position: absolute;
-  top: 0;
+  z-index: ${({ theme }) => theme.zIndex.bottle + 1000000};
+  top: 35px;
   left: calc(50% - 223px);
   width: 387px;
   height: 330px;
