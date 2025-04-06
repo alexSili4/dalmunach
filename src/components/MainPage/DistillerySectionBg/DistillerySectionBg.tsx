@@ -6,7 +6,7 @@ import otherSectionBgTablet from '@/images/main/distillery/other-section-bg-tabl
 import otherSectionBgDesk from '@/images/main/distillery/other-section-bg-desk-min.png';
 import barrelLid from '@/images/main/distillery/barrel-lid-min.png';
 import {
-  Container,
+  Content,
   SectionBgDesk,
   SectionBgMob,
   SectionBgTablet,
@@ -16,25 +16,38 @@ import {
   CutImgDesk,
   CutImgTablet,
   CutImgMob,
+  Container,
 } from './DistillerySectionBg.styled';
 import cutMob from '@/images/main/distillery/other-section-bg-cut-mob-min.png';
 import cutTablet from '@/images/main/distillery/other-section-bg-cut-tablet-min.png';
 import cutDesk from '@/images/main/distillery/other-section-bg-cut-desk-min.png';
+import { useParallax } from '@/hooks';
 
 const DistillerySectionBg: FC = () => {
+  const { containerRef, translateY } = useParallax();
+
   return (
     <Container>
-      <SectionBgMob src={otherSectionBgMob} alt='Фон' />
-      <SectionBgTablet src={otherSectionBgTablet} alt='Фон' />
-      <SectionBgDesk src={otherSectionBgDesk} alt='Фон' />
-      <BarrelLidImg src={barrelLid} alt='Кришка бочки' />
-      <AnimatedDistillerySectionImages />
-      <CutElement>
-        <CutImgMob src={cutMob} alt='Зріз' />
-        <CutImgTablet src={cutTablet} alt='Зріз' />
-        <CutImgDesk src={cutDesk} alt='Зріз' />
-      </CutElement>
-      <HouseImg src={house} alt='Будинок' />
+      <Content ref={containerRef}>
+        <SectionBgMob src={otherSectionBgMob} alt='Фон' />
+        <SectionBgTablet src={otherSectionBgTablet} alt='Фон' />
+        <SectionBgDesk src={otherSectionBgDesk} alt='Фон' />
+        <BarrelLidImg src={barrelLid} alt='Кришка бочки' />
+        <AnimatedDistillerySectionImages />
+        <CutElement>
+          <CutImgMob src={cutMob} alt='Зріз' />
+          <CutImgTablet src={cutTablet} alt='Зріз' />
+          <CutImgDesk src={cutDesk} alt='Зріз' />
+        </CutElement>
+      </Content>
+      <HouseImg
+        src={house}
+        alt='Будинок'
+        style={{
+          translateY,
+          translateX: '-50%',
+        }}
+      />
     </Container>
   );
 };

@@ -3,18 +3,17 @@ import styled from '@emotion/styled';
 import sectionBgMob from '@/images/main/distillery/section-bg-mob-min.jpg';
 import sectionBgTablet from '@/images/main/distillery/section-bg-tablet-min.jpg';
 import sectionBgDesk from '@/images/main/distillery/section-bg-desk-min.jpg';
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   position: absolute;
   bottom: 91px;
   left: 50%;
-  position: absolute;
-  display: flex;
   width: 100%;
   min-width: 618px;
+  display: flex;
   padding-bottom: ${({ theme }) => theme.spacing(22)}px;
   transform: translateX(-50%);
-  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-bottom: ${({ theme }) => theme.spacing(8)}px;
@@ -23,6 +22,11 @@ export const Container = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-bottom: ${({ theme }) => theme.spacing(11)}px;
   }
+`;
+
+export const Content = styled.div`
+  position: relative;
+  overflow: hidden;
 `;
 
 export const SectionBgMob = styled.img`
@@ -126,13 +130,12 @@ export const CutImgDesk = styled.img`
   }
 `;
 
-export const HouseImg = styled.img`
+export const HouseImg = styled(motion.img)`
   position: absolute;
   bottom: 0px;
   left: 50%;
   width: 238px;
   height: 150px;
-  transform: translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 555px;
