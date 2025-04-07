@@ -9,6 +9,8 @@ export type SetStringsOrNullFunc = (data: StringsOrNull) => void;
 
 export type SetStringOrNullFunc = (data: StringOrNull) => void;
 
+export type SetNumberFunc = (data: number) => void;
+
 export type SetBooleanFunc = (data: boolean) => void;
 
 export type Func = () => void;

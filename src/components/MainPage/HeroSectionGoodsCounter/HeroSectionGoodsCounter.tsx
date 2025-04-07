@@ -1,18 +1,18 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Container } from './HeroSectionGoodsCounter.styled';
 import { SectionsIds } from '@/constants';
-import { useAppStore } from '@/store/store';
-import { selectMaxBottles, selectOrdersCount } from '@/store/app/selectors';
+// import { useAppStore } from '@/store/store';
+// import { selectMaxBottles, selectOrdersCount } from '@/store/app/selectors';
 import HeroSectionGoodsCounterReservedLink from '@MainPageComponents/HeroSectionGoodsCounterReservedLink';
 import HeroSectionGoodsCounterTotal from '@MainPageComponents/HeroSectionGoodsCounterTotal';
 import { getCounterNumbers } from '@/utils';
 
 const HeroSectionGoodsCounter: FC = () => {
-  // const [ordersCount] = useState(100);
-  // const [maxBottles] = useState(325);
+  const [ordersCount] = useState(289);
+  const [maxBottles] = useState(300);
 
-  const ordersCount = useAppStore(selectOrdersCount);
-  const maxBottles = useAppStore(selectMaxBottles);
+  // const ordersCount = useAppStore(selectOrdersCount);
+  // const maxBottles = useAppStore(selectMaxBottles);
 
   const reservedLink = `#${SectionsIds.preOrder}`;
   const counterNumbers = getCounterNumbers({ maxBottles, ordersCount });

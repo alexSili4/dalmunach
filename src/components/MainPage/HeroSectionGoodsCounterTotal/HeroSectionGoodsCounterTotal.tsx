@@ -6,7 +6,7 @@ import {
   Title,
   DecorativeElement,
 } from './HeroSectionGoodsCounterTotal.styled';
-import HeroSectionGoodsCounterNumber from '@MainPageComponents/HeroSectionGoodsCounterNumber';
+import AnimatedHeroSectionGoodsCounterNumber from '@AnimatedComponents/AnimatedHeroSectionGoodsCounterNumber';
 
 const HeroSectionGoodsCounterTotal: FC<IProps> = ({ numbers }) => {
   return (
@@ -15,7 +15,10 @@ const HeroSectionGoodsCounterTotal: FC<IProps> = ({ numbers }) => {
       <Content>
         <DecorativeElement></DecorativeElement>
         {numbers.map((number, index) => (
-          <HeroSectionGoodsCounterNumber key={index} number={Number(number)} />
+          <AnimatedHeroSectionGoodsCounterNumber
+            key={index}
+            number={Number(number)}
+          />
         ))}
       </Content>
     </Container>

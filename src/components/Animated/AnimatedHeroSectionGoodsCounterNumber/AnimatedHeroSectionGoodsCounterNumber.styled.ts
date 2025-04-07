@@ -11,6 +11,7 @@ export const Container = styled(motion.div)`
   border: 1px solid #3b3a39;
   border-radius: 4.5px;
   background-color: rgba(248, 234, 203, 0.5);
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 45px;
@@ -37,24 +38,4 @@ export const NumberBg = styled.div`
     ${({ theme }) => theme.colors.white} 100%
   );
   overflow: hidden;
-`;
-
-export const Number = styled.p`
-  position: relative;
-  color: ${({ theme }) => theme.colors.primary};
-  font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  text-transform: uppercase;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 48px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 64px;
-  }
 `;
