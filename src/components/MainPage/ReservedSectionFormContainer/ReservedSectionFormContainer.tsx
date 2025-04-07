@@ -11,7 +11,7 @@ import ReservedSectionFormSuccessMessage from '@MainPageComponents/ReservedSecti
 import postCard from '@/images/main/reserved/post-card-min.png';
 import AnimatedReservedSectionFormTitle from '@AnimatedComponents/AnimatedReseRvedSectionFormTitle';
 
-const ReservedSectionFormContainer: FC<IProps> = ({ inView }) => {
+const ReservedSectionFormContainer: FC<IProps> = ({ inView, translateY }) => {
   const [error, setError] = useState<StringOrNull>(null);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [invalidFields, setInvalidFields] = useState<StringsOrNull>(null);
@@ -39,7 +39,7 @@ const ReservedSectionFormContainer: FC<IProps> = ({ inView }) => {
   };
 
   return (
-    <Container>
+    <Container style={{ translateY }}>
       <TitleWrap>
         <AnimatedReservedSectionFormTitle
           text='Надішліть свої контактні дані для передзамовлення'

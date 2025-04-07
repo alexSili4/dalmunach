@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import formBg from '@/images/main/reserved/form-bg-min.png';
+import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)}px;
@@ -18,6 +19,7 @@ export const Container = styled.div`
     width: 750px;
     padding: ${({ theme: { spacing } }) =>
       `${spacing(17)}px ${spacing(21)}px ${spacing(20)}px`};
+    transform: none !important;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

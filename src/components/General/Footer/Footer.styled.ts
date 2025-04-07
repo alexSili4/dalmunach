@@ -10,7 +10,6 @@ import footerBgTablet from '@/images/footer/footer-bg-tablet-min.jpg';
 import footerBgDesk from '@/images/footer/footer-bg-desk-min.jpg';
 
 export const StyledFooter = styled.footer`
-  position: relative;
   padding-top: ${({ theme }) => theme.spacing(10)}px;
   padding-bottom: ${({ theme }) => theme.spacing(44)}px;
   background-image: url(${footerBgMob});

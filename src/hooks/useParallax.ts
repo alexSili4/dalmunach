@@ -2,7 +2,7 @@ import { IUseParallax } from '@/types/hooks.types';
 import { useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-const useParallax = (): IUseParallax => {
+const useParallax = (maxTranslateY: number): IUseParallax => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -10,7 +10,11 @@ const useParallax = (): IUseParallax => {
     offset: ['start end', 'end start'],
   });
 
-  const translateY = useTransform(scrollYProgress, [0, 1], [-150, 150]);
+  const translateY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-maxTranslateY, maxTranslateY]
+  );
 
   return { containerRef, translateY };
 };
