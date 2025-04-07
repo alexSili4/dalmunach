@@ -11,10 +11,7 @@ import { useAnimatedSectionTitle } from '@/hooks';
 
 const AnimatedHeroSectionTitle: FC<IProps> = ({ text, inView }) => {
   const { containerVariants, elementVariants, animate, words } =
-    useAnimatedSectionTitle({
-      text,
-      inView,
-    });
+    useAnimatedSectionTitle({ text, inView });
 
   return (
     <Title variants={containerVariants} initial='hidden' animate={animate}>

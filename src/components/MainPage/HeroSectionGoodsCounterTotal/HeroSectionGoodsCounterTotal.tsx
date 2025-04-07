@@ -8,7 +8,7 @@ import {
 } from './HeroSectionGoodsCounterTotal.styled';
 import AnimatedHeroSectionGoodsCounterNumber from '@AnimatedComponents/AnimatedHeroSectionGoodsCounterNumber';
 
-const HeroSectionGoodsCounterTotal: FC<IProps> = ({ numbers }) => {
+const HeroSectionGoodsCounterTotal: FC<IProps> = ({ numbers, isLoaded }) => {
   return (
     <Container>
       <Title>залишилося пляшок</Title>
@@ -18,6 +18,7 @@ const HeroSectionGoodsCounterTotal: FC<IProps> = ({ numbers }) => {
           <AnimatedHeroSectionGoodsCounterNumber
             key={index}
             number={Number(number)}
+            isLoaded={isLoaded}
           />
         ))}
       </Content>

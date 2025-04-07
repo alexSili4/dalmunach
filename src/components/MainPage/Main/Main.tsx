@@ -14,8 +14,9 @@ import DecorativeBottle from '@MainPageComponents/DecorativeBottle';
 import { bottleImgs } from '@/constants';
 import { unDisableScroll } from '@/utils';
 import ProjectOwnersSection from '@MainPageComponents/ProjectOwnersSection';
+import { IProps } from './Main.types';
 
-const Main: FC = () => {
+const Main: FC<IProps> = ({ isLoaded }) => {
   const [showHandAnimation, setShowHandAnimation] = useState<boolean>(false);
   const [showBottleAnimation, setShowBottleAnimation] =
     useState<boolean>(false);
@@ -67,14 +68,16 @@ const Main: FC = () => {
 
   return (
     <Container ref={containerRef}>
-      <DecorativeBottle
-        onAnimationComplete={onHandAnimationComplete}
-        bottleScale={bottleScale}
-        showAnimation={showHandAnimation}
-        activeIndex={decorativeBottleActiveIndex}
-        bottleImgs={bottleImgs}
-      />
-      <HeroSection />
+      {isLoaded && (
+        <DecorativeBottle
+          onAnimationComplete={onHandAnimationComplete}
+          bottleScale={bottleScale}
+          showAnimation={showHandAnimation}
+          activeIndex={decorativeBottleActiveIndex}
+          bottleImgs={bottleImgs}
+        />
+      )}
+      <HeroSection isLoaded={isLoaded} />
       <AboutSection sectionRef={aboutSectionRef} inView={aboutSectionInView} />
       <HistorySection />
       <PreviewSection />

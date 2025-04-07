@@ -1,16 +1,16 @@
 import { VariantLabels, Variants } from 'framer-motion';
 import { MotionValueNumber, RefDivObject, Strings } from './types';
 
-export interface IUseAnimatedSectionTitleProps {
-  text?: string;
-  inView: boolean;
-}
-
 export interface IUseAnimatedSectionTitle {
   elementVariants: Variants;
   containerVariants: Variants;
   animate: VariantLabels;
   words: Strings;
+}
+
+export interface IUseAnimatedSectionTitleProps {
+  text?: string;
+  inView: boolean;
 }
 
 export interface IUseAnimatedSectionTextProps {

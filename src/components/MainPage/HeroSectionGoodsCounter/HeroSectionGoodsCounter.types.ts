@@ -5,3 +5,7 @@ export interface IStyledBackgroundProps {
 export interface IStyledReservedQuantityWrapProps {
   progress: number;
 }
+
+export interface IProps {
+  isLoaded: boolean;
+}

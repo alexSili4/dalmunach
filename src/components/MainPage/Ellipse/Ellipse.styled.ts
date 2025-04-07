@@ -1,7 +1,8 @@
 import { animations } from '@/constants';
 import styled from '@emotion/styled';
+import { IStyledContainerProps } from './Ellipse.types';
 
-export const Container = styled.div`
+export const Container = styled.div<IStyledContainerProps>`
   position: absolute;
   top: 176px;
   left: 50%;
@@ -11,7 +12,8 @@ export const Container = styled.div`
   border-radius: 50%;
   transform: translateX(-50%);
   opacity: 0.2;
-  animation: ${animations.ellipse} 2000ms;
+  animation: ${animations.ellipse} 2000ms linear
+    ${({ isAnimationEnd }) => !isAnimationEnd && 'infinite'} alternate;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 202px;

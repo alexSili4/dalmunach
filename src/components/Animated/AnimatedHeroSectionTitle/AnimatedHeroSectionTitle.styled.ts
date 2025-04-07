@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
+export const Container = styled.div``;
+
 export const Title = styled(motion.h1)`
   width: 205px;
 

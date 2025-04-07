@@ -7,13 +7,17 @@ import { IProps } from './AnimatedHeroSectionGoodsCounterNumber.types';
 import AnimatedHeroSectionGoodsCounterAllNumbers from '@AnimatedComponents/AnimatedHeroSectionGoodsCounterAllNumbers';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
 
-const AnimatedHeroSectionGoodsCounterNumber: FC<IProps> = ({ number }) => {
+const AnimatedHeroSectionGoodsCounterNumber: FC<IProps> = ({
+  number,
+  isLoaded,
+}) => {
   const [numberHeight, setNumberHeight] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     margin: '-10px 0px -10px 0px',
   });
-  const animate: VariantLabels = inView ? 'visible' : 'hidden';
+  const counterInView = isLoaded && inView;
+  const animate: VariantLabels = counterInView ? 'visible' : 'hidden';
   const translateY = numberHeight * (number + 1);
 
   const transition: Transition = {

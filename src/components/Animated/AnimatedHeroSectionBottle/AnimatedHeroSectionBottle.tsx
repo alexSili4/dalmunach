@@ -2,13 +2,15 @@ import { FC, useRef } from 'react';
 import { Bottle, Container } from './AnimatedHeroSectionBottle.styled';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
 import { bottleImgs } from '@/constants';
+import { IProps } from './AnimatedHeroSectionBottle.types';
 
-const AnimatedHeroSectionBottle: FC = () => {
+const AnimatedHeroSectionBottle: FC<IProps> = ({ isLoaded }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     margin: '-250px 0px -230px 0px',
   });
-  const animate: VariantLabels = inView ? 'visible' : 'hidden';
+  const bottleInView = isLoaded && inView;
+  const animate: VariantLabels = bottleInView ? 'visible' : 'hidden';
 
   const transition: Transition = {
     type: 'spring',

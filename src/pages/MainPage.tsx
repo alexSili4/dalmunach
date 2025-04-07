@@ -1,15 +1,26 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import Main from '@MainPageComponents/Main';
 import Header from '@GeneralComponents/Header';
-// import { useAllImagesVisible } from '@/hooks';
+import { useAllImagesVisible } from '@/hooks';
+import { disableScroll, unDisableScroll } from '@/utils';
 
 const MainPage: FC = () => {
-  // const allImagesVisible = useAllImagesVisible();
+  const allImagesVisible = useAllImagesVisible();
+
+  useEffect(() => {
+    disableScroll();
+  }, []);
+
+  useEffect(() => {
+    if (allImagesVisible) {
+      unDisableScroll();
+    }
+  }, [allImagesVisible]);
 
   return (
     <>
       <Header />
-      <Main />
+      <Main isLoaded={allImagesVisible} />
     </>
   );
 };

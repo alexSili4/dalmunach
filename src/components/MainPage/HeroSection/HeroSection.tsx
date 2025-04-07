@@ -15,29 +15,32 @@ import girl from '@/images/main/hero/girl-min.png';
 import birdBg from '@/images/main/hero/bird-bg-min.png';
 import bird from '@/images/main/hero/bird-min.png';
 import AnimatedHeroSectionBottle from '@AnimatedComponents/AnimatedHeroSectionBottle';
-import { useInView } from 'framer-motion';
 import AnimatedHeroSectionTitle from '@AnimatedComponents/AnimatedHeroSectionTitle';
 import Ellipse from '@MainPageComponents/Ellipse';
+import { IProps } from './HeroSection.types';
+import { useInView } from 'framer-motion';
 
-const HeroSection: FC = () => {
+const HeroSection: FC<IProps> = ({ isLoaded }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(sectionRef, {
-    margin: '-300px 0px -300px 0px',
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerInView = useInView(containerRef, {
+    margin: '-100px 0px -100px 0px',
   });
+  const inView = containerInView && isLoaded;
 
   return (
     <Section ref={sectionRef}>
-      <Ellipse></Ellipse>
+      <Ellipse isLoaded={isLoaded}></Ellipse>
       <GeneralContainer>
         <Container>
-          <TextWrap>
+          <TextWrap ref={containerRef}>
             <AnimatedHeroSectionTitle
               text='Single Malt Scotch Whisky'
               inView={inView}
             />
             <Subtitle>Product of Scotland</Subtitle>
           </TextWrap>
-          <HeroSectionGoodsCounter />
+          <HeroSectionGoodsCounter isLoaded={isLoaded} />
         </Container>
       </GeneralContainer>
       <GirlImg src={girl} alt='Дівчина' />
@@ -45,7 +48,7 @@ const HeroSection: FC = () => {
         <BirdImgBg src={birdBg} alt='Фон' />
         <BirdImg src={bird} alt='Птах' />
       </BirdImgWrap>
-      <AnimatedHeroSectionBottle />
+      <AnimatedHeroSectionBottle isLoaded={isLoaded} />
     </Section>
   );
 };
