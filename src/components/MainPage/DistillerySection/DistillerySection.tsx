@@ -1,26 +1,15 @@
-import { useInView } from 'framer-motion';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
-import { FC, useRef } from 'react';
-import {
-  Container,
-  Section,
-  BottlePicture,
-  YeyPicture,
-} from './DistillerySection.styled';
+import { FC } from 'react';
+import { Container, Section, BottlePicture } from './DistillerySection.styled';
 import bottle from '@/images/main/distillery/bottle-min.png';
 import bottleMob from '@/images/main/distillery/bottle-mob-min.png';
-import yeyMob from '@/images/main/distillery/yey-mob-min.png';
-import yeyDesk from '@/images/main/distillery/yey-desk-min.png';
 import { theme } from '@/constants';
 import AnimatedDistillerySectionTitle from '@AnimatedComponents/AnimatedDistillerySectionTitle';
 import AnimatedDistillerySectionText from '@AnimatedComponents/AnimatedDistillerySectionText';
 import DistillerySectionBg from '@MainPageComponents/DistillerySectionBg';
+import { IProps } from './DistillerySection.types';
 
-const DistillerySection: FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(sectionRef, {
-    margin: '-300px 0px -300px 0px',
-  });
+const DistillerySection: FC<IProps> = ({ sectionRef, inView }) => {
   const tabletPictureMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
 
   return (
@@ -30,10 +19,6 @@ const DistillerySection: FC = () => {
         <source srcSet={bottle} media={tabletPictureMedia} />
         <img src={bottleMob} alt='Пляшка' />
       </BottlePicture>
-      <YeyPicture>
-        <source srcSet={yeyDesk} media={tabletPictureMedia} />
-        <img src={yeyMob} alt='Око' />
-      </YeyPicture>
       <GeneralContainer>
         <Container>
           <AnimatedDistillerySectionTitle

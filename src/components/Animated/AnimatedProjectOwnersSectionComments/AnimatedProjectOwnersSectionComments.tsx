@@ -12,8 +12,14 @@ import {
   TitleWrap,
   ZamoskovnyyRuslanImg,
   ContentWrap,
+  CommentBgPicture,
 } from './AnimatedProjectOwnersSectionComments.styled';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
+import commentBgMob from '@/images/main/projectOwners/comment-bg-mob-min.png';
+import commentBgTablet from '@/images/main/projectOwners/comment-bg-tablet-min.png';
+import commentBgDesk from '@/images/main/projectOwners/comment-bg-desk-min.png';
+import { theme } from '@/constants';
+import Quotes from '@/icons/projectOwners/quotes.svg?react';
 
 const AnimatedProjectOwnersSectionComments: FC = () => {
   const firstCommentImgRef = useRef<HTMLImageElement>(null);
@@ -30,6 +36,8 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
   const secondCommentImgAnimate: VariantLabels = secondCommentImgInView
     ? 'visible'
     : 'hidden';
+  const bgTabletMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
+  const bgDeskMedia = `(min-width: ${theme.breakpoints.desktop}px)`;
 
   const transitionWithDelay: Transition = {
     type: 'spring',
@@ -111,6 +119,12 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
         animate={firstCommentImgAnimate}
       >
         <ContentWrap variants={firstCommentVariants}>
+          <CommentBgPicture>
+            <source srcSet={commentBgDesk} media={bgDeskMedia} />
+            <source srcSet={commentBgTablet} media={bgTabletMedia} />
+            <img src={commentBgMob} alt='Декоративне зображення' />
+          </CommentBgPicture>
+          <Quotes />
           <TextWrap>
             <Text>
               Аромат: солод, білий виноград, літні яблука, ноти лимонної цедри,
@@ -141,6 +155,12 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
         isFlexEnd
       >
         <ContentWrap variants={secondCommentVariants}>
+          <CommentBgPicture>
+            <source srcSet={commentBgDesk} media={bgDeskMedia} />
+            <source srcSet={commentBgTablet} media={bgTabletMedia} />
+            <img src={commentBgMob} alt='Декоративне зображення' />
+          </CommentBgPicture>
+          <Quotes />
           <TextWrap>
             <Text>
               Колір: світло-солом’яний, блискучий. Аромат: трава, солоджений

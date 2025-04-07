@@ -1,7 +1,3 @@
-import commentBgMob from '@/images/main/projectOwners/comment-bg-mob-min.png';
-import commentBgTablet from '@/images/main/projectOwners/comment-bg-tablet-min.png';
-import commentBgDesk from '@/images/main/projectOwners/comment-bg-desk-min.png';
-import quotes from '@/icons/projectOwners/quotes.svg';
 import { IStyledCommentProps } from './AnimatedProjectOwnersSectionComments.types';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
@@ -39,29 +35,50 @@ export const Comment = styled(motion.div)<IStyledCommentProps>`
 
 export const ContentWrap = styled(motion.div)`
   padding: ${({ theme: { spacing } }) => `${spacing(16)}px ${spacing(6)}px`};
-  background-image: url(${quotes}), url(${commentBgMob});
-  background-position: top 24px left 24px, 0 0;
-  background-size: 33px 24px, 100% 100%;
-  background-repeat: no-repeat;
+
+  & > svg {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 33px;
+    height: 24px;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      top: 28px;
+      left: 30px;
+      width: 25px;
+      height: 18px;
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+      top: 40px;
+      left: 40px;
+      width: 33px;
+      height: 24px;
+    }
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: ${({ theme: { spacing } }) =>
       `${spacing(7)}px ${spacing(10)}px ${spacing(15)}px ${spacing(18)}px`};
-    background-image: url(${quotes}), url(${commentBgTablet});
-    background-position: top 28px left 30px, 0 0;
-    background-size: 25px 18px, 100% 100%;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     padding: ${({ theme: { spacing } }) =>
       `${spacing(10)}px ${spacing(13)}px ${spacing(20)}px ${spacing(24)}px`};
-    background-image: url(${quotes}), url(${commentBgDesk});
-    background-position: top 40px left 40px, 0 0;
-    background-size: 33px 24px, 100% 100%;
   }
 `;
 
+export const CommentBgPicture = styled.picture`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 export const TextWrap = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)}px;

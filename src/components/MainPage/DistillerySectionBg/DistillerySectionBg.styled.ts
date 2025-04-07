@@ -12,8 +12,13 @@ export const Container = styled.div`
   width: 100%;
   min-width: 618px;
   display: flex;
-  padding-bottom: ${({ theme }) => theme.spacing(22)}px;
   transform: translateX(-50%);
+`;
+
+export const Content = styled.div`
+  position: relative;
+  padding-bottom: ${({ theme }) => theme.spacing(22)}px;
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-bottom: ${({ theme }) => theme.spacing(8)}px;
@@ -22,11 +27,6 @@ export const Container = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-bottom: ${({ theme }) => theme.spacing(11)}px;
   }
-`;
-
-export const Content = styled.div`
-  position: relative;
-  overflow: hidden;
 `;
 
 export const SectionBgMob = styled.img`

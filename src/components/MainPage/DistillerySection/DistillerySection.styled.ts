@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import sectionBgMob from '@/images/main/distillery/section-bg-mob-min.jpg';
 import sectionBgTablet from '@/images/main/distillery/section-bg-tablet-min.jpg';
 import sectionBgDesk from '@/images/main/distillery/section-bg-desk-min.jpg';
-import { animations } from '@/constants';
 
 export const Section = styled.section`
   position: relative;
@@ -63,29 +62,5 @@ export const BottlePicture = styled.picture`
     right: 801px;
     width: 106px;
     height: 232px;
-  }
-`;
-
-export const YeyPicture = styled.picture`
-  position: absolute;
-  top: 237px;
-  right: 14px;
-  width: 302px;
-  height: 114px;
-  transform-origin: right center;
-  animation: ${animations.scanner} 6s infinite alternate;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 347px;
-    right: 167px;
-    width: 444px;
-    height: 261px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 462px;
-    right: 223px;
-    width: 592px;
-    height: 347px;
   }
 `;

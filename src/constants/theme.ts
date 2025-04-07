@@ -34,6 +34,7 @@ interface ITheme {
     heroTitle: number;
     bottle: number;
     saxophonist: number;
+    yey: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => number;
@@ -71,6 +72,7 @@ const theme: ITheme = {
     heroTitle: 10,
     saxophonist: 10,
     bottle: 100,
+    yey: 1000,
   },
   // shadows: {  },
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',

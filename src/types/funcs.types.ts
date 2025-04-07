@@ -41,3 +41,10 @@ export interface IGetInvalidFormFields {
   errorMessage: string;
   invalidFields: Strings;
 }
+
+export interface IGetEyeAngleDegProps {
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
+}

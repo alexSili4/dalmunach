@@ -15,6 +15,8 @@ import { bottleImgs } from '@/constants';
 import { unDisableScroll } from '@/utils';
 import ProjectOwnersSection from '@MainPageComponents/ProjectOwnersSection';
 import { IProps } from './Main.types';
+import AnimatedEyeImg from '@AnimatedComponents/AnimatedEyeImg';
+import { useIsDesk, useIsTablet } from '@/hooks';
 
 const Main: FC<IProps> = ({ isLoaded }) => {
   const [showHandAnimation, setShowHandAnimation] = useState<boolean>(false);
@@ -23,6 +25,20 @@ const Main: FC<IProps> = ({ isLoaded }) => {
   const aboutSectionRef = useRef<HTMLDivElement>(null);
   const aboutSectionInView = useInView(aboutSectionRef, {
     margin: '-300px 0px -300px 0px',
+  });
+  const distillerySectionRef = useRef<HTMLDivElement>(null);
+  const distillerySectionInView = useInView(distillerySectionRef, {
+    margin: '-300px 0px -300px 0px',
+  });
+  const isDesk = useIsDesk();
+  const isTablet = useIsTablet();
+  const distillerySectionMargin = isDesk
+    ? '-800px 0px -300px 0px'
+    : isTablet
+    ? '-300px 0px -300px 0px'
+    : '-700px 0px -200px 0px';
+  const distillerySectionInViewWithMargin = useInView(distillerySectionRef, {
+    margin: distillerySectionMargin,
   });
   const showBottleSectionContainerRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -49,7 +65,25 @@ const Main: FC<IProps> = ({ isLoaded }) => {
       clamp: true,
     }
   );
-
+  const { scrollYProgress: distillerySectionScrollProgress } = useScroll({
+    target: distillerySectionRef,
+    offset: ['start end', 'end start'],
+  });
+  const eyeRotateInputRange = isDesk
+    ? [0, 0.35, 1]
+    : isTablet
+    ? [0, 0.3, 1]
+    : [0, 0.42, 1];
+  const eyeRotateOutputRange = isDesk
+    ? [-40, 0, 120]
+    : isTablet
+    ? [-40, 0, 120]
+    : [-120, 0, 120];
+  const eyeRotate = useTransform(
+    distillerySectionScrollProgress,
+    eyeRotateInputRange,
+    eyeRotateOutputRange
+  );
   const updateShowHandAnimation = (data: boolean) => {
     setShowHandAnimation(data);
   };
@@ -77,6 +111,10 @@ const Main: FC<IProps> = ({ isLoaded }) => {
           bottleImgs={bottleImgs}
         />
       )}
+      <AnimatedEyeImg
+        inView={distillerySectionInViewWithMargin}
+        rotate={eyeRotate}
+      />
       <HeroSection isLoaded={isLoaded} />
       <AboutSection sectionRef={aboutSectionRef} inView={aboutSectionInView} />
       <HistorySection />
@@ -88,7 +126,10 @@ const Main: FC<IProps> = ({ isLoaded }) => {
       />
       <OtherSectionsWrap>
         <SymbolsSection />
-        <DistillerySection />
+        <DistillerySection
+          sectionRef={distillerySectionRef}
+          inView={distillerySectionInView}
+        />
         <ProjectOwnersSection />
         <ReservedSection />
         <Footer />
