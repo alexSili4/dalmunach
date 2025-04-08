@@ -1,4 +1,4 @@
-import { VariantLabels, Variants } from 'framer-motion';
+import { Transition, VariantLabels, Variants } from 'framer-motion';
 import { Symbols } from '@/constants';
 import {
   IUseAnimatedSectionTextProps,
@@ -8,13 +8,20 @@ import {
 const useAnimatedSectionText = ({
   text = '',
   inView,
+  delay = 0,
 }: IUseAnimatedSectionTextProps): IUseAnimatedSectionText => {
   const animate: VariantLabels = inView ? 'visible' : 'hidden';
   const words = text.split(Symbols.space);
 
-  const transition = {
-    duration: 0.9,
+  const transition: Transition = {
+    duration: 0.8,
     ease: [0.25, 0.1, 0.25, 1],
+  };
+
+  const transitionWithDelay: Transition = {
+    duration: 0.8,
+    ease: [0.25, 0.1, 0.25, 1],
+    delay,
   };
 
   const containerVariants: Variants = {
@@ -31,7 +38,7 @@ const useAnimatedSectionText = ({
     visible: {
       y: 0,
       opacity: 1,
-      transition,
+      transition: transitionWithDelay,
     },
   };
 

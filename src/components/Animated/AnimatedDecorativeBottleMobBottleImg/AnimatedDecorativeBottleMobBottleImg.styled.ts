@@ -7,5 +7,6 @@ export const Bottle = styled(motion.img)<IStyledBottleProps>`
     isPositionAbsolute ? 'absolute' : 'relative'};
   top: 0;
   left: 0;
-  width: 150px;
+  width: 300px;
+  max-width: 300px;
 `;

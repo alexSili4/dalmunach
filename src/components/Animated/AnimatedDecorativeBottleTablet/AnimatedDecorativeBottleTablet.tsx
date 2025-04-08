@@ -31,7 +31,7 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({
         style={{
           scale,
           translateX: '-50%',
-          translateY: '-50%',
+          translateY: '-43%',
           transformOrigin: 'center bottom',
         }}
       >

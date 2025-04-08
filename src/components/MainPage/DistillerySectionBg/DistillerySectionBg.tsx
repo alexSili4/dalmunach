@@ -24,7 +24,7 @@ import cutDesk from '@/images/main/distillery/other-section-bg-cut-desk-min.png'
 import { useParallax } from '@/hooks';
 
 const DistillerySectionBg: FC = () => {
-  const { containerRef, translateY } = useParallax(150);
+  const { containerRef, translateY } = useParallax(70);
 
   return (
     <Container>

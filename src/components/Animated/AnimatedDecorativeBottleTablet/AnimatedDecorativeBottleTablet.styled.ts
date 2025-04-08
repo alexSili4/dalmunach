@@ -16,35 +16,33 @@ export const Container = styled.div`
 export const BottleWrap = styled(motion.div)`
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 53%;
 `;
 
 export const HandImg = styled(motion.img)`
   position: absolute;
-  top: -164px;
-  left: -146px;
+  top: -120px;
+  left: -78px;
   max-width: 2000px;
-  height: 289px;
+  height: 250px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: -243px;
-    left: -195px;
-    height: 385px;
+    top: -170px;
+    left: -105px;
+    height: 320px;
   }
 `;
 
 export const StandImg = styled(motion.img)`
   position: absolute;
-  left: -227px;
-  bottom: -187px;
+  left: -190px;
+  bottom: -120px;
   max-width: 2000px;
   width: 646px;
-  height: 363px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    bottom: -250px;
-    left: -303px;
-    width: 861px;
-    height: 484px;
+    bottom: -200px;
+    left: -250px;
+    width: 800px;
   }
 `;

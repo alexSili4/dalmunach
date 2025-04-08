@@ -12,6 +12,7 @@ const useAllImagesVisible = (sectionRef: RefDivObject): boolean => {
     }
 
     const imgs = Array.from(container.querySelectorAll('img'));
+
     const total = imgs.length;
     let loaded = 0;
 

@@ -17,6 +17,7 @@ export interface IUseAnimatedSectionTitleProps {
 export interface IUseAnimatedSectionTextProps {
   text?: string;
   inView: boolean;
+  delay?: number;
 }
 
 export interface IUseAnimatedSectionText {

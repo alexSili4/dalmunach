@@ -4,23 +4,10 @@ import zamoskovnyyRuslan from '@/images/main/projectOwners/zamoskovnyy-ruslan-mi
 import {
   Container,
   BlyznyukPlatonImg,
-  Comment,
-  Subtitle,
-  Text,
-  TextWrap,
-  Title,
-  TitleWrap,
   ZamoskovnyyRuslanImg,
-  ContentWrap,
-  CommentBgPicture,
-  CommentBgImg,
 } from './AnimatedProjectOwnersSectionComments.styled';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
-import commentBgMob from '@/images/main/projectOwners/comment-bg-mob-min.png';
-import commentBgTablet from '@/images/main/projectOwners/comment-bg-tablet-min.png';
-import commentBgDesk from '@/images/main/projectOwners/comment-bg-desk-min.png';
-import { theme } from '@/constants';
-import Quotes from '@/icons/projectOwners/quotes.svg?react';
+import AnimatedProjectOwnersSectionCommentDetails from '@AnimatedComponents/AnimatedProjectOwnersSectionCommentDetails';
 
 const AnimatedProjectOwnersSectionComments: FC = () => {
   const firstCommentImgRef = useRef<HTMLImageElement>(null);
@@ -37,8 +24,16 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
   const secondCommentImgAnimate: VariantLabels = secondCommentImgInView
     ? 'visible'
     : 'hidden';
-  const bgTabletMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
-  const bgDeskMedia = `(min-width: ${theme.breakpoints.desktop}px)`;
+  const firstCommentText = [
+    'Аромат: солод, білий виноград, літні яблука, ноти лимонної цедри, спецій. Ваніль та трохи вершковості.',
+    'Смак: сильний початок, збалансований. Фрукти, трохи зеленого банана, грейпфрут, трава та соснові голки.',
+    'Посмак: середньої тривалості. Фруктові ноти протягом усього.',
+  ];
+  const secondCommentText = [
+    'Колір: світло-солом’яний, блискучий. Аромат: трава, солоджений ячмінь, зелене яблуко, цитруси, парфумність.',
+    'Смак: збалансованість, пряність, гірчинка грейпфрута, фруктова солодкість, льодяники, свіжість.',
+    'Посмак: середній, пряний, м’ята, зелений банан.',
+  ];
 
   const transitionWithDelay: Transition = {
     type: 'spring',
@@ -55,7 +50,7 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
     duration: 0.8,
   };
 
-  const commentContainerVariants: Variants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: {},
   };
@@ -114,77 +109,39 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
 
   return (
     <Container>
-      <Comment
-        variants={commentContainerVariants}
-        initial='hidden'
+      <AnimatedProjectOwnersSectionCommentDetails
         animate={firstCommentImgAnimate}
+        containerVariants={containerVariants}
+        elementVariants={firstCommentVariants}
+        title='Замосковний Руслан'
+        subtitle='Засновник проекту Scyfion'
+        strings={firstCommentText}
+        inView={firstCommentImgInView}
       >
-        <ContentWrap variants={firstCommentVariants}>
-          <CommentBgPicture>
-            <source srcSet={commentBgDesk} media={bgDeskMedia} />
-            <source srcSet={commentBgTablet} media={bgTabletMedia} />
-            <CommentBgImg src={commentBgMob} alt='Декоративне зображення' />
-          </CommentBgPicture>
-          <Quotes />
-          <TextWrap>
-            <Text>
-              Аромат: солод, білий виноград, літні яблука, ноти лимонної цедри,
-              спецій. Ваніль та трохи вершковості.
-              <br />
-              Смак: сильний початок, збалансований. Фрукти, трохи зеленого
-              банана, грейпфрут, трава та соснові голки.
-              <br />
-              Посмак: середньої тривалості. Фруктові ноти протягом усього.
-            </Text>
-            <TitleWrap>
-              <Title>Замосковний Руслан</Title>
-              <Subtitle>Співвласник проекту Scyfion</Subtitle>
-            </TitleWrap>
-          </TextWrap>
-        </ContentWrap>
         <ZamoskovnyyRuslanImg
           ref={firstCommentImgRef}
           src={zamoskovnyyRuslan}
           alt='Замосковний Руслан'
           variants={firstCommentImgVariants}
         />
-      </Comment>
-      <Comment
-        variants={commentContainerVariants}
-        initial='hidden'
+      </AnimatedProjectOwnersSectionCommentDetails>
+      <AnimatedProjectOwnersSectionCommentDetails
         animate={secondCommentImgAnimate}
+        containerVariants={containerVariants}
+        elementVariants={secondCommentVariants}
+        title='Близнюк Платон'
+        subtitle='Співвласник проекту Scyfion'
+        strings={secondCommentText}
+        inView={secondCommentImgInView}
         isFlexEnd
       >
-        <ContentWrap variants={secondCommentVariants}>
-          <CommentBgPicture>
-            <source srcSet={commentBgDesk} media={bgDeskMedia} />
-            <source srcSet={commentBgTablet} media={bgTabletMedia} />
-            <CommentBgImg src={commentBgMob} alt='Декоративне зображення' />
-          </CommentBgPicture>
-          <Quotes />
-          <TextWrap>
-            <Text>
-              Колір: світло-солом’яний, блискучий. Аромат: трава, солоджений
-              ячмінь, зелене яблуко, цитруси, парфумність.
-              <br />
-              Смак: збалансованість, пряність, гірчинка грейпфрута, фруктова
-              солодкість, льодяники, свіжість.
-              <br />
-              Посмак: середній, пряний, м’ята, зелений банан.
-            </Text>
-            <TitleWrap>
-              <Title>Близнюк Платон</Title>
-              <Subtitle>Співвласник проекту Scyfion</Subtitle>
-            </TitleWrap>
-          </TextWrap>
-        </ContentWrap>
         <BlyznyukPlatonImg
           ref={secondCommentImgRef}
           src={blyznyukPlaton}
           alt='Близнюк Платон'
           variants={secondCommentImgVariants}
         />
-      </Comment>
+      </AnimatedProjectOwnersSectionCommentDetails>
     </Container>
   );
 };
