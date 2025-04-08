@@ -12,11 +12,12 @@ import Footer from '@GeneralComponents/Footer';
 import { useInView } from 'framer-motion';
 import DecorativeBottle from '@MainPageComponents/DecorativeBottle';
 import ProjectOwnersSection from '@MainPageComponents/ProjectOwnersSection';
-import { IProps } from './Main.types';
 import AnimatedEyeImg from '@AnimatedComponents/AnimatedEyeImg';
-import { useBottleAnimation, useEyeAnimation } from '@/hooks';
+import { useBottleAnimation, useEyeAnimation, useLoader } from '@/hooks';
 
-const Main: FC<IProps> = ({ isLoaded }) => {
+const Main: FC = () => {
+  const heroSectionRef = useRef<HTMLDivElement>(null);
+  const isLoaded = useLoader(heroSectionRef);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
   const aboutSectionInView = useInView(aboutSectionRef, {
     margin: '-300px 0px -300px 0px',
@@ -51,7 +52,7 @@ const Main: FC<IProps> = ({ isLoaded }) => {
         />
       )}
       <AnimatedEyeImg inView={inView} rotate={rotate} />
-      <HeroSection isLoaded={isLoaded} />
+      <HeroSection sectionRef={heroSectionRef} isLoaded={isLoaded} />
       <AboutSection sectionRef={aboutSectionRef} inView={aboutSectionInView} />
       <HistorySection />
       <PreviewSection />

@@ -1,10 +1,17 @@
+import { RefDivObject } from '@/types/types';
 import { useEffect, useState } from 'react';
 
-const useAllImagesVisible = (): boolean => {
+const useAllImagesVisible = (sectionRef: RefDivObject): boolean => {
   const [allLoaded, setAllLoaded] = useState(false);
 
   useEffect(() => {
-    const imgs = Array.from(document.querySelectorAll('img'));
+    const container = sectionRef.current;
+
+    if (!container) {
+      return;
+    }
+
+    const imgs = Array.from(container.querySelectorAll('img'));
     const total = imgs.length;
     let loaded = 0;
 

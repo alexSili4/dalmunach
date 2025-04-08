@@ -10,7 +10,7 @@ import {
   BirdImgBg,
   BirdImg,
 } from './HeroSection.styled';
-import HeroSectionGoodsCounter from '@MainPageComponents/HeroSectionGoodsCounter';
+import AnimatedHeroSectionGoodsCounter from '@AnimatedComponents/AnimatedHeroSectionGoodsCounter';
 import girl from '@/images/main/hero/girl-min.png';
 import birdBg from '@/images/main/hero/bird-bg-min.png';
 import bird from '@/images/main/hero/bird-min.png';
@@ -20,8 +20,7 @@ import Ellipse from '@MainPageComponents/Ellipse';
 import { IProps } from './HeroSection.types';
 import { useInView } from 'framer-motion';
 
-const HeroSection: FC<IProps> = ({ isLoaded }) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+const HeroSection: FC<IProps> = ({ isLoaded, sectionRef }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerInView = useInView(containerRef, {
     margin: '-100px 0px -100px 0px',
@@ -40,7 +39,7 @@ const HeroSection: FC<IProps> = ({ isLoaded }) => {
             />
             <Subtitle>Product of Scotland</Subtitle>
           </TextWrap>
-          <HeroSectionGoodsCounter isLoaded={isLoaded} />
+          <AnimatedHeroSectionGoodsCounter isLoaded={isLoaded} />
         </Container>
       </GeneralContainer>
       <GirlImg src={girl} alt='Дівчина' />

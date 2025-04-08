@@ -8,3 +8,4 @@ export { default as useIsDesk } from './useIsDesk';
 export { default as useIsTablet } from './useIsTablet';
 export { default as useBottleAnimation } from './useBottleAnimation';
 export { default as useEyeAnimation } from './useEyeAnimation';
+export { default as useLoader } from './useLoader';

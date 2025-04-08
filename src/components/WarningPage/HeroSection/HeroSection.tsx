@@ -32,7 +32,10 @@ import bgImgMob from '@/images/warning/hero/section-bg-mob-min.jpg';
 import bgImgDesk from '@/images/warning/hero/section-bg-desk-min.jpg';
 import { theme } from '@/constants';
 
-const HeroSection: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
+const HeroSection: FC<IProps> = ({
+  updateIsLegalDrinkingAgeUser,
+  sectionRef,
+}) => {
   const bgImgMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
 
   const onAcceptBtnClick = (e: BtnClickEvent) => {
@@ -42,7 +45,7 @@ const HeroSection: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
   };
 
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <GeneralContainer>
         <Background>
           <BgImgPicture>

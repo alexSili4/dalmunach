@@ -1,20 +1,24 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import Warning from '@WarningPageComponents/Warning';
 import { SetBooleanFunc } from '@/types/funcs.types';
 import Loader from '@WarningPageComponents/Loader';
-import { useAllImagesVisible } from '@/hooks';
+import { useLoader } from '@/hooks';
 
 export interface IProps {
   updateIsLegalDrinkingAgeUser: SetBooleanFunc;
 }
 
 const WarningPage: FC<IProps> = ({ updateIsLegalDrinkingAgeUser }) => {
-  const allImagesVisible = useAllImagesVisible();
+  const heroSectionRef = useRef<HTMLDivElement>(null);
+  const isLoaded = useLoader(heroSectionRef);
 
   return (
     <>
-      <Warning updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser} />
-      {!allImagesVisible && <Loader />}
+      <Warning
+        updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
+        heroSectionRef={heroSectionRef}
+      />
+      {!isLoaded && <Loader />}
     </>
   );
 };

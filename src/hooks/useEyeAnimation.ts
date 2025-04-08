@@ -11,7 +11,7 @@ const useEyeAnimation = (sectionRef: RefDivObject): IUseEyeAnimation => {
   const nextSectionInView = useInView(nextSectionRef, {
     margin: nextSectionMargin,
   });
-  const margin = isDesk ? '-500px' : '-300px';
+  const margin = isDesk ? '0px 0px -900px 0px' : '0px 0px -600px 0px';
   const animationIView = useInView(sectionRef, {
     margin,
   });
@@ -19,7 +19,7 @@ const useEyeAnimation = (sectionRef: RefDivObject): IUseEyeAnimation => {
     target: sectionRef,
     offset: ['start end', 'end start'],
   });
-  const rotate = useTransform(scrollYProgress, [0, 0.2, 1], [-40, 0, 120]);
+  const rotate = useTransform(scrollYProgress, [0.1, 0.2, 1], [-40, 0, 120]);
   const inView = animationIView && !nextSectionInView;
 
   return { rotate, inView, nextSectionRef };
