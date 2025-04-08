@@ -8,13 +8,14 @@ import bgCutTablet from '@/images/main/projectOwners/section-bg-cut-tablet-min.p
 import bgCutMob from '@/images/main/projectOwners/section-bg-cut-mob-min.png';
 import { theme } from '@/constants';
 import AnimatedProjectOwnersSectionComments from '@AnimatedComponents/AnimatedProjectOwnersSectionComments';
+import { IProps } from './ProjectOwnersSection.types';
 
-const ProjectOwnersSection: FC = () => {
+const ProjectOwnersSection: FC<IProps> = ({ sectionRef }) => {
   const bgCutPictureTabletMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
   const bgCutPictureDeskMedia = `(min-width: ${theme.breakpoints.desktop}px)`;
 
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <HiddenSectionTitle title='Співвласники проекту Scyfion' />
       <ProjectOwnersSectionBgImages />
       <GeneralContainer>

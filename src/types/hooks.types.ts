@@ -1,5 +1,6 @@
 import { VariantLabels, Variants } from 'framer-motion';
 import { MotionValueNumber, RefDivObject, Strings } from './types';
+import { Func, SetBooleanFunc } from './funcs.types';
 
 export interface IUseAnimatedSectionTitle {
   elementVariants: Variants;
@@ -33,4 +34,21 @@ export interface IUseBottleImgOpacityProps {
 export interface IUseParallax {
   containerRef: RefDivObject;
   translateY: MotionValueNumber;
+}
+
+export interface IUseBottleAnimation {
+  updateShowHandAnimation: SetBooleanFunc;
+  showBottleSectionContainerRef: RefDivObject;
+  showHandAnimation: boolean;
+  bottleImgs: Strings;
+  decorativeBottleActiveIndex: MotionValueNumber;
+  bottleScale: MotionValueNumber;
+  onHandAnimationComplete: Func;
+  containerRef: RefDivObject;
+}
+
+export interface IUseEyeAnimation {
+  rotate: MotionValueNumber;
+  inView: boolean;
+  nextSectionRef: RefDivObject;
 }
