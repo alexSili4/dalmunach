@@ -10,11 +10,13 @@ const useAllImagesVisible = (): boolean => {
 
     if (total === 0) {
       setAllLoaded(true);
+
       return;
     }
 
     const handleImageLoad = () => {
       loaded += 1;
+
       if (loaded === total) {
         requestAnimationFrame(() => {
           setAllLoaded(true);

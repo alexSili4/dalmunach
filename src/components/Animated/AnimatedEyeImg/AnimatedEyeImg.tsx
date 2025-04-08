@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import yey from '@/images/main/distillery/yey-min.png';
+import eye from '@/images/main/distillery/eye-min.png';
 import { Container, EyeImg, Element } from './AnimatedEyeImg.styled';
 import { Transition, VariantLabels, Variants } from 'framer-motion';
 import { IProps } from './AnimatedEyeImg.types';
@@ -36,7 +36,7 @@ const AnimatedEyeImg: FC<IProps> = ({ inView, rotate }) => {
     <Container variants={containerVariants} initial='hidden' animate={animate}>
       <Element variants={elementVariants}>
         <EyeImg
-          src={yey}
+          src={eye}
           alt='Око'
           style={{
             rotate,

@@ -16,7 +16,7 @@ import { unDisableScroll } from '@/utils';
 import ProjectOwnersSection from '@MainPageComponents/ProjectOwnersSection';
 import { IProps } from './Main.types';
 import AnimatedEyeImg from '@AnimatedComponents/AnimatedEyeImg';
-import { useIsDesk, useIsTablet } from '@/hooks';
+import { useIsDesk } from '@/hooks';
 
 const Main: FC<IProps> = ({ isLoaded }) => {
   const [showHandAnimation, setShowHandAnimation] = useState<boolean>(false);
@@ -31,12 +31,9 @@ const Main: FC<IProps> = ({ isLoaded }) => {
     margin: '-300px 0px -300px 0px',
   });
   const isDesk = useIsDesk();
-  const isTablet = useIsTablet();
   const distillerySectionMargin = isDesk
     ? '-800px 0px -300px 0px'
-    : isTablet
-    ? '-300px 0px -300px 0px'
-    : '-700px 0px -200px 0px';
+    : '-300px 0px -300px 0px';
   const distillerySectionInViewWithMargin = useInView(distillerySectionRef, {
     margin: distillerySectionMargin,
   });
@@ -69,16 +66,8 @@ const Main: FC<IProps> = ({ isLoaded }) => {
     target: distillerySectionRef,
     offset: ['start end', 'end start'],
   });
-  const eyeRotateInputRange = isDesk
-    ? [0, 0.35, 1]
-    : isTablet
-    ? [0, 0.3, 1]
-    : [0, 0.42, 1];
-  const eyeRotateOutputRange = isDesk
-    ? [-40, 0, 120]
-    : isTablet
-    ? [-40, 0, 120]
-    : [-120, 0, 120];
+  const eyeRotateInputRange = isDesk ? [0, 0.35, 1] : [0, 0.3, 1];
+  const eyeRotateOutputRange = isDesk ? [-40, 0, 120] : [-40, 0, 120];
   const eyeRotate = useTransform(
     distillerySectionScrollProgress,
     eyeRotateInputRange,

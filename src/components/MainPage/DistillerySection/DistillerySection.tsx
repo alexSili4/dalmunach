@@ -1,6 +1,11 @@
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import { FC } from 'react';
-import { Container, Section, BottlePicture } from './DistillerySection.styled';
+import {
+  Container,
+  Section,
+  BottlePicture,
+  EyeImg,
+} from './DistillerySection.styled';
 import bottle from '@/images/main/distillery/bottle-min.png';
 import bottleMob from '@/images/main/distillery/bottle-mob-min.png';
 import { theme } from '@/constants';
@@ -8,6 +13,7 @@ import AnimatedDistillerySectionTitle from '@AnimatedComponents/AnimatedDistille
 import AnimatedDistillerySectionText from '@AnimatedComponents/AnimatedDistillerySectionText';
 import DistillerySectionBg from '@MainPageComponents/DistillerySectionBg';
 import { IProps } from './DistillerySection.types';
+import eye from '@/images/main/distillery/eye-min.png';
 
 const DistillerySection: FC<IProps> = ({ sectionRef, inView }) => {
   const tabletPictureMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
@@ -19,6 +25,7 @@ const DistillerySection: FC<IProps> = ({ sectionRef, inView }) => {
         <source srcSet={bottle} media={tabletPictureMedia} />
         <img src={bottleMob} alt='Пляшка' />
       </BottlePicture>
+      <EyeImg src={eye} alt='Око' />
       <GeneralContainer>
         <Container>
           <AnimatedDistillerySectionTitle

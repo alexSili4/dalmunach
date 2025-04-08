@@ -13,6 +13,7 @@ import {
   ZamoskovnyyRuslanImg,
   ContentWrap,
   CommentBgPicture,
+  CommentBgImg,
 } from './AnimatedProjectOwnersSectionComments.styled';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
 import commentBgMob from '@/images/main/projectOwners/comment-bg-mob-min.png';
@@ -122,7 +123,7 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
           <CommentBgPicture>
             <source srcSet={commentBgDesk} media={bgDeskMedia} />
             <source srcSet={commentBgTablet} media={bgTabletMedia} />
-            <img src={commentBgMob} alt='Декоративне зображення' />
+            <CommentBgImg src={commentBgMob} alt='Декоративне зображення' />
           </CommentBgPicture>
           <Quotes />
           <TextWrap>
@@ -158,7 +159,7 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
           <CommentBgPicture>
             <source srcSet={commentBgDesk} media={bgDeskMedia} />
             <source srcSet={commentBgTablet} media={bgTabletMedia} />
-            <img src={commentBgMob} alt='Декоративне зображення' />
+            <CommentBgImg src={commentBgMob} alt='Декоративне зображення' />
           </CommentBgPicture>
           <Quotes />
           <TextWrap>

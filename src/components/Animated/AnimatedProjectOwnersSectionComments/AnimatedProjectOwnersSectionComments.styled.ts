@@ -77,6 +77,11 @@ export const CommentBgPicture = styled.picture`
   height: 100%;
 `;
 
+export const CommentBgImg = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
 export const TextWrap = styled.div`
   position: relative;
   display: flex;

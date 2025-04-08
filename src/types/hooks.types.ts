@@ -34,7 +34,3 @@ export interface IUseParallax {
   containerRef: RefDivObject;
   translateY: MotionValueNumber;
 }
-
-export interface IUseAnimatedYeyImg {
-  eyeAngleDeg: number;
-}

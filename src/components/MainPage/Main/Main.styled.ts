@@ -13,10 +13,10 @@ export const OtherSectionsWrap = styled.div`
     top: 100%;
     left: 0;
     width: 100%;
-    transform: translateY(-177px);
+    transform: translateY(-500px);
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    transform: translateY(-237px);
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    transform: translateY(-650px);
   }
 `;
