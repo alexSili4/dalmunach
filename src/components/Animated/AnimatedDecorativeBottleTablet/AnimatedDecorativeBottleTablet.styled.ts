@@ -36,15 +36,15 @@ export const HandImg = styled(motion.img)`
 export const StandImg = styled(motion.img)`
   position: absolute;
   left: -227px;
-  bottom: -187px;
+  bottom: -230px;
   max-width: 2000px;
   max-width: 2000px;
   width: 646px;
   height: 363px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    bottom: -250px;
-    left: -303px;
+    bottom: -300px;
+    left: -323px;
     width: 861px;
     height: 484px;
   }

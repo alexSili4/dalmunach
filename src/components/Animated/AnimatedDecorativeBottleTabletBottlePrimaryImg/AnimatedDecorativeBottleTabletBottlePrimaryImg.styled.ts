@@ -6,7 +6,7 @@ export const Container = styled.div<IStyledContainerProps>`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-36%) translateY(-50%);
+  transform: translateX(-36%) translateY(-45%);
   opacity: ${({ inView }) => (inView ? 1 : 0)};
   transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
 `;
