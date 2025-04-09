@@ -1,7 +1,7 @@
 import { FC, useRef } from 'react';
 import { Bottle, Container } from './AnimatedHeroSectionBottle.styled';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
-import { bottleImgs } from '@/constants';
+import primaryBottle from '@/images/main/bottle/primary-bottle-min.png';
 import { IProps } from './AnimatedHeroSectionBottle.types';
 
 const AnimatedHeroSectionBottle: FC<IProps> = ({ isLoaded }) => {
@@ -44,7 +44,7 @@ const AnimatedHeroSectionBottle: FC<IProps> = ({ isLoaded }) => {
       initial='hidden'
       animate={animate}
     >
-      <Bottle src={bottleImgs[0]} alt='Пляшка' variants={elementVariants} />
+      <Bottle src={primaryBottle} alt='Пляшка' variants={elementVariants} />
     </Container>
   );
 };

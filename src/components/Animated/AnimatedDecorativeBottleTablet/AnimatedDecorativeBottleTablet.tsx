@@ -17,7 +17,11 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({
   activeIndex,
   bottleImgs,
   onAnimationComplete,
+  bottleWrapRef,
+  isBottleAnimation,
 }) => {
+  const bottleWrapLeft = isBottleAnimation ? 50 : 53;
+  const bottleWrapTranslateY = isBottleAnimation ? '-50%' : '-43%';
   const transition: Transition = {
     type: 'spring',
     stiffness: 100,
@@ -28,12 +32,14 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({
   return (
     <Container>
       <BottleWrap
+        ref={bottleWrapRef}
         style={{
           scale,
           translateX: '-50%',
-          translateY: '-43%',
+          translateY: bottleWrapTranslateY,
           transformOrigin: 'center bottom',
         }}
+        bottleWrapLeft={bottleWrapLeft}
       >
         <AnimatePresence>
           {showAnimation && (
@@ -50,6 +56,7 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({
           <AnimatedDecorativeBottleTabletImages
             activeIndex={activeIndex}
             bottleImgs={bottleImgs}
+            isBottleAnimation={isBottleAnimation}
           />
           {showAnimation && (
             <HandImg

@@ -1,5 +1,5 @@
 import { Func } from '@/types/funcs.types';
-import { MotionValueNumber, Strings } from '@/types/types';
+import { MotionValueNumber, RefDivObject, Strings } from '@/types/types';
 
 export interface IProps {
   showAnimation: boolean;
@@ -7,4 +7,6 @@ export interface IProps {
   activeIndex: MotionValueNumber;
   bottleImgs: Strings;
   onAnimationComplete: Func;
+  bottleWrapRef: RefDivObject;
+  isBottleAnimation: boolean;
 }

@@ -1,15 +1,18 @@
+import { useEffect, useRef, useState } from 'react';
 import { bottleImgs } from '@/constants';
 import { IUseBottleAnimation } from '@/types/hooks.types';
 import { unDisableScroll } from '@/utils';
 import { useScroll, useTransform } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
 
 const useBottleAnimation = (): IUseBottleAnimation => {
   const [showHandAnimation, setShowHandAnimation] = useState<boolean>(false);
+  const [isBottleAnimation, setIsBottleAnimation] = useState<boolean>(false);
   const [showBottleAnimation, setShowBottleAnimation] =
     useState<boolean>(false);
   const showBottleSectionContainerRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
+  const bottleWrapRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress: showBottleSectionContainerScrollYProgress } =
     useScroll({
@@ -44,6 +47,24 @@ const useBottleAnimation = (): IUseBottleAnimation => {
   };
 
   useEffect(() => {
+    const onWindowScroll = () => {
+      const bottleWrap = bottleWrapRef.current;
+      const preview = previewRef.current;
+
+      if (bottleWrap && preview) {
+        const previewRect = preview.getBoundingClientRect();
+        const bottleWrapRect = bottleWrap.getBoundingClientRect();
+
+        const isBottleAnimation = previewRect.top - bottleWrapRect.top <= -30;
+
+        setIsBottleAnimation(isBottleAnimation);
+      }
+    };
+
+    window.addEventListener('scroll', onWindowScroll);
+  }, []);
+
+  useEffect(() => {
     if (showHandAnimation) {
       setShowBottleAnimation(true);
     } else {
@@ -60,6 +81,9 @@ const useBottleAnimation = (): IUseBottleAnimation => {
     bottleScale,
     onHandAnimationComplete,
     containerRef,
+    previewRef,
+    bottleWrapRef,
+    isBottleAnimation,
   };
 };
 

@@ -38,6 +38,9 @@ const Main: FC = () => {
     showBottleSectionContainerRef,
     showHandAnimation,
     updateShowHandAnimation,
+    bottleWrapRef,
+    previewRef,
+    isBottleAnimation,
   } = useBottleAnimation();
 
   return (
@@ -49,13 +52,15 @@ const Main: FC = () => {
           showAnimation={showHandAnimation}
           activeIndex={decorativeBottleActiveIndex}
           bottleImgs={bottleImgs}
+          bottleWrapRef={bottleWrapRef}
+          isBottleAnimation={isBottleAnimation}
         />
       )}
       <AnimatedEyeImg inView={inView} rotate={rotate} />
       <HeroSection sectionRef={heroSectionRef} isLoaded={isLoaded} />
       <AboutSection sectionRef={aboutSectionRef} inView={aboutSectionInView} />
       <HistorySection />
-      <PreviewSection />
+      <PreviewSection previewRef={previewRef} />
       <ShowBottleSection
         showHandAnimation={showHandAnimation}
         containerRef={showBottleSectionContainerRef}

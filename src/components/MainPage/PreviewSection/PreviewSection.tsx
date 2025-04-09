@@ -5,13 +5,14 @@ import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import preview from '@/video/preview.mp4';
 import PreviewSectionPlayer from '@MainPageComponents/PreviewSectionPlayer';
 import AnimatedPreviewSectionImages from '@AnimatedComponents/AnimatedPreviewSectionImages';
+import { IProps } from './PreviewSection.types';
 
-const PreviewSection: FC = () => {
+const PreviewSection: FC<IProps> = ({ previewRef }) => {
   return (
     <Section>
       <HiddenSectionTitle title='Загальна демонстрація' />
       <GeneralContainer>
-        <PreviewSectionPlayer video={preview} />
+        <PreviewSectionPlayer video={preview} previewRef={previewRef} />
       </GeneralContainer>
       <AnimatedPreviewSectionImages />
     </Section>

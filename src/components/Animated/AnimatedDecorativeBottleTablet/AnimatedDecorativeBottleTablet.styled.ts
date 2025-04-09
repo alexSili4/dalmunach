@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
+import { IStyledBottleWrapProps } from './AnimatedDecorativeBottleTablet.types';
 
 export const Container = styled.div`
   position: sticky;
@@ -13,36 +14,39 @@ export const Container = styled.div`
   }
 `;
 
-export const BottleWrap = styled(motion.div)`
+export const BottleWrap = styled(motion.div)<IStyledBottleWrapProps>`
   position: absolute;
   top: 0;
-  left: 53%;
+  left: ${({ bottleWrapLeft }) => bottleWrapLeft}%;
 `;
 
 export const HandImg = styled(motion.img)`
   position: absolute;
-  top: -120px;
-  left: -78px;
+  top: -164px;
+  left: -146px;
+  height: 289px;
   max-width: 2000px;
-  height: 250px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: -170px;
-    left: -105px;
-    height: 320px;
+    top: -243px;
+    left: -195px;
+    height: 385px;
   }
 `;
 
 export const StandImg = styled(motion.img)`
   position: absolute;
-  left: -190px;
-  bottom: -120px;
+  left: -227px;
+  bottom: -187px;
+  max-width: 2000px;
   max-width: 2000px;
   width: 646px;
+  height: 363px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    bottom: -200px;
-    left: -250px;
-    width: 800px;
+    bottom: -250px;
+    left: -303px;
+    width: 861px;
+    height: 484px;
   }
 `;

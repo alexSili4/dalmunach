@@ -46,6 +46,9 @@ export interface IUseBottleAnimation {
   bottleScale: MotionValueNumber;
   onHandAnimationComplete: Func;
   containerRef: RefDivObject;
+  previewRef: RefDivObject;
+  isBottleAnimation: boolean;
+  bottleWrapRef: RefDivObject;
 }
 
 export interface IUseEyeAnimation {

@@ -8,7 +8,11 @@ const AnimatedDecorativeBottleTabletBottleImg: FC<IProps> = ({
   index,
   isPositionAbsolute,
   img,
+  isBottleAnimation,
 }) => {
+  const bottleWidthTablet = isBottleAnimation ? 149 : 320;
+  const bottleWidthDesk = isBottleAnimation ? 198 : 395;
+
   const getCurrentOpacity = (value: number): number => {
     const roundValue = Math.round(value);
     const isTargetIndex = roundValue === index;
@@ -25,6 +29,8 @@ const AnimatedDecorativeBottleTabletBottleImg: FC<IProps> = ({
       alt='Пляшки'
       style={{ opacity }}
       isPositionAbsolute={isPositionAbsolute}
+      bottleWidthDesk={bottleWidthDesk}
+      bottleWidthTablet={bottleWidthTablet}
     />
   );
 };

@@ -9,6 +9,8 @@ const DecorativeBottle: FC<IProps> = ({
   bottleImgs,
   showAnimation,
   onAnimationComplete,
+  bottleWrapRef,
+  isBottleAnimation,
 }) => {
   return (
     <>
@@ -24,6 +26,8 @@ const DecorativeBottle: FC<IProps> = ({
         showAnimation={showAnimation}
         bottleImgs={bottleImgs}
         onAnimationComplete={onAnimationComplete}
+        bottleWrapRef={bottleWrapRef}
+        isBottleAnimation={isBottleAnimation}
       />
     </>
   );

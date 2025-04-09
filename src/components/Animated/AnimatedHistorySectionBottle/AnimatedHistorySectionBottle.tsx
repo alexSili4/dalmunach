@@ -1,6 +1,6 @@
 import { FC, useRef } from 'react';
 import { Bottle, Container } from './AnimatedHistorySectionBottle.styled';
-import { bottleImgs } from '@/constants';
+import primaryBottle from '@/images/main/bottle/primary-bottle-min.png';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
 
 const AnimatedHistorySectionBottle: FC = () => {
@@ -42,7 +42,7 @@ const AnimatedHistorySectionBottle: FC = () => {
       initial='hidden'
       animate={animate}
     >
-      <Bottle src={bottleImgs[0]} alt='Пляшка' variants={elementVariants} />
+      <Bottle src={primaryBottle} alt='Пляшка' variants={elementVariants} />
     </Container>
   );
 };

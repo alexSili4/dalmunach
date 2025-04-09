@@ -11,7 +11,7 @@ import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
 import Play from '@/icons/preview/play.svg?react';
 
-const PreviewSectionPlayer: FC<IProps> = ({ video }) => {
+const PreviewSectionPlayer: FC<IProps> = ({ video, previewRef }) => {
   const [playing, setPlaying] = useState<boolean>(false);
 
   const startPlay = () => {
@@ -41,7 +41,7 @@ const PreviewSectionPlayer: FC<IProps> = ({ video }) => {
   };
 
   return (
-    <Container>
+    <Container ref={previewRef}>
       <StyledReactPlayer
         url={video}
         playing={playing}

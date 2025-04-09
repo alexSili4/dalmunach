@@ -7,9 +7,9 @@ export const Bottle = styled(motion.img)<IStyledBottleProps>`
     isPositionAbsolute ? 'absolute' : 'relative'};
   top: 0;
   left: 0;
-  height: 650px;
+  width: ${({ bottleWidthTablet }) => bottleWidthTablet}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    height: 800px;
+    width: ${({ bottleWidthDesk }) => bottleWidthDesk}px;
   }
 `;
