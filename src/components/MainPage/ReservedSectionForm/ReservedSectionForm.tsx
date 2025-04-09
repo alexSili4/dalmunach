@@ -78,7 +78,7 @@ const ReseRvedSectionForm: FC<IProps> = ({
         <InputsWrap>
           <Input
             isInvalidField={isInvalidNameField}
-            placeholder="Моє ім'я"
+            placeholder="Ім'я та прізвище"
             settings={{
               ...register('name', {
                 required: {

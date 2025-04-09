@@ -64,9 +64,7 @@ const HeroSection: FC<IProps> = ({
                 </Icons>
                 <DalmunachImg src={dalmunach} alt='Лого Dalmunach' />
               </IconsWrap>
-              <Title>
-                Маєш бути повнолітнім, щоб відвідати цей стрьомний сайт
-              </Title>
+              <Title>Ви маєте бути повнолітні для перегляду сайту</Title>
             </TitleWrap>
             <ControlsWrap>
               <AcceptBtn type='button' onClick={onAcceptBtnClick}>

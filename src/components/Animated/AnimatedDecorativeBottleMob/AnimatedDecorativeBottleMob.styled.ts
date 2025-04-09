@@ -26,22 +26,22 @@ export const StickyBottleWrap = styled.div`
 export const BottleWrap = styled.div`
   position: absolute;
   top: 50%;
-  left: 60%;
+  left: 50%;
   transform: translateX(-50%) translateY(-50%);
 `;
 
 export const HandImg = styled(motion.img)`
   position: absolute;
-  top: -100px;
-  left: -55px;
+  top: -125px;
+  left: -86px;
   max-width: 2000px;
   height: 209px;
 `;
 
 export const StandImg = styled(motion.img)`
   position: absolute;
-  left: -90px;
-  bottom: -90px;
+  left: -128px;
+  bottom: -131px;
   max-width: 2000px;
   width: 431px;
   height: 242px;

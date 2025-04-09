@@ -42,7 +42,7 @@ export const Container = styled.div`
 
 export const PlusesImg = styled.img`
   position: absolute;
-  top: 787px;
+  top: 601px;
   left: calc(50% + 119px);
   width: 64px;
   height: 600px;
@@ -63,19 +63,19 @@ export const PlusesImg = styled.img`
 
 export const TriangleImg = styled.img`
   position: absolute;
-  top: 912px;
+  top: 726px;
   left: 50%;
   width: 422px;
   aspect-ratio: 1 / 1;
   transform: translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 252px;
+    top: 98px;
     width: 716px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 336px;
+    top: 135px;
     width: 954px;
   }
 `;
