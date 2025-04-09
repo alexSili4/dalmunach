@@ -4,7 +4,6 @@ import {
   CommentBgImg,
   CommentBgPicture,
   Content,
-  Text,
 } from './AnimatedProjectOwnersSectionCommentDetails.styled';
 import commentBgMob from '@/images/main/projectOwners/comment-bg-mob-min.png';
 import commentBgTablet from '@/images/main/projectOwners/comment-bg-tablet-min.png';
@@ -48,31 +47,6 @@ const AnimatedProjectOwnersSectionCommentDetails: FC<IProps> = ({
           subtitle={subtitle}
           inView={inView}
         />
-        {/* <TextWrap>
-          <Text>
-            {strings.map((text, index, array) => {
-              const isLastIndex = getIsLastIndex({ array, index });
-              const textPart = <TextPart>{text}</TextPart>;
-
-              return (
-                <Fragment key={index}>
-                  {isLastIndex ? (
-                    textPart
-                  ) : (
-                    <>
-                      {textPart}
-                      <br />
-                    </>
-                  )}
-                </Fragment>
-              );
-            })}
-          </Text>
-          <TitleWrap>
-            <Title>{title}</Title>
-            <Subtitle>{subtitle}</Subtitle>
-          </TitleWrap>
-        </TextWrap> */}
       </Content>
       {children}
     </Container>

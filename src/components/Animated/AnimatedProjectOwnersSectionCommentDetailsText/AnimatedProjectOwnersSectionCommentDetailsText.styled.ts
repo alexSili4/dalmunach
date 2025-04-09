@@ -5,6 +5,8 @@ export const Container = styled(motion.div)`
   position: relative;
 `;
 
+export const Text = styled.p``;
+
 export const Title = styled.p`
   margin-top: ${({ theme }) => theme.spacing(4)}px;
 

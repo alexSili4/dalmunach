@@ -6,6 +6,7 @@ import { getIsLastIndex, getTextWord } from '@/utils';
 import {
   Container,
   Subtitle,
+  Text,
   Title,
 } from './AnimatedProjectOwnersSectionCommentDetailsText.styled';
 import AnimatedProjectOwnersSectionCommentSubtitle from '@AnimatedComponents/AnimatedProjectOwnersSectionCommentSubtitle';
@@ -25,28 +26,30 @@ const AnimatedProjectOwnersSectionCommentDetailsText: FC<IProps> = ({
 
   return (
     <Container variants={containerVariants} initial='hidden' animate={animate}>
-      {strings.map((item, index, array) => {
-        const isLastIndex = getIsLastIndex({ index, array });
-        const commentText = (
-          <AnimatedProjectOwnersSectionCommentText
-            text={item}
-            variants={elementVariants}
-          />
-        );
+      <Text>
+        {strings.map((item, index, array) => {
+          const isLastIndex = getIsLastIndex({ index, array });
+          const commentText = (
+            <AnimatedProjectOwnersSectionCommentText
+              text={item}
+              variants={elementVariants}
+            />
+          );
 
-        return (
-          <Fragment key={index}>
-            {isLastIndex ? (
-              commentText
-            ) : (
-              <>
-                {commentText}
-                <br />
-              </>
-            )}
-          </Fragment>
-        );
-      })}
+          return (
+            <Fragment key={index}>
+              {isLastIndex ? (
+                commentText
+              ) : (
+                <>
+                  {commentText}
+                  <br />
+                </>
+              )}
+            </Fragment>
+          );
+        })}
+      </Text>
       <Title>
         {titleWords.map((word, index, words) => {
           const textWord = getTextWord({ index, word, words });
