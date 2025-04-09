@@ -16,7 +16,7 @@ export const StyledHeader = styled.header`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    padding-top: ${({ theme }) => theme.spacing(20)}px;
+    padding-top: ${({ theme }) => theme.spacing(16)}px;
     padding-bottom: ${({ theme }) => theme.spacing(20)}px;
   }
 `;

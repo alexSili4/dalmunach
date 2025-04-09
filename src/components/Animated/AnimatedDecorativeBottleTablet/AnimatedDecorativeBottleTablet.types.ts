@@ -10,7 +10,3 @@ export interface IProps {
   bottleWrapRef: RefDivObject;
   isBottleAnimation: boolean;
 }
-
-export interface IStyledBottleWrapProps {
-  bottleWrapLeft: number;
-}
