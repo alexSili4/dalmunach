@@ -20,7 +20,7 @@ const AnimatedProjectOwnersSectionCommentDetailsText: FC<IProps> = ({
   inView,
 }) => {
   const { containerVariants, elementVariants, animate } =
-    useAnimatedSectionText({ inView, delay: 1.2 });
+    useAnimatedSectionText({ inView });
   const titleWords = title.split(Symbols.space);
   const subtitleWords = subtitle.split(Symbols.space);
 

@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
-import { IStyledContainerProps } from './AnimatedProjectOwnersSectionCommentDetails.types';
+import { IStyledContainerProps } from './ProjectOwnersSectionCommentDetails.types';
 
-export const Container = styled(motion.div)<IStyledContainerProps>`
+export const Container = styled.div<IStyledContainerProps>`
   align-self: ${({ isFlexEnd }) => isFlexEnd && 'flex-end'};
   position: relative;
   width: 100%;
@@ -16,7 +15,7 @@ export const Container = styled(motion.div)<IStyledContainerProps>`
   }
 `;
 
-export const Content = styled(motion.div)`
+export const Content = styled.div`
   padding: ${({ theme: { spacing } }) => `${spacing(16)}px ${spacing(6)}px`};
 
   & > svg {

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   display: flex;
@@ -18,7 +17,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ZamoskovnyyRuslanImg = styled(motion.img)`
+export const ZamoskovnyyRuslanImg = styled.img`
   position: absolute;
   top: 334px;
   left: -4px;
@@ -41,7 +40,7 @@ export const ZamoskovnyyRuslanImg = styled(motion.img)`
   }
 `;
 
-export const BlyznyukPlatonImg = styled(motion.img)`
+export const BlyznyukPlatonImg = styled.img`
   position: absolute;
   top: 334px;
   right: 0;

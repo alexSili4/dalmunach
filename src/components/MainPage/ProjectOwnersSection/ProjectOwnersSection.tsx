@@ -7,7 +7,7 @@ import bgCutDesk from '@/images/main/projectOwners/section-bg-cut-desk-min.png';
 import bgCutTablet from '@/images/main/projectOwners/section-bg-cut-tablet-min.png';
 import bgCutMob from '@/images/main/projectOwners/section-bg-cut-mob-min.png';
 import { theme } from '@/constants';
-import AnimatedProjectOwnersSectionComments from '@AnimatedComponents/AnimatedProjectOwnersSectionComments';
+import ProjectOwnersSectionComments from '@MainPageComponents/ProjectOwnersSectionComments';
 import { IProps } from './ProjectOwnersSection.types';
 
 const ProjectOwnersSection: FC<IProps> = ({ sectionRef }) => {
@@ -19,7 +19,7 @@ const ProjectOwnersSection: FC<IProps> = ({ sectionRef }) => {
       <HiddenSectionTitle title='Співвласники проекту Scyfion' />
       <ProjectOwnersSectionBgImages />
       <GeneralContainer>
-        <AnimatedProjectOwnersSectionComments />
+        <ProjectOwnersSectionComments />
       </GeneralContainer>
       <BgCutPicture>
         <source srcSet={bgCutDesk} media={bgCutPictureDeskMedia} />
