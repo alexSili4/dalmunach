@@ -1,12 +1,9 @@
-import { Strings } from '@/types/types';
-import { VariantLabels, Variants } from 'framer-motion';
+import { RefDivObject, Strings } from '@/types/types';
 import { ReactNode } from 'react';
 
 export interface IProps {
+  containerRef: RefDivObject;
   children: ReactNode;
-  containerVariants: Variants;
-  animate: VariantLabels;
-  elementVariants: Variants;
   strings: Strings;
   title: string;
   subtitle: string;
