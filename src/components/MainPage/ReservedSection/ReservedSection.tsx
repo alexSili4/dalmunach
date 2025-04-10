@@ -1,12 +1,12 @@
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 import ReservedSectionFormContainer from '@MainPageComponents/ReservedSectionFormContainer';
 import { Section, Container } from './ReservedSection.styled';
 import { SectionsIds } from '@/constants';
 import { useInView } from 'framer-motion';
 import { useParallax } from '@/hooks';
+import { IProps } from './ReservedSection.types';
 
-const ReservedSection: FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+const ReservedSection: FC<IProps> = ({ sectionRef }) => {
   const inView = useInView(sectionRef, {
     margin: '-300px 0px -300px 0px',
   });

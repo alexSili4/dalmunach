@@ -4,6 +4,7 @@ import {
   CommentBgImg,
   CommentBgPicture,
   Content,
+  Element,
 } from './AnimatedProjectOwnersSectionCommentDetails.styled';
 import commentBgMob from '@/images/main/projectOwners/comment-bg-mob-min.png';
 import commentBgTablet from '@/images/main/projectOwners/comment-bg-tablet-min.png';
@@ -22,7 +23,11 @@ const AnimatedProjectOwnersSectionCommentDetails: FC<IProps> = ({
   title,
   subtitle,
   isFlexEnd,
-  inView,
+  containerInView,
+  transformOriginXDesk,
+  transformOriginXTablet,
+  transformOriginYDesk,
+  transformOriginYTablet,
 }) => {
   const bgTabletMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
   const bgDeskMedia = `(min-width: ${theme.breakpoints.desktop}px)`;
@@ -30,25 +35,33 @@ const AnimatedProjectOwnersSectionCommentDetails: FC<IProps> = ({
   return (
     <Container
       variants={containerVariants}
-      initial='hidden'
+      initial='visible'
       animate={animate}
       isFlexEnd={isFlexEnd}
     >
-      <Content variants={elementVariants}>
-        <CommentBgPicture>
-          <source srcSet={commentBgDesk} media={bgDeskMedia} />
-          <source srcSet={commentBgTablet} media={bgTabletMedia} />
-          <CommentBgImg src={commentBgMob} alt='Декоративне зображення' />
-        </CommentBgPicture>
-        <Quotes />
-        <AnimatedProjectOwnersSectionCommentDetailsText
-          strings={strings}
-          title={title}
-          subtitle={subtitle}
-          inView={inView}
-        />
-      </Content>
-      {children}
+      <Element
+        variants={elementVariants}
+        transformOriginXDesk={transformOriginXDesk}
+        transformOriginXTablet={transformOriginXTablet}
+        transformOriginYDesk={transformOriginYDesk}
+        transformOriginYTablet={transformOriginYTablet}
+      >
+        <Content>
+          <CommentBgPicture>
+            <source srcSet={commentBgDesk} media={bgDeskMedia} />
+            <source srcSet={commentBgTablet} media={bgTabletMedia} />
+            <CommentBgImg src={commentBgMob} alt='Декоративне зображення' />
+          </CommentBgPicture>
+          <Quotes />
+          <AnimatedProjectOwnersSectionCommentDetailsText
+            strings={strings}
+            title={title}
+            subtitle={subtitle}
+            inView={containerInView}
+          />
+        </Content>
+        {children}
+      </Element>
     </Container>
   );
 };

@@ -10,10 +10,21 @@ export interface IProps {
   strings: Strings;
   title: string;
   subtitle: string;
-  inView: boolean;
+  containerInView: boolean;
   isFlexEnd?: boolean;
+  transformOriginXTablet: number;
+  transformOriginYTablet: number;
+  transformOriginXDesk: number;
+  transformOriginYDesk: number;
 }
 
 export interface IStyledContainerProps {
   isFlexEnd?: boolean;
+}
+
+export interface IStyledElementProps {
+  transformOriginXTablet: number;
+  transformOriginYTablet: number;
+  transformOriginXDesk: number;
+  transformOriginYDesk: number;
 }

@@ -9,8 +9,12 @@ import bgCutMob from '@/images/main/projectOwners/section-bg-cut-mob-min.png';
 import { theme } from '@/constants';
 import AnimatedProjectOwnersSectionComments from '@AnimatedComponents/AnimatedProjectOwnersSectionComments';
 import { IProps } from './ProjectOwnersSection.types';
+import AnimatedProjectOwnersSectionPrice from '@AnimatedComponents/AnimatedProjectOwnersSectionPrice';
 
-const ProjectOwnersSection: FC<IProps> = ({ sectionRef }) => {
+const ProjectOwnersSection: FC<IProps> = ({
+  sectionRef,
+  nextSectionInView,
+}) => {
   const bgCutPictureTabletMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
   const bgCutPictureDeskMedia = `(min-width: ${theme.breakpoints.desktop}px)`;
 
@@ -19,8 +23,9 @@ const ProjectOwnersSection: FC<IProps> = ({ sectionRef }) => {
       <HiddenSectionTitle title='Співвласники проекту Scyfion' />
       <ProjectOwnersSectionBgImages />
       <GeneralContainer>
-        <AnimatedProjectOwnersSectionComments />
+        <AnimatedProjectOwnersSectionComments inView={!nextSectionInView} />
       </GeneralContainer>
+      <AnimatedProjectOwnersSectionPrice inView={nextSectionInView} />
       <BgCutPicture>
         <source srcSet={bgCutDesk} media={bgCutPictureDeskMedia} />
         <source srcSet={bgCutTablet} media={bgCutPictureTabletMedia} />

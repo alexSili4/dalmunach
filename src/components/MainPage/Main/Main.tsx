@@ -26,6 +26,8 @@ const Main: FC = () => {
   const distillerySectionInView = useInView(distillerySectionRef, {
     margin: '-300px 0px -300px 0px',
   });
+  const reservedSectionRef = useRef<HTMLDivElement>(null);
+  const reservedSectionInView = useInView(reservedSectionRef);
 
   const { inView, rotate, nextSectionRef } =
     useEyeAnimation(distillerySectionRef);
@@ -72,8 +74,11 @@ const Main: FC = () => {
           sectionRef={distillerySectionRef}
           inView={distillerySectionInView}
         />
-        <ProjectOwnersSection sectionRef={nextSectionRef} />
-        <ReservedSection />
+        <ProjectOwnersSection
+          sectionRef={nextSectionRef}
+          nextSectionInView={reservedSectionInView}
+        />
+        <ReservedSection sectionRef={reservedSectionRef} />
         <Footer />
       </OtherSectionsWrap>
     </Container>

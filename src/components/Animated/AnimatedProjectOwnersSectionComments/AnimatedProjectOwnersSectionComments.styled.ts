@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   display: flex;
@@ -18,46 +17,46 @@ export const Container = styled.div`
   }
 `;
 
-export const ZamoskovnyyRuslanImg = styled(motion.img)`
+export const ZamoskovnyyRuslanImg = styled.img`
   position: absolute;
-  top: 334px;
+  top: 374px;
   left: -4px;
   width: 253px;
   max-width: 675px;
   height: 325px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 110px;
+    top: 190px;
     left: -323px;
     width: 506px;
     height: 649px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 147px;
+    top: 247px;
     left: -431px;
     width: 675px;
     height: 865px;
   }
 `;
 
-export const BlyznyukPlatonImg = styled(motion.img)`
+export const BlyznyukPlatonImg = styled.img`
   position: absolute;
-  top: 334px;
+  top: 354px;
   right: 0;
   width: 200px;
   max-width: 532px;
-  height: 297x;
+  height: 297px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: -79px;
+    top: -29px;
     left: 352px;
     width: 399px;
     height: 593px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: -105px;
+    top: -85px;
     left: 469px;
     width: 532px;
     height: 790px;

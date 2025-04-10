@@ -1,22 +1,36 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { IStyledContainerProps } from './AnimatedProjectOwnersSectionCommentDetails.types';
+import {
+  IStyledContainerProps,
+  IStyledElementProps,
+} from './AnimatedProjectOwnersSectionCommentDetails.types';
 
 export const Container = styled(motion.div)<IStyledContainerProps>`
   align-self: ${({ isFlexEnd }) => isFlexEnd && 'flex-end'};
   position: relative;
-  width: 100%;
+`;
+
+export const Element = styled(motion.div)<IStyledElementProps>`
+  position: relative;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 443px;
+    transform-origin: ${({ transformOriginXTablet, transformOriginYTablet }) =>
+      `${transformOriginXTablet}px ${transformOriginYTablet}px`};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 590px;
+    transform-origin: ${({ transformOriginXDesk, transformOriginYDesk }) =>
+      `${transformOriginXDesk}px ${transformOriginYDesk}px`};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    transform: none !important;
   }
 `;
 
-export const Content = styled(motion.div)`
+export const Content = styled.div`
   padding: ${({ theme: { spacing } }) => `${spacing(16)}px ${spacing(6)}px`};
 
   & > svg {

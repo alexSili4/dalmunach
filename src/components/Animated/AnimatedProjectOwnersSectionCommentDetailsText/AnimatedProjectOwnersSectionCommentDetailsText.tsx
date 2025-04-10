@@ -20,12 +20,12 @@ const AnimatedProjectOwnersSectionCommentDetailsText: FC<IProps> = ({
   inView,
 }) => {
   const { containerVariants, elementVariants, animate } =
-    useAnimatedSectionText({ inView, delay: 1.2 });
+    useAnimatedSectionText({ inView });
   const titleWords = title.split(Symbols.space);
   const subtitleWords = subtitle.split(Symbols.space);
 
   return (
-    <Container variants={containerVariants} initial='hidden' animate={animate}>
+    <Container variants={containerVariants} initial='visible' animate={animate}>
       <Text>
         {strings.map((item, index, array) => {
           const isLastIndex = getIsLastIndex({ index, array });

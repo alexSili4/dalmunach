@@ -6,6 +6,7 @@ export const Container = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.eye};
   top: 100px;
   right: 167px;
+  pointer-events: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     right: 223px;

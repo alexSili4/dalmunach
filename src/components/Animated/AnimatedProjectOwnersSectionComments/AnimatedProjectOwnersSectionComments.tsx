@@ -8,22 +8,14 @@ import {
 } from './AnimatedProjectOwnersSectionComments.styled';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
 import AnimatedProjectOwnersSectionCommentDetails from '@AnimatedComponents/AnimatedProjectOwnersSectionCommentDetails';
+import { IProps } from './AnimatedProjectOwnersSectionComments.types';
 
-const AnimatedProjectOwnersSectionComments: FC = () => {
-  const firstCommentImgRef = useRef<HTMLImageElement>(null);
-  const firstCommentImgInView = useInView(firstCommentImgRef, {
+const AnimatedProjectOwnersSectionComments: FC<IProps> = ({ inView }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerInView = useInView(containerRef, {
     margin: '-200px 0px -200px 0px',
   });
-  const firstCommentImgAnimate: VariantLabels = firstCommentImgInView
-    ? 'visible'
-    : 'hidden';
-  const secondCommentImgRef = useRef<HTMLImageElement>(null);
-  const secondCommentImgInView = useInView(secondCommentImgRef, {
-    margin: '-200px 0px -200px 0px',
-  });
-  const secondCommentImgAnimate: VariantLabels = secondCommentImgInView
-    ? 'visible'
-    : 'hidden';
+  const animate: VariantLabels = inView ? 'visible' : 'hidden';
   const firstCommentText = [
     'Аромат: солод, білий виноград, літні яблука, ноти лимонної цедри, спецій. Ваніль та трохи вершковості.',
     'Смак: сильний початок, збалансований. Фрукти, трохи зеленого банана, грейпфрут, трава та соснові голки.',
@@ -34,14 +26,6 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
     'Смак: збалансованість, пряність, гірчинка грейпфрута, фруктова солодкість, льодяники, свіжість.',
     'Посмак: середній, пряний, м’ята, зелений банан.',
   ];
-
-  const transitionWithDelay: Transition = {
-    type: 'spring',
-    stiffness: 100,
-    damping: 10,
-    duration: 0.8,
-    delay: 0.8,
-  };
 
   const transition: Transition = {
     type: 'spring',
@@ -55,92 +39,63 @@ const AnimatedProjectOwnersSectionComments: FC = () => {
     visible: {},
   };
 
-  const firstCommentImgVariants: Variants = {
-    hidden: {
-      x: '-100%',
-      opacity: 0,
-      transition,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition,
-    },
-  };
-
   const firstCommentVariants: Variants = {
     hidden: {
-      x: '-100%',
-      opacity: 0,
-      transition: transitionWithDelay,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: transitionWithDelay,
-    },
-  };
-
-  const secondCommentImgVariants: Variants = {
-    hidden: {
-      x: '100%',
-      opacity: 0,
+      rotate: '-55deg',
       transition,
     },
     visible: {
-      x: 0,
-      opacity: 1,
+      rotate: 0,
       transition,
     },
   };
 
   const secondCommentVariants: Variants = {
     hidden: {
-      x: '100%',
-      opacity: 0,
-      transition: transitionWithDelay,
+      rotate: '60deg',
+      transition,
     },
     visible: {
-      x: 0,
-      opacity: 1,
-      transition: transitionWithDelay,
+      rotate: 0,
+      transition,
     },
   };
 
   return (
-    <Container>
+    <Container ref={containerRef}>
       <AnimatedProjectOwnersSectionCommentDetails
-        animate={firstCommentImgAnimate}
+        animate={animate}
         containerVariants={containerVariants}
         elementVariants={firstCommentVariants}
-        title='Замосковний Руслан'
+        title='Руслан Замосковний'
         subtitle='Засновник проекту Scyfion'
         strings={firstCommentText}
-        inView={firstCommentImgInView}
+        containerInView={containerInView}
+        transformOriginXTablet={372}
+        transformOriginYTablet={759}
+        transformOriginXDesk={591}
+        transformOriginYDesk={1012}
       >
         <ZamoskovnyyRuslanImg
-          ref={firstCommentImgRef}
           src={zamoskovnyyRuslan}
           alt='Замосковний Руслан'
-          variants={firstCommentImgVariants}
         />
       </AnimatedProjectOwnersSectionCommentDetails>
       <AnimatedProjectOwnersSectionCommentDetails
-        animate={secondCommentImgAnimate}
+        animate={animate}
         containerVariants={containerVariants}
         elementVariants={secondCommentVariants}
-        title='Близнюк Платон'
+        title='Платон Близнюк'
         subtitle='Співвласник проекту Scyfion'
         strings={secondCommentText}
-        inView={secondCommentImgInView}
+        containerInView={containerInView}
+        transformOriginXTablet={352}
+        transformOriginYTablet={564}
+        transformOriginXDesk={591}
+        transformOriginYDesk={706}
         isFlexEnd
       >
-        <BlyznyukPlatonImg
-          ref={secondCommentImgRef}
-          src={blyznyukPlaton}
-          alt='Близнюк Платон'
-          variants={secondCommentImgVariants}
-        />
+        <BlyznyukPlatonImg src={blyznyukPlaton} alt='Близнюк Платон' />
       </AnimatedProjectOwnersSectionCommentDetails>
     </Container>
   );
