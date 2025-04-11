@@ -33,17 +33,17 @@ const DistillerySection: FC<IProps> = ({ sectionRef, inView }) => {
             inView={inView}
           />
           <AnimatedDistillerySectionText
-            region='Регіон: Спейсайд'
-            owner='Власник: Chivas Brothers (Pernod Ricard)'
+            region='<strong>Регіон:</strong> Спейсайд'
+            owner='<strong>Власник:</strong> Chivas Brothers (Pernod Ricard)'
             location='Побудована на місці славнозвісної дистилерії Imperial, Dalmunach розпочала винокуріння в 2015 році.'
-            subtitle='Технічне оснащення:'
+            subtitle='<strong>Технічне</strong> <strong>оснащення:</strong>'
             equipment={[
               ' ∙ 13-тонний заторний чан',
               ' ∙ 16 ферментаційних чанів із нержавіючої сталі на 56 000 л',
               ' ∙ 4 бражних перегонних куби об’ємом 28 000 л кожен',
               ' ∙ 4 спиртових перегонних куби об’ємом 18 000 л кожен',
             ]}
-            history='Перший офіційний реліз Dalmunach — односолодове 4-річне віскі бочкової міцності (59%) — вийшов восени 2019 року.'
+            history='<strong>Перший</strong> <strong>офіційний</strong> <strong>реліз</strong> <strong>Dalmunach</strong> — односолодове 4-річне віскі бочкової міцності (59%) — вийшов восени 2019 року.'
             inView={inView}
           />
         </Container>

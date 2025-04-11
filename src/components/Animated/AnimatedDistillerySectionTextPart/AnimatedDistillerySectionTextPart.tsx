@@ -9,9 +9,11 @@ const AnimatedDistillerySectionTextPart: FC<IProps> = ({
 }) => {
   return (
     <Container>
-      <Word isTitle={isTitle} variants={variants}>
-        {textWord}
-      </Word>
+      <Word
+        isTitle={isTitle}
+        variants={variants}
+        dangerouslySetInnerHTML={{ __html: textWord }}
+      ></Word>
     </Container>
   );
 };
