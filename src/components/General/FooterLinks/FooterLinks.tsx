@@ -43,7 +43,7 @@ const FooterLinks: FC = () => {
           </ListItem>
         </List>
         <Warning>
-          Сайт може містити контент не призначений для осіб молодше 16 років.
+          Сайт може містити контент, не призначений для осіб молодше 18 років.
         </Warning>
       </Content>
       <Link href={ExternalLinks.sun} target='_blank' rel='noopener noreferrer'>

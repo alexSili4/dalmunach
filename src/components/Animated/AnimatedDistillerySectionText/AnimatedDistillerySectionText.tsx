@@ -15,11 +15,9 @@ const AnimatedDistillerySectionText: FC<IProps> = ({
   owner,
   region,
   subtitle,
-  title,
 }) => {
   const { containerVariants, elementVariants, animate } =
     useAnimatedSectionText({ inView });
-  const titleWords = title.split(Symbols.space);
   const regionWords = region.split(Symbols.space);
   const ownerWords = owner.split(Symbols.space);
   const locationWords = location.split(Symbols.space);
@@ -28,20 +26,6 @@ const AnimatedDistillerySectionText: FC<IProps> = ({
 
   return (
     <Text variants={containerVariants} initial='hidden' animate={animate}>
-      {titleWords.map((word, index, words) => {
-        const textWord = getTextWord({ index, word, words });
-
-        return (
-          <AnimatedDistillerySectionTextPart
-            textWord={textWord}
-            variants={elementVariants}
-            key={index}
-            isTitle
-          />
-        );
-      })}
-      <br />
-      <br />
       {regionWords.map((word, index, words) => {
         const textWord = getTextWord({ index, word, words });
 

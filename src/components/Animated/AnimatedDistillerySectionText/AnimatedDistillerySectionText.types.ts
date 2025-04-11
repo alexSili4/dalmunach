@@ -1,7 +1,6 @@
 import { Strings } from '@/types/types';
 
 export interface IProps {
-  title: string;
   region: string;
   owner: string;
   location: string;

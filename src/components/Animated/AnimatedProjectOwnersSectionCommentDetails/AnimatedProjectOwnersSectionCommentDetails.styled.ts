@@ -1,15 +1,11 @@
 import styled from '@emotion/styled';
-<<<<<<< HEAD:src/components/Animated/AnimatedProjectOwnersSectionCommentDetails/AnimatedProjectOwnersSectionCommentDetails.styled.ts
 import { motion } from 'framer-motion';
 import {
   IStyledContainerProps,
   IStyledElementProps,
 } from './AnimatedProjectOwnersSectionCommentDetails.types';
-=======
-import { IStyledContainerProps } from './ProjectOwnersSectionCommentDetails.types';
->>>>>>> 1a06ac301e203db3c39a65768dc682508e98cff6:src/components/MainPage/ProjectOwnersSectionCommentDetails/ProjectOwnersSectionCommentDetails.styled.ts
 
-export const Container = styled.div<IStyledContainerProps>`
+export const Container = styled(motion.div)<IStyledContainerProps>`
   align-self: ${({ isFlexEnd }) => isFlexEnd && 'flex-end'};
   position: relative;
 `;
@@ -31,6 +27,7 @@ export const Element = styled(motion.div)<IStyledElementProps>`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     transform: none !important;
+    opacity: 1 !important;
   }
 `;
 

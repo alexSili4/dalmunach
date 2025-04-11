@@ -30,7 +30,7 @@ import scyfion from '@/images/warning/hero/scyfion-min.png';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import bgImgMob from '@/images/warning/hero/section-bg-mob-min.jpg';
 import bgImgDesk from '@/images/warning/hero/section-bg-desk-min.jpg';
-import { theme } from '@/constants';
+import { ExternalLinks, theme } from '@/constants';
 
 const HeroSection: FC<IProps> = ({
   updateIsLegalDrinkingAgeUser,
@@ -72,7 +72,7 @@ const HeroSection: FC<IProps> = ({
                   <ControlTitle>Я лишаюсь — мені є 18</ControlTitle>
                 </ControlTitleWrap>
               </AcceptBtn>
-              <GoBackLink href='https://www.google.com'>
+              <GoBackLink href={ExternalLinks.drinksetter}>
                 <ControlTitleWrap>
                   <ControlTitle>Я йду</ControlTitle>
                 </ControlTitleWrap>

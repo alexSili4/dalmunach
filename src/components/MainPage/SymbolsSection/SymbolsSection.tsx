@@ -20,11 +20,11 @@ const SymbolsSection: FC = () => {
       <GeneralContainer>
         <Container ref={containerRef}>
           <AnimatedSymbolsSectionTitle
-            text='Бажаєш розгадати сенси символів?'
+            text='Бажаєте розгадати сенси символів?'
             inView={inView}
           />
           <AnimatedSymbolsSectionText
-            text='До кожної пляшки надається буклет з якого ви можете дізнатись сенси знаків.'
+            text='До кожної пляшки надається буклет, з якого ви можете дізнатися сенси знаків.'
             inView={inView}
           />
         </Container>

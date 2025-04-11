@@ -1,8 +1,8 @@
-import { RefDivObject, Strings } from '@/types/types';
+import { Strings } from '@/types/types';
+import { VariantLabels, Variants } from 'framer-motion';
 import { ReactNode } from 'react';
 
 export interface IProps {
-  containerRef: RefDivObject;
   children: ReactNode;
   strings: Strings;
   title: string;
@@ -13,6 +13,9 @@ export interface IProps {
   transformOriginYTablet: number;
   transformOriginXDesk: number;
   transformOriginYDesk: number;
+  animate: VariantLabels;
+  containerVariants: Variants;
+  elementVariants: Variants;
 }
 
 export interface IStyledContainerProps {

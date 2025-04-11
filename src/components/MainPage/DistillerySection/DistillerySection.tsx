@@ -29,11 +29,10 @@ const DistillerySection: FC<IProps> = ({ sectionRef, inView }) => {
       <GeneralContainer>
         <Container>
           <AnimatedDistillerySectionTitle
-            strings={['Про', 'дістелерію']}
+            strings={['Про', 'дистилерію']}
             inView={inView}
           />
           <AnimatedDistillerySectionText
-            title='Дані про дистилерію:'
             region='Регіон: Спейсайд'
             owner='Власник: Chivas Brothers (Pernod Ricard)'
             location='Побудована на місці славнозвісної дистилерії Imperial, Dalmunach розпочала винокуріння в 2015 році.'

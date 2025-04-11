@@ -1,14 +1,14 @@
 import { FC, useRef } from 'react';
 import blyznyukPlaton from '@/images/main/projectOwners/blyznyuk-platon-min.png';
 import zamoskovnyyRuslan from '@/images/main/projectOwners/zamoskovnyy-ruslan-min.png';
+import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
+import { IProps } from './AnimatedProjectOwnersSectionComments.types';
+import AnimatedProjectOwnersSectionCommentDetails from '@AnimatedComponents/AnimatedProjectOwnersSectionCommentDetails';
 import {
   Container,
   BlyznyukPlatonImg,
   ZamoskovnyyRuslanImg,
 } from './AnimatedProjectOwnersSectionComments.styled';
-import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
-import AnimatedProjectOwnersSectionCommentDetails from '@AnimatedComponents/AnimatedProjectOwnersSectionCommentDetails';
-import { IProps } from './AnimatedProjectOwnersSectionComments.types';
 
 const AnimatedProjectOwnersSectionComments: FC<IProps> = ({ inView }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,8 @@ const AnimatedProjectOwnersSectionComments: FC<IProps> = ({ inView }) => {
     'Посмак: середньої тривалості. Фруктові ноти протягом усього.',
   ];
   const secondCommentText = [
-    'Колір: світло-солом’яний, блискучий. Аромат: трава, солоджений ячмінь, зелене яблуко, цитруси, парфумність.',
+    'Колір: світло-солом’яний, блискучий.',
+    'Аромат: трава, солоджений ячмінь, зелене яблуко, цитруси, парфумність.',
     'Смак: збалансованість, пряність, гірчинка грейпфрута, фруктова солодкість, льодяники, свіжість.',
     'Посмак: середній, пряний, м’ята, зелений банан.',
   ];
@@ -41,22 +42,26 @@ const AnimatedProjectOwnersSectionComments: FC<IProps> = ({ inView }) => {
 
   const firstCommentVariants: Variants = {
     hidden: {
-      rotate: '-55deg',
+      rotate: '-45deg',
+      opacity: 0,
       transition,
     },
     visible: {
       rotate: 0,
+      opacity: 1,
       transition,
     },
   };
 
   const secondCommentVariants: Variants = {
     hidden: {
-      rotate: '60deg',
+      rotate: '45deg',
+      opacity: 0,
       transition,
     },
     visible: {
       rotate: 0,
+      opacity: 1,
       transition,
     },
   };
@@ -68,7 +73,7 @@ const AnimatedProjectOwnersSectionComments: FC<IProps> = ({ inView }) => {
         containerVariants={containerVariants}
         elementVariants={firstCommentVariants}
         title='Руслан Замосковний'
-        subtitle='Засновник проекту Scyfion'
+        subtitle='Засновник проєкту Scyfion'
         strings={firstCommentText}
         containerInView={containerInView}
         transformOriginXTablet={372}
@@ -86,7 +91,7 @@ const AnimatedProjectOwnersSectionComments: FC<IProps> = ({ inView }) => {
         containerVariants={containerVariants}
         elementVariants={secondCommentVariants}
         title='Платон Близнюк'
-        subtitle='Співвласник проекту Scyfion'
+        subtitle='Співвласник проєкту Scyfion'
         strings={secondCommentText}
         containerInView={containerInView}
         transformOriginXTablet={352}

@@ -39,7 +39,7 @@ const SocialLinksList: FC<IProps> = ({ isFooter = false }) => {
         </ListItem>
         <ListItem>
           <Link
-            href={ExternalLinks.dss}
+            href={ExternalLinks.drinksetter}
             target='_blank'
             rel='noopener noreferrer'
             isFooter={isFooter}
