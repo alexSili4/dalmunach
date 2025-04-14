@@ -14,6 +14,7 @@ import DecorativeBottle from '@MainPageComponents/DecorativeBottle';
 import ProjectOwnersSection from '@MainPageComponents/ProjectOwnersSection';
 import AnimatedEyeImg from '@AnimatedComponents/AnimatedEyeImg';
 import { useBottleAnimation, useEyeAnimation, useLoader } from '@/hooks';
+import PriceSection from '@MainPageComponents/PriceSection';
 
 const Main: FC = () => {
   const heroSectionRef = useRef<HTMLDivElement>(null);
@@ -26,8 +27,6 @@ const Main: FC = () => {
   const distillerySectionInView = useInView(distillerySectionRef, {
     margin: '-300px 0px -300px 0px',
   });
-  const reservedSectionRef = useRef<HTMLDivElement>(null);
-  const reservedSectionInView = useInView(reservedSectionRef);
 
   const { inView, rotate, nextSectionRef } =
     useEyeAnimation(distillerySectionRef);
@@ -74,11 +73,9 @@ const Main: FC = () => {
           sectionRef={distillerySectionRef}
           inView={distillerySectionInView}
         />
-        <ProjectOwnersSection
-          sectionRef={nextSectionRef}
-          nextSectionInView={reservedSectionInView}
-        />
-        <ReservedSection sectionRef={reservedSectionRef} />
+        <ProjectOwnersSection sectionRef={nextSectionRef} />
+        <PriceSection />
+        <ReservedSection />
         <Footer />
       </OtherSectionsWrap>
     </Container>

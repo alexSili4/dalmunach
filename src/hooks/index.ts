@@ -9,3 +9,4 @@ export { default as useIsTablet } from './useIsTablet';
 export { default as useBottleAnimation } from './useBottleAnimation';
 export { default as useEyeAnimation } from './useEyeAnimation';
 export { default as useLoader } from './useLoader';
+export { default as useAppUpdateVersion } from './useAppUpdateVersion';

@@ -4,16 +4,15 @@ import { Section, Container } from './ReservedSection.styled';
 import { SectionsIds } from '@/constants';
 import { useInView } from 'framer-motion';
 import { useParallax } from '@/hooks';
-import { IProps } from './ReservedSection.types';
 
-const ReservedSection: FC<IProps> = ({ sectionRef }) => {
-  const inView = useInView(sectionRef, {
+const ReservedSection: FC = () => {
+  const { containerRef, translateY } = useParallax(70);
+  const inView = useInView(containerRef, {
     margin: '-300px 0px -300px 0px',
   });
-  const { containerRef, translateY } = useParallax(70);
 
   return (
-    <Section id={SectionsIds.preOrder} ref={sectionRef}>
+    <Section id={SectionsIds.preOrder}>
       <Container ref={containerRef}>
         <ReservedSectionFormContainer inView={inView} translateY={translateY} />
       </Container>

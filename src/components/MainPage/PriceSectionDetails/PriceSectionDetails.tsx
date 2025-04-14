@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import primaryBottle from '@/images/main/bottle/primary-bottle-min.png';
 import {
   BottleImg,
@@ -10,12 +10,16 @@ import {
   PriceWrap,
   Text,
   TextWrap,
-} from './AnimatedProjectOwnersSectionPrice.styled';
-import { Transition, VariantLabels, Variants } from 'framer-motion';
-import { IProps } from './AnimatedProjectOwnersSectionPrice.types';
+} from './PriceSectionDetails.styled';
+import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
 
-const AnimatedProjectOwnersSectionPrice: FC<IProps> = ({ inView }) => {
+const AnimatedProjectOwnersSectionPrice: FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(containerRef, {
+    margin: '-400px 0px -400px 0px',
+  });
   const animate: VariantLabels = inView ? 'visible' : 'hidden';
+
   const transition: Transition = {
     type: 'spring',
     stiffness: 100,
@@ -28,23 +32,41 @@ const AnimatedProjectOwnersSectionPrice: FC<IProps> = ({ inView }) => {
     visible: {},
   };
 
-  const elementVariants: Variants = {
+  const firstElementVariants: Variants = {
     hidden: {
-      y: 100,
+      x: '100%',
       opacity: 0,
       transition,
     },
     visible: {
-      y: 0,
+      x: 0,
+      opacity: 1,
+      transition,
+    },
+  };
+
+  const secondElementVariants: Variants = {
+    hidden: {
+      x: '-100%',
+      opacity: 0,
+      transition,
+    },
+    visible: {
+      x: 0,
       opacity: 1,
       transition,
     },
   };
 
   return (
-    <Container variants={containerVariants} initial='visible' animate={animate}>
-      <Element variants={elementVariants}>
-        <Content>
+    <Container
+      ref={containerRef}
+      initial='hidden'
+      animate={animate}
+      variants={containerVariants}
+    >
+      <Content>
+        <Element variants={firstElementVariants}>
           <TextWrap>
             <Text>Віскі Dalmunach Distillery XXI century</Text>
             <PriceWrap>
@@ -52,9 +74,11 @@ const AnimatedProjectOwnersSectionPrice: FC<IProps> = ({ inView }) => {
               <Currency>ГРН</Currency>
             </PriceWrap>
           </TextWrap>
+        </Element>
+        <Element variants={secondElementVariants}>
           <BottleImg src={primaryBottle} alt='Пляшка' />
-        </Content>
-      </Element>
+        </Element>
+      </Content>
     </Container>
   );
 };

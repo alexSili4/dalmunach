@@ -1,33 +1,17 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import {
   IStyledContainerProps,
-  IStyledElementProps,
-} from './AnimatedProjectOwnersSectionCommentDetails.types';
+} from './ProjectOwnersSectionCommentDetails.types';
 
-export const Container = styled(motion.div)<IStyledContainerProps>`
+export const Container = styled.div<IStyledContainerProps>`
   align-self: ${({ isFlexEnd }) => isFlexEnd && 'flex-end'};
   position: relative;
-`;
-
-export const Element = styled(motion.div)<IStyledElementProps>`
-  position: relative;
-
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 443px;
-    transform-origin: ${({ transformOriginXTablet, transformOriginYTablet }) =>
-      `${transformOriginXTablet}px ${transformOriginYTablet}px`};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 590px;
-    transform-origin: ${({ transformOriginXDesk, transformOriginYDesk }) =>
-      `${transformOriginXDesk}px ${transformOriginYDesk}px`};
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    transform: none !important;
-    opacity: 1 !important;
   }
 `;
 

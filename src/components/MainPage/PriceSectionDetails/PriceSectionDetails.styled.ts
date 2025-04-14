@@ -1,32 +1,20 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-export const Container = styled(motion.div)`
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+export const Container = styled(motion.div)``;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    bottom: 70px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    bottom: 80px;
-  }
-`;
-
-export const Element = styled(motion.div)`
-  height: 100%;
-`;
+export const Element = styled(motion.div)``;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  gap: ${({ theme }) => theme.spacing(12)}px;
   height: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    gap: ${({ theme }) => theme.spacing(13)}px;
+  }
 `;
 
 export const TextWrap = styled.div`
@@ -108,6 +96,10 @@ export const Currency = styled.p`
 
 export const BottleImg = styled.img`
   position: relative;
-  height: 70vh;
+  width: 240px;
   transform: translateX(15%);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 400px;
+  }
 `;

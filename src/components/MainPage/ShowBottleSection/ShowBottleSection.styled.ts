@@ -26,7 +26,11 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  height: 3750px;
+  height: 2000px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    height: 3750px;
+  }
 `;
 
 export const Content = styled.div<IStyledContainerProps>`
