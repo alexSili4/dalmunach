@@ -9,6 +9,7 @@ const ReservedSection: FC = () => {
   const { containerRef, translateY } = useParallax(70);
   const inView = useInView(containerRef, {
     margin: '-300px 0px -300px 0px',
+    once: true,
   });
 
   return (

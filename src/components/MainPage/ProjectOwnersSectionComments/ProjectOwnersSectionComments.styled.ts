@@ -19,11 +19,11 @@ export const Container = styled.div`
 
 export const ZamoskovnyyRuslanImg = styled.img`
   position: absolute;
-  top: 374px;
+  top: 404px;
   left: -4px;
-  width: 253px;
+  width: 240px;
   max-width: 675px;
-  height: 325px;
+  height: 308px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 190px;

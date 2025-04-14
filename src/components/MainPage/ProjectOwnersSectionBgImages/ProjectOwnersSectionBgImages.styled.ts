@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const CheersImg = styled.img`
   position: absolute;
-  top: 755px;
+  top: 800px;
   left: 50%;
   width: 340px;
   transform: translateX(-50%);

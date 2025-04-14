@@ -11,6 +11,7 @@ import {
   DrinkSetterImg,
   ScyfionImg,
   DalmunachImg,
+  Link,
 } from './Footer.styled';
 import GeneralContainer from '@GeneralComponents/GeneralContainer';
 import FooterLinks from '@GeneralComponents/FooterLinks';
@@ -19,6 +20,7 @@ import logo from '@/images/footer/logo-min.png';
 import dalmunach from '@/images/footer/dalmunach-min.png';
 import drinkSetter from '@/images/footer/drink-setter-min.png';
 import scyfion from '@/images/footer/scyfion-min.png';
+import { ExternalLinks } from '@/constants';
 
 const Footer: FC = () => {
   return (
@@ -30,8 +32,20 @@ const Footer: FC = () => {
               <Icons>
                 <LogoImg src={logo} alt='Лого лікеро-горілчаних заводів' />
                 <OtherIcons>
-                  <DrinkSetterImg src={drinkSetter} alt='Лого Drink Setter' />
-                  <ScyfionImg src={scyfion} alt='Лого Scyfion' />
+                  <Link
+                    href={ExternalLinks.drinksetter}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <DrinkSetterImg src={drinkSetter} alt='Лого Drink Setter' />
+                  </Link>
+                  <Link
+                    href={ExternalLinks.scyfion}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <ScyfionImg src={scyfion} alt='Лого Scyfion' />
+                  </Link>
                 </OtherIcons>
               </Icons>
               <DalmunachImg src={dalmunach} alt='Лого Dalmunach' />

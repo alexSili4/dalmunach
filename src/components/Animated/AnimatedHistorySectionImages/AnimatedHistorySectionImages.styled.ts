@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 
 export const ManImgWrap = styled(motion.div)`
   position: absolute;
-  top: 601px;
+  top: 801px;
   left: calc(50% - 32px);
   transform-origin: bottom right;
   animation: ${animations.man} 8s infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 415px;
+    top: 615px;
     left: calc(50% + 192px);
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 558px;
+    top: 758px;
     left: calc(50% + 256px);
   }
 `;

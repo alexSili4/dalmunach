@@ -16,13 +16,3 @@ export const Text = styled(motion.p)`
     font-size: 20px;
   }
 `;
-
-export const WordContainer = styled.span`
-  display: inline-block;
-  overflow-y: hidden;
-`;
-
-export const Word = styled(motion.span)`
-  display: inline-block;
-  white-space: pre;
-`;

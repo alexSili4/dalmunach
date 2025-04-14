@@ -184,3 +184,5 @@ export const ControlTitle = styled.span`
     font-size: 20px;
   }
 `;
+
+export const Link = styled.a``;

@@ -7,6 +7,7 @@ const AnimatedHistorySectionBottle: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     margin: '-150px 0px -300px 0px',
+    once: true,
   });
   const animate: VariantLabels = inView ? 'visible' : 'hidden';
 

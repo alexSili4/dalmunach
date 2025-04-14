@@ -17,6 +17,7 @@ const AnimatedPreviewSectionImages: FC = () => {
   const imgRef = useRef<HTMLImageElement>(null);
   const imgInView = useInView(imgRef, {
     margin: '-100px 0px -100px 0px',
+    once: true,
   });
   const animate: VariantLabels = imgInView ? 'visible' : 'hidden';
   const deliciousMedia = `(min-width: ${theme.breakpoints.tablet}px)`;

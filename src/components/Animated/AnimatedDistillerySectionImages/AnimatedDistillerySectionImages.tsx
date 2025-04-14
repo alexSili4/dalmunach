@@ -12,6 +12,7 @@ const AnimatedDistillerySectionImages: FC = () => {
   const saxophonistImgWrapRef = useRef<HTMLDivElement>(null);
   const manImgWrapInView = useInView(saxophonistImgWrapRef, {
     margin: '-200px 0px -200px 0px',
+    once: true,
   });
   const animate = manImgWrapInView ? 'visible' : 'hidden';
 

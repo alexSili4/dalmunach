@@ -81,3 +81,9 @@ export const LogoWrap = styled.div`
     }
   }
 `;
+
+export const Link = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

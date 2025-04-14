@@ -8,6 +8,7 @@ const AnimatedHeroSectionBottle: FC<IProps> = ({ isLoaded }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     margin: '-250px 0px -230px 0px',
+    once: true,
   });
   const bottleInView = isLoaded && inView;
   const animate: VariantLabels = bottleInView ? 'visible' : 'hidden';

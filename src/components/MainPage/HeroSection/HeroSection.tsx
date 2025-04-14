@@ -24,6 +24,7 @@ const HeroSection: FC<IProps> = ({ isLoaded, sectionRef }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerInView = useInView(containerRef, {
     margin: '-100px 0px -100px 0px',
+    once: true,
   });
   const inView = containerInView && isLoaded;
 

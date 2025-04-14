@@ -20,6 +20,7 @@ import {
   ControlTitleWrap,
   BgImgPicture,
   BgImg,
+  Link,
 } from './HeroSection.styled';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent } from '@/types/types';
@@ -58,8 +59,23 @@ const HeroSection: FC<IProps> = ({
                 <Icons>
                   <LogoImg src={logo} alt='Лого лікеро-горілчаних заводів' />
                   <OtherIcons>
-                    <DrinkSetterImg src={drinkSetter} alt='Лого Drink Setter' />
-                    <ScyfionImg src={scyfion} alt='Лого Scyfion' />
+                    <Link
+                      href={ExternalLinks.drinksetter}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <DrinkSetterImg
+                        src={drinkSetter}
+                        alt='Лого Drink Setter'
+                      />
+                    </Link>
+                    <Link
+                      href={ExternalLinks.scyfion}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <ScyfionImg src={scyfion} alt='Лого Scyfion' />
+                    </Link>
                   </OtherIcons>
                 </Icons>
                 <DalmunachImg src={dalmunach} alt='Лого Dalmunach' />

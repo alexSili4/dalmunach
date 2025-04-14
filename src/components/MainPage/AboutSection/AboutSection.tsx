@@ -20,6 +20,7 @@ import {
   BirdBgMobImg,
   BirdDeskImg,
   BirdMobImg,
+  Link,
 } from './AboutSection.styled';
 import birdMob from '@/images/main/about/bird-mob-min.png';
 import birdDesk from '@/images/main/about/bird-desk-min.png';
@@ -27,6 +28,7 @@ import birdBgMob from '@/images/main/about/bird-bg-mob-min.png';
 import birdBgDesk from '@/images/main/about/bird-bg-desk-min.png';
 import AnimatedAboutSectionText from '@AnimatedComponents/AnimatedAboutSectionText';
 import { IProps } from './AboutSection.types';
+import { ExternalLinks } from '@/constants';
 
 const AboutSection: FC<IProps> = ({ inView, sectionRef }) => {
   return (
@@ -38,14 +40,31 @@ const AboutSection: FC<IProps> = ({ inView, sectionRef }) => {
             <LogoWrap>
               <LogoImg src={logo} alt='Лого лікеро-горілчаних заводів' />
               <Logo>
-                <DrinkSetterImg src={drinkSetter} alt='Лого Drink Setter' />
-                <ScyfionImg src={scyfion} alt='Лого Scyfion' />
+                <Link
+                  href={ExternalLinks.drinksetter}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <DrinkSetterImg src={drinkSetter} alt='Лого Drink Setter' />
+                </Link>
+                <Link
+                  href={ExternalLinks.scyfion}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <ScyfionImg src={scyfion} alt='Лого Scyfion' />
+                </Link>
               </Logo>
             </LogoWrap>
             <DalmunachImg src={dalmunach} alt='Лого Dalmunach' />
           </Content>
           <AnimatedAboutSectionText
-            text='Від почину віку спливло вже чверть століття. За цей час у Шотландії розпочали роботу понад 30 нових солодових винокурень. Чимала частина з них вже може похвалитися власними віскі з витримкою, яка досягає двозначних чисел у роках.'
+            title='Тепер ви маєте можливість:'
+            strings={[
+              '• дізнатись, яким був стиль віскі зруйнованої гуральні Imperial, поки її спадкоємиця, гуральня Dalmunach, ще намагалася його наслідувати',
+              '• розпочати колекціонування віскі, бо серія Distilleries of the XXI Century задумана як колекція',
+              '• саме тут, на цьому сайті, замовити це віскі трохи дешевше, ніж будь-де (у роздрібній мережі, онлайн-магазині тощо)',
+            ]}
             inView={inView}
           />
         </Container>

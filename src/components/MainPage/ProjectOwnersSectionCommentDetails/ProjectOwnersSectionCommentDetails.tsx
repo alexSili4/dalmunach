@@ -24,6 +24,7 @@ const ProjectOwnersSectionCommentDetails: FC<IProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     margin: '-200px 0px -200px 0px',
+    once: true,
   });
   const bgTabletMedia = `(min-width: ${theme.breakpoints.tablet}px)`;
   const bgDeskMedia = `(min-width: ${theme.breakpoints.desktop}px)`;

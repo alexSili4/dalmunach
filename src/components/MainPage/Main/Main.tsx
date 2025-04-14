@@ -22,10 +22,12 @@ const Main: FC = () => {
   const aboutSectionRef = useRef<HTMLDivElement>(null);
   const aboutSectionInView = useInView(aboutSectionRef, {
     margin: '-300px 0px -300px 0px',
+    once: true,
   });
   const distillerySectionRef = useRef<HTMLDivElement>(null);
   const distillerySectionInView = useInView(distillerySectionRef, {
     margin: '-300px 0px -300px 0px',
+    once: true,
   });
 
   const { inView, rotate, nextSectionRef } =

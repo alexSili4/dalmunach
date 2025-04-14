@@ -15,21 +15,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)}px;
-  align-items: center;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: ${({ theme }) => theme.spacing(5)}px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    gap: ${({ theme }) => theme.spacing(6)}px;
-  }
-`;
-
 export const List = styled.ul`
   display: flex;
   gap: ${({ theme }) => theme.spacing()}px;

@@ -190,3 +190,5 @@ export const BirdDeskImg = styled.img`
     display: none;
   }
 `;
+
+export const Link = styled.a``;

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const Container = styled(motion.div)`
   position: absolute;
-  top: 601px;
+  top: 801px;
   right: calc(50% - 100px);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {

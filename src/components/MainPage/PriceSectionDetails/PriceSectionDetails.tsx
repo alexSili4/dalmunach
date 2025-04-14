@@ -17,6 +17,7 @@ const AnimatedProjectOwnersSectionPrice: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     margin: '-400px 0px -400px 0px',
+    once: true,
   });
   const animate: VariantLabels = inView ? 'visible' : 'hidden';
 

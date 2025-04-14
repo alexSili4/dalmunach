@@ -1,4 +1,7 @@
+import { Strings } from '@/types/types';
+
 export interface IProps {
-  text: string;
+  title: string;
+  strings: Strings;
   inView: boolean;
 }

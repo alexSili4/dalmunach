@@ -7,6 +7,7 @@ const AnimatedHistorySectionImages: FC = () => {
   const manImgWrapRef = useRef<HTMLDivElement>(null);
   const manImgWrapInView = useInView(manImgWrapRef, {
     margin: '-200px 0px -400px 0px',
+    once: true,
   });
   const animate = manImgWrapInView ? 'visible' : 'hidden';
 

@@ -187,3 +187,5 @@ export const Warning = styled.div`
     background-position: top 225px left 50%, 0 0;
   }
 `;
+
+export const Link = styled.a``;

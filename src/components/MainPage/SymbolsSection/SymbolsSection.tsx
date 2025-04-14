@@ -12,6 +12,7 @@ const SymbolsSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     margin: '-200px 0px -200px 0px',
+    once: true,
   });
 
   return (

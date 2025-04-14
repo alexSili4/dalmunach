@@ -15,6 +15,7 @@ const AnimatedHeroSectionGoodsCounterNumber: FC<IProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     margin: '-10px 0px -10px 0px',
+    once: true,
   });
   const counterInView = isLoaded && inView;
   const animate: VariantLabels = counterInView ? 'visible' : 'hidden';

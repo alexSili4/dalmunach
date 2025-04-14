@@ -13,6 +13,7 @@ const AnimatedSymbolsSectionImages: FC = () => {
   const diagramsImgWrapRef = useRef<HTMLImageElement>(null);
   const diagramsImgWrapInView = useInView(diagramsImgWrapRef, {
     margin: '-200px 0px -200px 0px',
+    once: true,
   });
   const diagramsImgWrapAnimate: VariantLabels = diagramsImgWrapInView
     ? 'visible'
@@ -20,6 +21,7 @@ const AnimatedSymbolsSectionImages: FC = () => {
   const bookletImgWrapRef = useRef<HTMLImageElement>(null);
   const bookletImgWrapInView = useInView(bookletImgWrapRef, {
     margin: '-200px 0px -200px 0px',
+    once: true,
   });
   const bookletImgWrapAnimate: VariantLabels = bookletImgWrapInView
     ? 'visible'
