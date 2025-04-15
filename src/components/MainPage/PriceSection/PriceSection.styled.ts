@@ -9,6 +9,7 @@ export const Section = styled.section`
   background-position: 0 0;
   padding-top: ${({ theme }) => theme.spacing(10)}px;
   padding-bottom: ${({ theme }) => theme.spacing(20)}px;
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     background-image: url(${sectionBgTablet});

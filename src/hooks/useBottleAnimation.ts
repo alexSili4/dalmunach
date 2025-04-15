@@ -3,12 +3,14 @@ import { bottleImgs } from '@/constants';
 import { IUseBottleAnimation } from '@/types/hooks.types';
 import { unDisableScroll } from '@/utils';
 import { useScroll, useTransform } from 'framer-motion';
+import useIsTablet from './useIsTablet';
 
 const useBottleAnimation = (): IUseBottleAnimation => {
   const [showHandAnimation, setShowHandAnimation] = useState<boolean>(false);
   const [isBottleAnimation, setIsBottleAnimation] = useState<boolean>(false);
   const [showBottleAnimation, setShowBottleAnimation] =
     useState<boolean>(false);
+  const isTablet = useIsTablet();
   const showBottleSectionContainerRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
@@ -22,7 +24,7 @@ const useBottleAnimation = (): IUseBottleAnimation => {
   const bottleImgsLength = bottleImgs.length;
   const decorativeBottleActiveIndex = useTransform(
     showBottleSectionContainerScrollYProgress,
-    [0.35, 0.8],
+    isTablet ? [0.35, 0.8] : [0.55, 0.7],
     showBottleAnimation ? [0, bottleImgsLength - 1] : [0, 0],
     {
       clamp: true,

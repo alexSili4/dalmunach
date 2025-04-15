@@ -9,12 +9,14 @@ const AnimatedAboutSectionDescText: FC<IProps> = ({ text, variants }) => {
 
   return words.map((word, index, words) => {
     const textWord = getTextWord({ index, word, words });
+    const isFirstItem = index === 0;
 
     return (
       <AnimatedAboutSectionTextPart
         textWord={textWord}
         variants={variants}
         key={index}
+        isFirstItem={isFirstItem}
       />
     );
   });

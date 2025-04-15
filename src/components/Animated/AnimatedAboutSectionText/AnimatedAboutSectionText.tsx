@@ -29,6 +29,7 @@ const AnimatedAboutSectionText: FC<IProps> = ({ title, strings, inView }) => {
       <br />
       {strings.map((item, index, array) => {
         const isLastIndex = getIsLastIndex({ index, array });
+
         const descText = (
           <AnimatedAboutSectionDescText
             text={item}

@@ -6,7 +6,7 @@ import sectionBgDesk from '@/images/main/projectOwners/section-bg-desk-min.jpg';
 export const Section = styled.section`
   position: relative;
   padding-top: ${({ theme }) => theme.spacing(24)}px;
-  padding-bottom: calc(100vh + ${({ theme }) => theme.spacing(24)}px);
+  padding-bottom: ${({ theme }) => theme.spacing(94)}px;
   background-image: url(${sectionBgMob});
   background-position: 0 0;
   background-size: 100% 100%;
