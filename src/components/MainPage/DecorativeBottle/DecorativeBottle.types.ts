@@ -11,4 +11,5 @@ export interface IProps {
   isBottleAnimation: boolean;
   nextSectionInViewWithMargin: boolean;
   nextSectionInView: boolean;
+  sectionInView: boolean;
 }

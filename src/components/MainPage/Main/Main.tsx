@@ -49,6 +49,8 @@ const Main: FC = () => {
     bottleWrapRef,
     previewRef,
     isBottleAnimation,
+    mobBottleGuardInView,
+    mobBottleGuardRef,
   } = useBottleAnimation();
 
   return (
@@ -64,6 +66,7 @@ const Main: FC = () => {
           isBottleAnimation={isBottleAnimation}
           nextSectionInViewWithMargin={symbolsSectionInViewWithMargin}
           nextSectionInView={symbolsSectionInView}
+          sectionInView={mobBottleGuardInView}
         />
       )}
       <AnimatedEyeImg inView={inView} rotate={rotate} />
@@ -75,6 +78,7 @@ const Main: FC = () => {
         showHandAnimation={showHandAnimation}
         containerRef={showBottleSectionContainerRef}
         updateShowHandAnimation={updateShowHandAnimation}
+        guardRef={mobBottleGuardRef}
       />
       <OtherSectionsWrap>
         <SymbolsSection sectionRef={symbolsSectionRef} />

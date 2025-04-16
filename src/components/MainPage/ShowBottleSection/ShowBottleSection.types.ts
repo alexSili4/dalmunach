@@ -4,6 +4,7 @@ import { RefDivObject } from '@/types/types';
 export interface IProps {
   containerRef: RefDivObject;
   showHandAnimation: boolean;
+  guardRef: RefDivObject;
   updateShowHandAnimation: SetBooleanFunc;
 }
 

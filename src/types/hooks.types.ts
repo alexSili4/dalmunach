@@ -48,6 +48,8 @@ export interface IUseBottleAnimation {
   previewRef: RefDivObject;
   isBottleAnimation: boolean;
   bottleWrapRef: RefDivObject;
+  mobBottleGuardRef: RefDivObject;
+  mobBottleGuardInView: boolean;
 }
 
 export interface IUseEyeAnimation {

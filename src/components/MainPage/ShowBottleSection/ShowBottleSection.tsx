@@ -11,6 +11,7 @@ import {
   EllipseRight,
   Content,
   Container,
+  Guard,
 } from './ShowBottleSection.styled';
 import deregent from '@/images/main/showBottle/deregent-min.png';
 import peopleDesk from '@/images/main/showBottle/people-desk-min.png';
@@ -19,14 +20,17 @@ import ray from '@/images/main/showBottle/ray-min.png';
 import sculpture from '@/images/main/showBottle/sculpture-min.png';
 import { IProps } from './ShowBottleSection.types';
 import { disableScroll } from '@/utils';
+import { useIsTablet } from '@/hooks';
 
 const ShowBottleSection: FC<IProps> = ({
   containerRef,
   updateShowHandAnimation,
   showHandAnimation,
+  guardRef,
 }) => {
   const [top, setTop] = useState<number>(0);
   const contentRef = useRef<HTMLDivElement>(null);
+  const isTablet = useIsTablet();
 
   useEffect(() => {
     const onSectionScroll = () => {
@@ -38,7 +42,7 @@ const ShowBottleSection: FC<IProps> = ({
         const roundTop = Math.round(top);
         const shouldShowHandAnimation = roundContainerTop === roundTop;
         const shouldDisableScroll =
-          shouldShowHandAnimation && !showHandAnimation;
+          shouldShowHandAnimation && !showHandAnimation && isTablet;
 
         updateShowHandAnimation(shouldShowHandAnimation);
 
@@ -81,6 +85,7 @@ const ShowBottleSection: FC<IProps> = ({
           <SculptureImg src={sculpture} alt='Скульптура' />
           <PeopleMobImg src={peopleMob} alt='Люди' />
           <PeopleDeskImg src={peopleDesk} alt='Люди' />
+          <Guard ref={guardRef}></Guard>
         </Content>
       </Container>
     </Section>

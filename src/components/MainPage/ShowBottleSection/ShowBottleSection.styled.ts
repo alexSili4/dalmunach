@@ -29,7 +29,11 @@ export const Container = styled.div`
   height: 2500px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    height: 3750px;
+    height: 4000px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    height: 4750px;
   }
 `;
 
@@ -201,5 +205,16 @@ export const EllipseRight = styled.div`
     top: 595px;
     right: -286px;
     width: 573px;
+  }
+`;
+
+export const Guard = styled.div`
+  position: absolute;
+  top: 900px;
+  left: 0;
+  width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    display: none;
   }
 `;

@@ -44,9 +44,9 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({
               src={stand}
               alt='Стенд'
               key='stand-tablet'
-              initial={{ y: '100%' }}
+              initial={{ y: '100vh' }}
               animate={{ y: 0 }}
-              exit={{ y: '100%' }}
+              exit={{ y: '100vh' }}
               transition={transition}
             />
           )}

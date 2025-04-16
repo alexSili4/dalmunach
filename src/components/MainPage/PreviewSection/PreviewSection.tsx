@@ -14,7 +14,7 @@ const PreviewSection: FC<IProps> = ({ previewRef }) => {
       <HiddenSectionTitle title='Загальна демонстрація' />
       <GeneralContainer>
         <Container>
-          <ReservedLink/>
+          <ReservedLink isHiddenOnDesk />
           <PreviewSectionPlayer video={preview} previewRef={previewRef} />
         </Container>
       </GeneralContainer>

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { bottleImgs } from '@/constants';
 import { IUseBottleAnimation } from '@/types/hooks.types';
 import { unDisableScroll } from '@/utils';
-import { useScroll, useTransform } from 'framer-motion';
+import { useInView, useScroll, useTransform } from 'framer-motion';
 import useIsTablet from './useIsTablet';
 
 const useBottleAnimation = (): IUseBottleAnimation => {
@@ -15,7 +15,8 @@ const useBottleAnimation = (): IUseBottleAnimation => {
   const containerRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const bottleWrapRef = useRef<HTMLDivElement>(null);
-
+  const mobBottleGuardRef = useRef<HTMLDivElement>(null);
+  const mobBottleGuardInView = useInView(mobBottleGuardRef);
   const { scrollYProgress: showBottleSectionContainerScrollYProgress } =
     useScroll({
       target: showBottleSectionContainerRef,
@@ -24,7 +25,7 @@ const useBottleAnimation = (): IUseBottleAnimation => {
   const bottleImgsLength = bottleImgs.length;
   const decorativeBottleActiveIndex = useTransform(
     showBottleSectionContainerScrollYProgress,
-    isTablet ? [0.35, 0.75] : [0.55, 0.65],
+    isTablet ? [0.35, 0.75] : [0.47, 0.65],
     showBottleAnimation ? [0, bottleImgsLength - 1] : [0, 0],
     {
       clamp: true,
@@ -63,7 +64,7 @@ const useBottleAnimation = (): IUseBottleAnimation => {
       }
     };
 
-    window.addEventListener('scroll', onWindowScroll);
+      window.addEventListener('scroll', onWindowScroll);
   }, []);
 
   useEffect(() => {
@@ -86,6 +87,8 @@ const useBottleAnimation = (): IUseBottleAnimation => {
     previewRef,
     bottleWrapRef,
     isBottleAnimation,
+    mobBottleGuardRef,
+    mobBottleGuardInView,
   };
 };
 

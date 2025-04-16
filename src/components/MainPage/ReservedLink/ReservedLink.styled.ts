@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { IStyledLinkProps } from './ReservedLink.types';
 
-export const Link = styled.a`
+export const Link = styled.a<IStyledLinkProps>`
   flex-shrink: 0;
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.bottle + 1};
@@ -17,6 +18,7 @@ export const Link = styled.a`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    display: ${({ isHiddenOnDesk }) => isHiddenOnDesk && 'none'};
     width: 222px;
   }
 
