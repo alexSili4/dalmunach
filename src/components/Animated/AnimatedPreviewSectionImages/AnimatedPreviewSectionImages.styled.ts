@@ -9,6 +9,7 @@ export const Container = styled(motion.div)`
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 `;
 
 export const DeliciousPictureWrap = styled(motion.div)`

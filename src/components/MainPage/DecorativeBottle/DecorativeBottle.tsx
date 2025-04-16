@@ -24,7 +24,7 @@ const DecorativeBottle: FC<IProps> = ({
   const transition: Transition = {
     type: 'spring',
     stiffness: 100,
-    damping: 10,
+    damping: 20,
   };
 
   const containerVariants: Variants = {

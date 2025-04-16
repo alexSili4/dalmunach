@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 
 export const Link = styled.a`
   flex-shrink: 0;
+  position: relative;
+  z-index: ${({ theme }) => theme.zIndex.bottle + 1};
   display: flex;
   width: 100%;
   padding: ${({ theme }) => theme.spacing()}px;

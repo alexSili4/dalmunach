@@ -5,7 +5,7 @@ import sectionBgDesk from '@/images/main/preview/section-bg-desk-min.jpg';
 
 export const Section = styled.section`
   position: relative;
-  padding-top: ${({ theme }) => theme.spacing(150)}px;
+  padding-top: ${({ theme }) => theme.spacing(120)}px;
   background-image: url(${sectionBgMob});
   background-position: 0 0;
   background-size: 100% 100%;
@@ -23,4 +23,11 @@ export const Section = styled.section`
     padding-bottom: ${({ theme }) => theme.spacing(47)}px;
     background-image: url(${sectionBgDesk});
   }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(20)}px;
 `;
