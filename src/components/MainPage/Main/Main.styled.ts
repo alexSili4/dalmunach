@@ -5,14 +5,14 @@ export const Container = styled.main`
 `;
 
 export const OtherSectionsWrap = styled.div`
-  position: relative;
+  position: absolute;
   z-index: ${({ theme }) => theme.zIndex.bottle + 1};
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-90px);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
     transform: translateY(-500px);
   }
 

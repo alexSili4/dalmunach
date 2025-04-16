@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import sectionBgMob from '@/images/main/symbols/section-bg-mob-min.jpg';
+import sectionBgMob from '@/images/main/symbols/section-bg-mob-min.png';
 import sectionBgTablet from '@/images/main/symbols/section-bg-tablet-min.png';
 import sectionBgDesk from '@/images/main/symbols/section-bg-desk-min.png';
 
