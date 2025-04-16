@@ -23,14 +23,18 @@ export const StickyBottleWrap = styled.div`
   overflow: hidden;
 `;
 
-export const BottleWrap = styled.div`
+export const BottleWrap = styled(motion.div)`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 `;
 
-export const HandImg = styled(motion.img)`
+export const AnimatedBottle = styled(motion.div)`
+  position: relative;
+`;
+
+export const HandImg = styled.img`
   position: absolute;
   top: -125px;
   left: -86px;

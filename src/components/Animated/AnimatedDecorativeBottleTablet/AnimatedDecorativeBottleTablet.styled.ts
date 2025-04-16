@@ -17,7 +17,6 @@ export const BottleWrap = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 50%;
-  outline: 1px solid red;
 `;
 
 export const HandImg = styled(motion.img)`

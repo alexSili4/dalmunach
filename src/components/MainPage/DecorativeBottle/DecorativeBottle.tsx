@@ -17,6 +17,7 @@ const DecorativeBottle: FC<IProps> = ({
 }) => {
   const shouldShowHand = showAnimation || nextSectionInView;
   const shouldShowStand = showAnimation;
+  const animateMob: VariantLabels = showAnimation ? 'visible' : 'hidden';
   const animate: VariantLabels = nextSectionInViewWithMargin
     ? 'hidden'
     : 'visible';
@@ -31,9 +32,22 @@ const DecorativeBottle: FC<IProps> = ({
     visible: {},
   };
 
-  const elementVariants: Variants = {
+  const bottleVariants: Variants = {
     hidden: {
       y: '-70%',
+      opacity: 0,
+      transition,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition,
+    },
+  };
+
+  const standVariants: Variants = {
+    hidden: {
+      y: '70%',
       opacity: 0,
       transition,
     },
@@ -47,10 +61,13 @@ const DecorativeBottle: FC<IProps> = ({
   return (
     <>
       <AnimatedDecorativeBottleMob
-        showAnimation={showAnimation}
         activeIndex={activeIndex}
         bottleImgs={bottleImgs}
         onAnimationComplete={onAnimationComplete}
+        animate={animateMob}
+        containerVariants={containerVariants}
+        bottleVariants={bottleVariants}
+        standVariants={standVariants}
       />
       <AnimatedDecorativeBottleTablet
         scale={bottleScale}
@@ -63,7 +80,7 @@ const DecorativeBottle: FC<IProps> = ({
         shouldShowHand={shouldShowHand}
         animate={animate}
         containerVariants={containerVariants}
-        elementVariants={elementVariants}
+        elementVariants={bottleVariants}
         transition={transition}
       />
     </>
