@@ -6,7 +6,7 @@ import sectionBgDesk from '@/images/main/symbols/section-bg-desk-min.png';
 export const Section = styled.section`
   position: relative;
   padding-top: ${({ theme }) => theme.spacing(73)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(233)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(63)}px;
   background-image: url(${sectionBgMob});
   background-position: 0 0;
   background-size: 100% 100%;
@@ -15,18 +15,29 @@ export const Section = styled.section`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(148)}px;
-    padding-bottom: ${({ theme }) => theme.spacing(198)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(28)}px;
     background-image: url(${sectionBgTablet});
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     padding-top: ${({ theme }) => theme.spacing(181)}px;
-    padding-bottom: ${({ theme }) => theme.spacing(247)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(77)}px;
     background-image: url(${sectionBgDesk});
   }
 `;
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(170)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(220)}px;
+  }
+`;
+
+export const TextWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)}px;

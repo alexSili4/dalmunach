@@ -1,11 +1,6 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 
-export const Container = styled(motion.div)``;
-
-export const Element = styled(motion.div)``;
-
-export const Content = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +92,7 @@ export const Currency = styled.p`
 export const BottleImg = styled.img`
   position: relative;
   width: 240px;
-  transform: translateX(15%);
+  transform: translateX(12%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 400px;

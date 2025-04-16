@@ -9,4 +9,6 @@ export interface IProps {
   onAnimationComplete: Func;
   bottleWrapRef: RefDivObject;
   isBottleAnimation: boolean;
+  nextSectionInViewWithMargin: boolean;
+  nextSectionInView: boolean;
 }

@@ -12,12 +12,14 @@ const AnimatedDistillerySectionEquipmentText: FC<IProps> = ({
 
   return words.map((word, index, words) => {
     const textWord = getTextWord({ index, word, words });
+    const isFirstItem = index === 0;
 
     return (
       <AnimatedDistillerySectionTextPart
         textWord={textWord}
         variants={variants}
         key={index}
+        isFirstItem={isFirstItem}
       />
     );
   });

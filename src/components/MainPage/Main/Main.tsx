@@ -29,6 +29,11 @@ const Main: FC = () => {
     margin: '-300px 0px -300px 0px',
     once: true,
   });
+  const symbolsSectionRef = useRef<HTMLDivElement>(null);
+  const symbolsSectionInViewWithMargin = useInView(symbolsSectionRef, {
+    margin: '-200px',
+  });
+  const symbolsSectionInView = useInView(symbolsSectionRef);
 
   const { inView, rotate, nextSectionRef } =
     useEyeAnimation(distillerySectionRef);
@@ -57,6 +62,8 @@ const Main: FC = () => {
           bottleImgs={bottleImgs}
           bottleWrapRef={bottleWrapRef}
           isBottleAnimation={isBottleAnimation}
+          nextSectionInViewWithMargin={symbolsSectionInViewWithMargin}
+          nextSectionInView={symbolsSectionInView}
         />
       )}
       <AnimatedEyeImg inView={inView} rotate={rotate} />
@@ -70,7 +77,7 @@ const Main: FC = () => {
         updateShowHandAnimation={updateShowHandAnimation}
       />
       <OtherSectionsWrap>
-        <SymbolsSection />
+        <SymbolsSection sectionRef={symbolsSectionRef} />
         <DistillerySection
           sectionRef={distillerySectionRef}
           inView={distillerySectionInView}

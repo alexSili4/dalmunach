@@ -7,7 +7,9 @@ export const Container = styled.span`
   overflow-y: hidden;
 `;
 
-export const Word = styled(motion.span)<IStyledWordProps>`
+export const Text = styled(motion.span)``;
+
+export const Word = styled.span<IStyledWordProps>`
   display: inline-block;
   color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
@@ -24,4 +26,11 @@ export const Word = styled(motion.span)<IStyledWordProps>`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     font-size: 20px;
   }
+`;
+
+export const Bullet = styled.img`
+  position: relative;
+  display: inline-block;
+  height: 18px;
+  transform: translateY(4px);
 `;

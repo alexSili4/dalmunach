@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const ReservedLink = styled.a`
+export const Link = styled.a`
   flex-shrink: 0;
   display: flex;
   width: 100%;
@@ -23,7 +23,7 @@ export const ReservedLink = styled.a`
   }
 `;
 
-export const ReservedLinkTitleWrap = styled.span`
+export const LinkTitleWrap = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +42,7 @@ export const ReservedLinkTitleWrap = styled.span`
   }
 `;
 
-export const ReservedLinkTitle = styled.span`
+export const LinkTitle = styled.span`
   color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.sofiaSans};
   font-size: 16px;

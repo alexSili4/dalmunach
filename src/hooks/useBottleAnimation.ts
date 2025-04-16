@@ -24,7 +24,7 @@ const useBottleAnimation = (): IUseBottleAnimation => {
   const bottleImgsLength = bottleImgs.length;
   const decorativeBottleActiveIndex = useTransform(
     showBottleSectionContainerScrollYProgress,
-    isTablet ? [0.35, 0.8] : [0.55, 0.7],
+    isTablet ? [0.35, 0.75] : [0.55, 0.65],
     showBottleAnimation ? [0, bottleImgsLength - 1] : [0, 0],
     {
       clamp: true,

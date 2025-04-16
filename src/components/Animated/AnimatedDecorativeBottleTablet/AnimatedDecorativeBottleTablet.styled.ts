@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   position: sticky;
   z-index: ${({ theme }) => theme.zIndex.bottle};
   top: 50%;
@@ -17,6 +17,7 @@ export const BottleWrap = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 50%;
+  outline: 1px solid red;
 `;
 
 export const HandImg = styled(motion.img)`
