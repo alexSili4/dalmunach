@@ -8,7 +8,6 @@ export interface IProps {
   bottleImgs: Strings;
   onAnimationComplete: Func;
   bottleWrapRef: RefDivObject;
-  isBottleAnimation: boolean;
   nextSectionInViewWithMargin: boolean;
   nextSectionInView: boolean;
   sectionInView: boolean;

@@ -11,7 +11,6 @@ const DecorativeBottle: FC<IProps> = ({
   showAnimation,
   onAnimationComplete,
   bottleWrapRef,
-  isBottleAnimation,
   nextSectionInViewWithMargin,
   nextSectionInView,
   sectionInView,
@@ -73,7 +72,6 @@ const DecorativeBottle: FC<IProps> = ({
         bottleImgs={bottleImgs}
         onAnimationComplete={onAnimationComplete}
         bottleWrapRef={bottleWrapRef}
-        isBottleAnimation={isBottleAnimation}
         shouldShowStand={shouldShowStand}
         shouldShowHand={shouldShowHand}
         animate={animate}

@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-   define: {
+  define: {
     __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
   },
   plugins: [react(), svgr()],
@@ -19,16 +19,20 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        chunkFileNames: 'dist/[name].js',
-        entryFileNames: 'dist/[name].js',
+        chunkFileNames: 'dist/[name]-[hash].js',
+        entryFileNames: 'dist/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
           const fileName = assetInfo.name || '';
 
-          if (fileName.endsWith('.png') || fileName.endsWith('.jpg')) {
+          if (
+            fileName.endsWith('.png') ||
+            fileName.endsWith('.jpg') ||
+            fileName.endsWith('.webp')
+          ) {
             return 'img/app/[name]-[hash][extname]';
           }
 
-          return 'dist/[name][extname]';
+          return 'dist/[name]-[hash][extname]';
         },
       },
     },

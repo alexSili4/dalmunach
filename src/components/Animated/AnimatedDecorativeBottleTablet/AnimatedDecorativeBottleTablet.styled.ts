@@ -27,8 +27,8 @@ export const HandImg = styled(motion.img)`
   max-width: 2000px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: -243px;
-    left: -205px;
+    top: -203px;
+    left: -195px;
     height: 385px;
   }
 `;
@@ -44,7 +44,7 @@ export const StandImg = styled(motion.img)`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     bottom: -300px;
-    left: -323px;
+    left: -300px;
     width: 861px;
     height: 484px;
   }

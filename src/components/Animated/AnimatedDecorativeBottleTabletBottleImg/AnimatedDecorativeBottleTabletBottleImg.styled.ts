@@ -11,6 +11,7 @@ export const Bottle = styled(motion.img)<IStyledBottleProps>`
   transform: translateY(6%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 180px;
+    width: 200px;
+    transform: translateY(7%);
   }
 `;

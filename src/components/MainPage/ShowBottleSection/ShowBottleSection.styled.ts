@@ -26,14 +26,10 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  height: 2500px;
+  height: 380vh;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    height: 4000px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    height: 4750px;
+    height: 530vh;
   }
 `;
 
@@ -41,7 +37,8 @@ export const Content = styled.div<IStyledContainerProps>`
   position: sticky;
   top: ${({ top }) => top}px;
   left: 0;
-  height: 1439px;
+  min-height: 1439px;
+  height: 100vh;
   background-image: url(${sectionBgMob});
   background-position: 0 0;
   background-size: 100% 100%;
@@ -49,12 +46,12 @@ export const Content = styled.div<IStyledContainerProps>`
   overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    height: 927px;
+    min-height: 927px;
     background-image: url(${sectionBgTablet});
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    height: 1264px;
+    min-height: 1264px;
     background-image: url(${sectionBgDesk});
   }
 `;

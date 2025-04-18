@@ -10,7 +10,6 @@ import hand from '@/images/main/bottle/hand-min.png';
 import stand from '@/images/main/bottle/stand-min.png';
 import { AnimatePresence } from 'framer-motion';
 import AnimatedDecorativeBottleTabletImages from '@AnimatedComponents/AnimatedDecorativeBottleTabletImages';
-import AnimatedDecorativeBottleTabletBottlePrimaryImg from '@AnimatedComponents/AnimatedDecorativeBottleTabletBottlePrimaryImg';
 
 const AnimatedDecorativeBottleTablet: FC<IProps> = ({
   scale,
@@ -18,7 +17,6 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({
   bottleImgs,
   onAnimationComplete,
   bottleWrapRef,
-  isBottleAnimation,
   animate,
   containerVariants,
   elementVariants,
@@ -50,14 +48,9 @@ const AnimatedDecorativeBottleTablet: FC<IProps> = ({
               transition={transition}
             />
           )}
-          <AnimatedDecorativeBottleTabletBottlePrimaryImg
-            key='bottle-tablet'
-            inView={!isBottleAnimation}
-          />
           <AnimatedDecorativeBottleTabletImages
             activeIndex={activeIndex}
             bottleImgs={bottleImgs}
-            inView={isBottleAnimation}
           />
           {shouldShowHand && (
             <HandImg

@@ -11,7 +11,22 @@ export const Container = styled(motion.div)`
   }
 `;
 
+export const Element = styled(motion.div)`
+  position: relative;
+`;
+
 export const Bottle = styled(motion.img)`
-  width: 200px;
-  max-width: 200px;
+  position: relative;
+  width: 125px;
+  max-width: 125px;
+`;
+
+export const ShadowImg = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 90px);
+  max-width: none;
+  height: 100%;
+  transform: translateX(-50%) translateY(-50%);
 `;

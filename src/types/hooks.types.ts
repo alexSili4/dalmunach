@@ -46,7 +46,6 @@ export interface IUseBottleAnimation {
   onHandAnimationComplete: Func;
   containerRef: RefDivObject;
   previewRef: RefDivObject;
-  isBottleAnimation: boolean;
   bottleWrapRef: RefDivObject;
   mobBottleGuardRef: RefDivObject;
   mobBottleGuardInView: boolean;

@@ -89,12 +89,29 @@ export const Currency = styled.p`
   }
 `;
 
+export const BottleWrap = styled.div`
+  position: relative;
+`;
+
+export const ShadowImg = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 90px);
+  max-width: none;
+  height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: calc(100% + 120px);
+  }
+`;
+
 export const BottleImg = styled.img`
   position: relative;
-  width: 240px;
-  transform: translateX(12%);
+  width: 149px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    width: 400px;
+    width: 200px;
   }
 `;

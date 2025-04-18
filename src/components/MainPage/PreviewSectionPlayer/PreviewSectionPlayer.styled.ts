@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import ReactPlayer from 'react-player';
-import { IPlayBtnProps } from './PreviewSectionPlayer.types';
 
 export const Container = styled.div`
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.bottle + 1};
   display: flex;
   height: 667px;
+  aspect-ratio: 356 / 667;
   margin-left: auto;
   margin-right: auto;
   padding-top: ${({ theme }) => theme.spacing(26)}px;
@@ -33,7 +33,7 @@ export const Container = styled.div`
   }
 `;
 
-export const VideoBg = styled.img`
+export const VideoWrapBg = styled.img`
   position: absolute;
   top: 0;
   left: 0;
@@ -42,33 +42,21 @@ export const VideoBg = styled.img`
   pointer-events: none;
 `;
 
-export const StyledReactPlayer = styled(ReactPlayer)``;
-
-export const PlayBtn = styled.button<IPlayBtnProps>`
+export const VideoBg = styled.img`
   position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  transform: translateX(-50%) translateY(-50%);
-  opacity: ${({ playing }) => (playing ? 0 : 1)};
-  pointer-events: ${({ playing }) => (playing ? 'none' : 'all')};
-  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  top: 60px;
+  left: 40px;
+  width: calc(100% - 40px - 40px);
+  height: calc(100% - 60px - 60px);
 
-  & > svg {
-    width: 84px;
-    height: 60px;
-    color: #ff0000;
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-      width: 63px;
-      height: 45px;
-    }
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-      width: 84px;
-      height: 60px;
-    }
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: 80px;
+    left: 60px;
+    width: calc(100% - 60px - 60px);
+    height: calc(100% - 80px - 80px);
   }
+`;
+
+export const StyledReactPlayer = styled(ReactPlayer)`
+  position: relative;
 `;

@@ -48,7 +48,6 @@ const Main: FC = () => {
     updateShowHandAnimation,
     bottleWrapRef,
     previewRef,
-    isBottleAnimation,
     mobBottleGuardInView,
     mobBottleGuardRef,
   } = useBottleAnimation();
@@ -63,7 +62,6 @@ const Main: FC = () => {
           activeIndex={decorativeBottleActiveIndex}
           bottleImgs={bottleImgs}
           bottleWrapRef={bottleWrapRef}
-          isBottleAnimation={isBottleAnimation}
           nextSectionInViewWithMargin={symbolsSectionInViewWithMargin}
           nextSectionInView={symbolsSectionInView}
           sectionInView={mobBottleGuardInView}

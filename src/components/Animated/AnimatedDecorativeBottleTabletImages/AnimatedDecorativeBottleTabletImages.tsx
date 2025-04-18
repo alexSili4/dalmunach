@@ -1,15 +1,19 @@
 import { FC } from 'react';
 import { IProps } from './AnimatedDecorativeBottleTabletImages.types';
 import AnimatedDecorativeBottleTabletBottleImg from '@AnimatedComponents/AnimatedDecorativeBottleTabletBottleImg';
-import { Container } from './AnimatedDecorativeBottleTabletImages.styled';
+import {
+  Container,
+  ShadowImg,
+} from './AnimatedDecorativeBottleTabletImages.styled';
+import shadow from '@/images/main/bottle/shadow.webp';
 
 const AnimatedDecorativeBottleTabletImages: FC<IProps> = ({
   bottleImgs,
   activeIndex,
-  inView,
 }) => {
   return (
-    <Container inView={inView}>
+    <Container>
+      <ShadowImg src={shadow} alt='Тінь' />
       {bottleImgs.map((img, index) => {
         const key = `bottle-tablet-${index}`;
         const isPositionAbsolute = index !== 0;

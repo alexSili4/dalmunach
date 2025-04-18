@@ -18,7 +18,7 @@ export const DeliciousPictureWrap = styled(motion.div)`
   left: 0;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 422px;
+    top: 421px;
     left: 96px;
   }
 
@@ -49,7 +49,7 @@ export const DeliciousPicture = styled.picture<IStyledImgProps>`
 
 export const HowGoodImgWrap = styled(motion.div)`
   position: absolute;
-  top: 102px;
+  top: 222px;
   right: 2px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {

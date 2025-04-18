@@ -7,7 +7,6 @@ import useIsTablet from './useIsTablet';
 
 const useBottleAnimation = (): IUseBottleAnimation => {
   const [showHandAnimation, setShowHandAnimation] = useState<boolean>(false);
-  const [isBottleAnimation, setIsBottleAnimation] = useState<boolean>(false);
   const [showBottleAnimation, setShowBottleAnimation] =
     useState<boolean>(false);
   const isTablet = useIsTablet();
@@ -25,7 +24,7 @@ const useBottleAnimation = (): IUseBottleAnimation => {
   const bottleImgsLength = bottleImgs.length;
   const decorativeBottleActiveIndex = useTransform(
     showBottleSectionContainerScrollYProgress,
-    isTablet ? [0.35, 0.75] : [0.47, 0.65],
+    isTablet ? [0.28, 0.74] : [0.47, 0.65],
     showBottleAnimation ? [0, bottleImgsLength - 1] : [0, 0],
     {
       clamp: true,
@@ -50,24 +49,6 @@ const useBottleAnimation = (): IUseBottleAnimation => {
   };
 
   useEffect(() => {
-    const onWindowScroll = () => {
-      const bottleWrap = bottleWrapRef.current;
-      const preview = previewRef.current;
-
-      if (bottleWrap && preview) {
-        const previewRect = preview.getBoundingClientRect();
-        const bottleWrapRect = bottleWrap.getBoundingClientRect();
-
-        const isBottleAnimation = previewRect.top - bottleWrapRect.top <= -30;
-
-        setIsBottleAnimation(isBottleAnimation);
-      }
-    };
-
-      window.addEventListener('scroll', onWindowScroll);
-  }, []);
-
-  useEffect(() => {
     if (showHandAnimation) {
       setShowBottleAnimation(true);
     } else {
@@ -86,7 +67,6 @@ const useBottleAnimation = (): IUseBottleAnimation => {
     containerRef,
     previewRef,
     bottleWrapRef,
-    isBottleAnimation,
     mobBottleGuardRef,
     mobBottleGuardInView,
   };

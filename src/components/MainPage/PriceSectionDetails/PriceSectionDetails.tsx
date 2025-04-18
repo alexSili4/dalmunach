@@ -1,14 +1,17 @@
 import { FC } from 'react';
-import primaryBottle from '@/images/main/bottle/primary-bottle-min.png';
 import {
   BottleImg,
+  BottleWrap,
   Container,
   Currency,
   Price,
   PriceWrap,
   Text,
   TextWrap,
+  ShadowImg,
 } from './PriceSectionDetails.styled';
+import { bottleImgs } from '@/constants';
+import shadow from '@/images/main/bottle/shadow.webp';
 
 const PriceSectionDetails: FC = () => {
   return (
@@ -20,7 +23,10 @@ const PriceSectionDetails: FC = () => {
           <Currency>ГРН</Currency>
         </PriceWrap>
       </TextWrap>
-      <BottleImg src={primaryBottle} alt='Пляшка' />
+      <BottleWrap>
+        <ShadowImg src={shadow} alt='Тінь' />
+        <BottleImg src={bottleImgs[0]} alt='Пляшка' />
+      </BottleWrap>
     </Container>
   );
 };

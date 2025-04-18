@@ -1,7 +1,13 @@
 import { FC, useRef } from 'react';
-import { Bottle, Container } from './AnimatedHistorySectionBottle.styled';
-import primaryBottle from '@/images/main/bottle/primary-bottle-min.png';
+import {
+  Bottle,
+  Container,
+  Element,
+  ShadowImg,
+} from './AnimatedHistorySectionBottle.styled';
 import { Transition, useInView, VariantLabels, Variants } from 'framer-motion';
+import { bottleImgs } from '@/constants';
+import shadow from '@/images/main/bottle/shadow.webp';
 
 const AnimatedHistorySectionBottle: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,7 +49,10 @@ const AnimatedHistorySectionBottle: FC = () => {
       initial='hidden'
       animate={animate}
     >
-      <Bottle src={primaryBottle} alt='Пляшка' variants={elementVariants} />
+      <Element variants={elementVariants}>
+        <ShadowImg src={shadow} alt='Тінь' />
+        <Bottle src={bottleImgs[0]} alt='Пляшка' />
+      </Element>
     </Container>
   );
 };
