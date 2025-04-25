@@ -10,16 +10,16 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-top: ${({ theme }) => theme.spacing(26)}px;
-  padding-left: ${({ theme }) => theme.spacing(10)}px;
-  padding-right: ${({ theme }) => theme.spacing(9)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(24)}px;
+  padding-left: ${({ theme }) => theme.spacing(11)}px;
+  padding-right: ${({ theme }) => theme.spacing(12)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(25)}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 461px;
     height: 864px;
     padding-top: ${({ theme }) => theme.spacing(34)}px;
     padding-left: ${({ theme }) => theme.spacing(15)}px;
-    padding-right: ${({ theme }) => theme.spacing(14)}px;
+    padding-right: ${({ theme }) => theme.spacing(16)}px;
     padding-bottom: ${({ theme }) => theme.spacing(33)}px;
   }
 
@@ -28,7 +28,7 @@ export const Container = styled.div`
     height: 1151px;
     padding-top: ${({ theme }) => theme.spacing(48)}px;
     padding-left: ${({ theme }) => theme.spacing(22)}px;
-    padding-right: ${({ theme }) => theme.spacing(20)}px;
+    padding-right: ${({ theme }) => theme.spacing(22)}px;
     padding-bottom: ${({ theme }) => theme.spacing(45)}px;
   }
 `;
