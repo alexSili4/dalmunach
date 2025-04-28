@@ -1,6 +1,6 @@
 const enum PagePaths {
   root = '/',
-  warning = '/warning',
+  bwr = '/bwr',
 }
 
 export default PagePaths;

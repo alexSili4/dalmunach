@@ -1,9 +1,13 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, lazy, useEffect, useState } from 'react';
 import { useAppStore } from '@/store/store';
 import { selectGetReservedInfo } from '@/store/app/selectors';
-import WarningPage from '@/pages/WarningPage';
-import MainPage from '@/pages/MainPage';
 import { useAppUpdateVersion } from '@/hooks';
+import { Route, Routes } from 'react-router-dom';
+import { PagePaths } from '@/constants';
+
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
+const RootPage = lazy(() => import('@/pages/RootPage'));
+const MainPage = lazy(() => import('@/pages/MainPage'));
 
 const App: FC = () => {
   const getReservedInfo = useAppStore(selectGetReservedInfo);
@@ -23,10 +27,20 @@ const App: FC = () => {
     setIsLegalDrinkingAgeUser(data);
   };
 
-  return isLegalDrinkingAgeUser ? (
-    <MainPage />
-  ) : (
-    <WarningPage updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser} />
+  return (
+    <Routes>
+      <Route
+        path={PagePaths.root}
+        element={
+          <RootPage
+            isLegalDrinkingAgeUser={isLegalDrinkingAgeUser}
+            updateIsLegalDrinkingAgeUser={updateIsLegalDrinkingAgeUser}
+          />
+        }
+      />
+      <Route path={PagePaths.bwr} element={<MainPage />} />
+      <Route path='*' element={<NotFoundPage />} />
+    </Routes>
   );
 };
 
